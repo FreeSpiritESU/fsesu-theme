@@ -1,0 +1,110 @@
+/*
+Theme Name:     FreeSpirit ESU
+Theme URI:      http: //www.freespiritesu.org.uk/
+Description:    FreeSpirit ESU Site Theme (Child theme for the Twenty Eleven theme) <br />This theme has been custom built specifically for use by FreeSpirit ESU for their website at http://www.freespiritesu.org.uk/. All functionality has been built in to the specific needs of FreeSpirit ESU and will not necessarily be of any use to anyone else.
+Author:         Richard Perry
+Author URI:     http: //www.perry-online.me.uk/
+Template:       twentyeleven
+Version:        0.1.0
+Tags:           black, red, two-columns, fixed-width, featured-images, custom-menu
+*/
+
+/**
+ * Import the parent theme stylesheet
+ */
+@import url("../twentyeleven/style.css");
+
+a:hover, a:active { border-bottom: 1px solid red; margin-bottom: -1px; text-decoration: none;}
+body { background: white; padding: 0 0 1em; }
+small { font-size: smaller; }
+#page { 
+  -webkit-border-bottom-right-radius: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -moz-border-radius-bottomleft: 8px;
+	background: #e2e2e2; 
+	border: 1px solid #aeaeae; 
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+	border-top: 0; 
+	margin: 0 auto 2em; 
+	padding: 0 8px 8px;
+}
+
+#branding { background: url(images/head/header.php); border: 0; }
+#branding hgroup { margin: 0 10px; }
+#branding #site-info { background: url(images/fslogo.png) top left no-repeat; height: 180px; }
+#branding #site-title { clear: none; margin: 0 10px; text-align: center; }
+#branding #site-description { clear: none; text-align: center; }
+#branding #site-title a, #branding #site-description { color: red; }
+#branding #site-logo, #branding #header-spacer { width: 150px }
+#branding #site-logo { float: left; }
+#branding #header-spacer { float: right; }
+
+
+#access { margin: 0 auto 0; }
+#access div { margin: 0; }
+#access li:hover > a,
+#access ul ul :hover > a,
+#access a:focus { color: red; }
+#access .menu { margin-left: 5px; }
+
+#main { padding: 0; }
+#main #primary #content { margin: 0 257px 0 0; width: auto; }
+#main #primary #content #respond { 
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  background: #efefef; 
+  border-radius: 8px;
+  margin: 10px 0; 
+  padding: 10px; 
+  width: auto;
+}
+#main #primary #content #respond .form-submit { float: none; margin: 0; text-align: right; }
+#main #primary #content #respond  input#submit { left: 0; margin: 5px 0; padding: 6px 20px }
+#main #secondary aside {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border: 1px solid #aeaeae; 
+  border-radius: 8px;
+  margin: 0 0 5px;
+  padding: 3px 10px;
+}
+#main #secondary aside ul { list-style: none; }
+#main #secondary aside.widget_search form { margin: 8px 10px; }
+.entry-header .comments-link a { right: 10px; }
+.hentry, .hentry:last-child, .no-results { 
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+	background: white;
+	border: 1px solid #aeaeae; 
+  border-radius: 8px;
+	padding: 0 10px 1.625em; 
+	margin: 5px 0;
+}
+.singular .hentry {  
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+	border: 1px solid #aeaeae; 
+  border-radius: 8px;
+}
+.singular.page .hentry { padding: 0 10px 1.625em; }
+.singular .entry-header, 
+.singular .entry-content, 
+.singular footer.entry-meta, 
+.singular #comments-title { width: auto; }
+.singular .entry-meta .edit-link a { float: right; position: relative; left: 0; top: 0; }
+#main #secondary { margin: 0; width: 250px; }
+#main #secondary aside { background: white; margin: 5px 0;}
+
+footer {   
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+	background: white; 
+  border: 1px solid #aeaeae;  
+  border-radius: 8px;
+  text-align: center;
+}
+.widget a:hover, .widget a:focus, .widget a:active { text-decoration: none; }
+footer div { margin: 5px 0; }
+article footer { border: 0; }
