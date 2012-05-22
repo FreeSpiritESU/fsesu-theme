@@ -1,3 +1,4 @@
+/* SVN FILE: $Id$ */
 /*
 Theme Name:     FreeSpirit ESU
 Theme URI:      http: //www.freespiritesu.org.uk/
@@ -12,22 +13,23 @@ Tags:           black, red, two-columns, fixed-width, featured-images, custom-me
 /**
  * Import the parent theme stylesheet
  */
-@import url("../twentyeleven/style.css");
+@import url("../twentyeleven/style.css"); 
 
 a:hover, a:active { border-bottom: 1px solid red; margin-bottom: -1px; text-decoration: none;}
 body { background: white; padding: 0 0 1em; }
 small { font-size: smaller; }
 #page { 
-  -webkit-border-bottom-right-radius: 8px;
-  -webkit-border-bottom-left-radius: 8px;
-  -moz-border-radius-bottomright: 8px;
-  -moz-border-radius-bottomleft: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-radius-bottomright: 8px;
+	-moz-border-radius-bottomleft: 8px;
 	background: #e2e2e2; 
 	border: 1px solid #aeaeae; 
-  border-bottom-right-radius: 8px;
-  border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
 	border-top: 0; 
-	margin: 0 auto 2em; 
+	margin: 0 auto 2em;
+	max-width: 1000px;
 	padding: 0 8px 8px;
 }
 
@@ -50,6 +52,7 @@ small { font-size: smaller; }
 #access .menu { margin-left: 5px; }
 
 #main { padding: 0; }
+#main #primary { float: left; margin: 0 -26.4% 0 0; }
 #main #primary #content { margin: 0 257px 0 0; width: auto; }
 #main #primary #content #respond { 
   -webkit-border-radius: 8px;
@@ -62,6 +65,8 @@ small { font-size: smaller; }
 }
 #main #primary #content #respond .form-submit { float: none; margin: 0; text-align: right; }
 #main #primary #content #respond  input#submit { left: 0; margin: 5px 0; padding: 6px 20px }
+
+#main #secondary { float: right; margin-right: 7.6%; width: 18.8%; }
 #main #secondary aside {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -88,12 +93,21 @@ small { font-size: smaller; }
 	border: 1px solid #aeaeae; 
   border-radius: 8px;
 }
-.singular.page .hentry { padding: 0 10px 1.625em; }
+.singular .page .hentry { padding: 0 10px 1.625em; }
 .singular .entry-header, 
 .singular .entry-content, 
 .singular footer.entry-meta, 
 .singular #comments-title { width: auto; }
 .singular .entry-meta .edit-link a { float: right; position: relative; left: 0; top: 0; }
+
+/* error404 */
+.error404 #primary { float: none; margin: 0; }
+.error404 #primary #content { margin: 0 7.6%; width: auto; }
+
+/* Alignment */
+.alignleft { display: inline; float: left; margin-right: 1.625em; }
+.alignright { display: inline; float: right; margin-left: 1.625em; }
+.aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
 #main #secondary { margin: 0; width: 250px; }
 #main #secondary aside { background: white; margin: 5px 0;}
 

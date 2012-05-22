@@ -1,4 +1,5 @@
 <?php
+/* SVN FILE: $Id$ */
 /**
  *  events.php Event Custom Post Type Setup File
  *  
@@ -16,7 +17,9 @@
  *  @copright       FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
  *  @author         Richard Perry <http: //www.perry-online.me.uk/>
  *  @since          Release 0.1.0
- *  @version        0.1.0
+ *  @version        $Rev$
+ * 	@modifiedby    	$LastChangedBy$
+ * 	@lastmodified  	$Date$
  *
  *  @todo           ToDo List
  *                  - Complete the contextual help for the events post type
