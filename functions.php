@@ -10,7 +10,7 @@
  *  
  *  @package        FreeSpiritESU
  *  @subpackage     Functions
- *  @copright       FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
+ *  @copyright       FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
  *  @author         Richard Perry <http: //www.perry-online.me.uk/>
  *  @since          Release 0.1.0
  *  @version        $Rev$
@@ -27,11 +27,6 @@
  *  GENERAL SETUP FUNCTIONS
  */
  
-/**
- *  Tell WordPress to run fsesu_setup() when the 'after_setup_theme' hook is run.
- */
-add_action( 'after_setup_theme', 'fsesu_setup' );
-
 if ( ! function_exists( 'fsesu_setup' ) ):
 /**
  *  Set up theme defaults and registers support for various WordPress features.
@@ -80,30 +75,48 @@ function fsesu_setup() {
 
 }
 endif; // fsesu_setup
+add_action( 'after_setup_theme', 'fsesu_setup' );
+
+/**
+ *  Change the default excerpt length so post summaries are more readable
+ * 
+ *  @param  integer number of words to include in the excerpt
+ */
+function fsesu_custom_excerpt( $length ) {
+    return 100;
+}
+add_filter( 'excerpt_length', 'fsesu_custom_excerpt', 9999 );
+
+/**
+ *  Change the [...] to a Read More link
+ */
+function fsesu_excerpt_more($more) {
+    global $post;
+    return '<a href="'. get_permalink($post->ID) . '">Read more...</a>';
+}
+add_filter('excerpt_more', 'fsesu_excerpt_more');
 
 /**
  *  Add the FreeSpirit ESU Favicon to the site
  */
- 
-add_action('wp_head', 'fsesu_favicon');
-
 function fsesu_favicon() {
     echo '<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />' . "\n";
 }
+add_action('wp_head', 'fsesu_favicon');
 
 /**
  *  Change the Wordpress jQuery reference to use the Google CDN jQuery library
  */
-add_action( 'after_setup_theme', 'fsesu_jquery_init' ); // Theme active, include function
-
 function fsesu_jquery_init() {
-	if ( !is_admin() ) { // actually not necessary, because the Hook only get used in the Theme
+	if ( !is_admin() ) { 
 		wp_deregister_script( 'jquery' ); // unregistered key jQuery
-		wp_register_script( 'jquery', 'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js', false, '1.4.2'); // register key jQuery with URL of Google CDN
+		wp_register_script( 'jquery', 
+	       'http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js', 
+	       false, '1.4.2'); // register key jQuery with URL of Google CDN
 		wp_enqueue_script( 'jquery' ); // include jQuery
 	}
 }
- 
+add_action( 'after_setup_theme', 'fsesu_jquery_init' ); // Theme active, include function
 
 
 /**
@@ -122,33 +135,27 @@ function fsesu_jquery_init() {
 /**
  *  Add the FreeSpirit ESU Logo to the Login Page
  */
- 
-add_action( 'login_head', 'fsesu_login_logo' );
-
 function fsesu_login_logo() {
 	$style = '<style type="text/css"> h1 a { background: transparent url(' . get_bloginfo('url') . '/favicon.ico) no-repeat 30px center !important; } </style>';
 	echo $style;
 }
+add_action( 'login_head', 'fsesu_login_logo' );
 
 /**
  *  Change the Login header title
  */
-
-add_filter( 'login_headertitle', 'fsesu_login_headertitle' );
-
 function fsesu_login_headertitle() {
 	return get_option('blogname');
 }
+add_filter( 'login_headertitle', 'fsesu_login_headertitle' );
 
 /**
  *  Change the Login header link
  */
- 
-add_filter( 'login_headerurl', 'fsesu_login_headerurl' );
-
 function fsesu_login_headerurl() {
 	return home_url();
 }
+add_filter( 'login_headerurl', 'fsesu_login_headerurl' );
 
 
 

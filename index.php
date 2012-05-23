@@ -11,7 +11,7 @@
  *
  * 	@package        FreeSpiritESU
  *  @subpackage     Content
- *  @copright       FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
+ *  @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011
  *  @author         Richard Perry <http: //www.perry-online.me.uk/>
  *  @since          Release 0.1.1
  *  @version        $Rev$
@@ -19,22 +19,23 @@
  * 	@lastmodified  	$Date$
  *
  *  @todo           ToDo List
- *                  - 
+ *                  -
  */
 
-get_header(); ?>
+get_header();
+ ?>
 
 		<div id="primary">
 			<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php fsesu_content_nav( 'top-nav' ); ?>
+				<?php fsesu_content_nav('top-nav'); ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
 
-					<?php get_template_part( 'loop', get_post_format() ); ?>
+					<?php get_template_part('loop', get_post_format()); ?>
 
 				<?php endwhile; ?>
 

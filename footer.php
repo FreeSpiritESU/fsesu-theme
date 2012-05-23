@@ -7,7 +7,7 @@
  *
  * 	@package        FreeSpiritESU
  *  @subpackage     Footer
- *  @copright       FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
+ *  @copyright       FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
  *  @author         Richard Perry <http: //www.perry-online.me.uk/>
  *  @since          Release 0.1.0
  *  @version        $Rev$
