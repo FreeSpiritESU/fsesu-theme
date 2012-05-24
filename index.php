@@ -19,7 +19,8 @@
  * 	@lastmodified  	$Date$
  *
  *  @todo           ToDo List
- *                  -
+ *                  - Add i18n/l10n elements
+ *                  - Add content templates for other post formats
  */
 
 get_header();
@@ -34,8 +35,13 @@ get_header();
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
-
-					<?php get_template_part('loop', get_post_format()); ?>
+                    
+                    <?php 
+                    /**
+                     *  Get the content template relevant to the post format
+                     *  of the post to be displayed
+                     */
+					get_template_part('content', get_post_format()); ?>
 
 				<?php endwhile; ?>
 
@@ -47,7 +53,11 @@ get_header();
 					</header><!-- .entry-header -->
 
 					<div class="entry-content">
-						<p>Apologies, but there doesn't seem to be anything here. Are you sure you clicked on the right link? Or did you mistype the page address?</p>
+						<p>
+						    Apologies, but there doesn't seem to be anything 
+						    here. Are you sure you clicked on the right link? Or 
+						    did you mistype the page address?
+					    </p>
 						<?php get_search_form(); ?>
 					</div><!-- .entry-content -->
 				</article><!-- #post-0 -->

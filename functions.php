@@ -10,7 +10,7 @@
  *  
  *  @package        FreeSpiritESU
  *  @subpackage     Functions
- *  @copyright       FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
+ *  @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
  *  @author         Richard Perry <http: //www.perry-online.me.uk/>
  *  @since          Release 0.1.0
  *  @version        $Rev$
@@ -78,6 +78,35 @@ endif; // fsesu_setup
 add_action( 'after_setup_theme', 'fsesu_setup' );
 
 /**
+ * Register our sidebars and widgetized areas.
+ *
+ * @since Release 0.1.1
+ */
+function fsesu_widgets_init() {
+
+    register_sidebar( array(
+        'name' => __( 'Main Sidebar', 'fsesu' ),
+        'id' => 'sidebar',
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => "</aside>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Footer Sidebar', 'fsesu' ),
+        'id' => 'sidebar-foot',
+        'description' => __( 'An optional widget area for the footer', 'fsesu' ),
+        'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+        'after_widget' => "</aside>",
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+}
+add_action( 'widgets_init', 'fsesu_widgets_init' );
+
+
+/**
  *  Change the default excerpt length so post summaries are more readable
  * 
  *  @param  integer number of words to include in the excerpt
@@ -116,7 +145,7 @@ function fsesu_jquery_init() {
 		wp_enqueue_script( 'jquery' ); // include jQuery
 	}
 }
-add_action( 'after_setup_theme', 'fsesu_jquery_init' ); // Theme active, include function
+add_action( 'after_setup_theme', 'fsesu_jquery_init' );
 
 
 /**

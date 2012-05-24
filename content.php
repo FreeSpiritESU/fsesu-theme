@@ -22,25 +22,21 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-            <h1 class="entry-title"><a href="<?php the_permalink(); ?>" 
-			    title="<?php printf( 'Permalink to %s', 
-                    the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
-			    <?php the_title(); ?></a></h1>
+            <h1 class="entry-title">
+                <a href="<?php the_permalink(); ?>" 
+                    title="<?php printf( 'Permalink to %s', 
+                        the_title_attribute( 'echo=0' ) ); ?>" 
+                    rel="bookmark"><?php the_title(); ?></a>
+            </h1>
 
-			<?php if ( 'post' == get_post_type() ) : ?>
 			<div class="entry-meta">
-				<?php fsesu_entry_meta(); ?>
+				<?php 
+				/**
+                 *  Add the meta data for the post
+                 */
+				fsesu_entry_meta(); 
+				?>
 			</div><!-- .entry-meta -->
-			<?php endif; ?>
-
-			<?php if ( comments_open() && ! post_password_required() ) : ?>
-			<div class="comments-link">
-				<?php comments_popup_link( 
-				    '<span class="leave-reply">Reply</span>', 
-				    _x( '1', 'comments number' ), 
-				    _x( '%', 'comments number' ) ); ?>
-			</div>
-			<?php endif; ?>
 		</header><!-- .entry-header -->
 
 		<div class="entry-content">

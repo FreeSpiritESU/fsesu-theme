@@ -21,7 +21,7 @@
 
 	</div><!-- #main -->
 
-	<footer id="colophon" role="contentinfo">
+	<footer id="footer" role="contentinfo">
       <nav id='footer_menu' role='navigation'>
           <small>
               <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
@@ -31,8 +31,7 @@
           <small>&copy; 2008 - <?php echo date('Y'); ?> FreeSpirit Explorer Scout Unit. All Rights Reserved. &nbsp;
             | &nbsp; Hosted by <a href="http://www.webtreeauthoring.com/" target="_blank">Webtree Authoring</a></small>
       </div>
-      </div>
-	</footer><!-- #colophon -->
+	</footer><!-- #footer -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
