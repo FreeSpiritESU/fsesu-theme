@@ -147,6 +147,20 @@ function fsesu_jquery_init() {
 }
 add_action( 'after_setup_theme', 'fsesu_jquery_init' );
 
+/**
+ * Remove the automatic paragraph wrapper around images
+ */
+function fsesu_unautop_4_img( $content ) {
+    $content = preg_replace(
+        '/<p>\\s*?(<a rel=\"attachment.*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s',
+        '<figure>$1</figure>',
+        $content
+    );
+    return $content;
+}
+add_filter( 'the_content', 'fsesu_unautop_4_img', 999 );
+
+
 
 /**
  *  Include the various additional function files
