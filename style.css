@@ -18,7 +18,7 @@ Tags:           black, red, two-columns, fixed-width, featured-images, custom-me
 a:hover, a:active { border-bottom: 1px solid red; margin-bottom: -1px; text-decoration: none;}
 body { background: white; padding: 0 0 1em; }
 small { font-size: smaller; }
-#page { 
+#wrapper { 
 	-webkit-border-bottom-right-radius: 8px;
 	-webkit-border-bottom-left-radius: 8px;
 	-moz-border-radius-bottomright: 8px;
@@ -33,16 +33,12 @@ small { font-size: smaller; }
 	padding: 0 8px 8px;
 }
 
-#branding { background: url(images/head/header.php); border: 0; }
-#branding hgroup { margin: 0 10px; }
-#branding #site-info { background: url(images/fslogo.png) top left no-repeat; height: 180px; }
-#branding #site-title { clear: none; margin: 0 10px; text-align: center; }
-#branding #site-description { clear: none; text-align: center; }
-#branding #site-title a, #branding #site-description { color: red; }
-#branding #site-logo, #branding #header-spacer { width: 150px }
-#branding #site-logo { float: left; }
-#branding #header-spacer { float: right; }
-
+#header { background: url(images/head/header.php); border: 0; }
+#masthead { margin: 0 10px; }
+#branding { background: url(images/fslogo.png) top left no-repeat; height: 180px; }
+#site-title { clear: none; margin: 0 10px; text-align: center; }
+#site-title a { color: red; }
+#site-description { clear: none; color: red; text-align: center; }
 
 #access { margin: 0 auto 0; }
 #access div { margin: 0; }
@@ -51,10 +47,11 @@ small { font-size: smaller; }
 #access a:focus { color: red; }
 #access .menu { margin-left: 5px; }
 
+
 #main { padding: 0; }
-#main #primary { float: left; margin: 0 -26.4% 0 0; }
-#main #primary #content { margin: 0 257px 0 0; width: auto; }
-#main #primary #content #respond { 
+#primary { float: left; margin: 0 -26.4% 0 0; }
+#content { margin: 0 257px 0 0; width: auto; }
+#respond { 
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   background: #efefef; 
@@ -63,11 +60,11 @@ small { font-size: smaller; }
   padding: 10px; 
   width: auto;
 }
-#main #primary #content #respond .form-submit { float: none; margin: 0; text-align: right; }
-#main #primary #content #respond  input#submit { left: 0; margin: 5px 0; padding: 6px 20px }
+#respond .form-submit { float: none; margin: 0; text-align: right; }
+#respond  input#submit { left: 0; margin: 5px 0; padding: 6px 20px }
 
-#main #secondary { float: right; margin-right: 7.6%; width: 18.8%; }
-#main #secondary aside {
+#secondary { float: right; margin-right: 7.6%; width: 18.8%; }
+#secondary aside {
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border: 1px solid #aeaeae; 
@@ -75,8 +72,8 @@ small { font-size: smaller; }
   margin: 0 0 5px;
   padding: 3px 10px;
 }
-#main #secondary aside ul { list-style: none; }
-#main #secondary aside.widget_search form { margin: 8px 10px; }
+#secondary aside ul { list-style: none; }
+#secondary aside.widget_search form { margin: 8px 10px; }
 .entry-header .comments-link a { right: 10px; }
 .hentry, .hentry:last-child, .no-results { 
   -webkit-border-radius: 8px;
@@ -108,8 +105,6 @@ small { font-size: smaller; }
 .alignleft { display: inline; float: left; margin-right: 1.625em; }
 .alignright { display: inline; float: right; margin-left: 1.625em; }
 .aligncenter { clear: both; display: block; margin-left: auto; margin-right: auto; }
-#main #secondary { margin: 0; width: 250px; }
-#main #secondary aside { background: white; margin: 5px 0;}
 
 footer {   
   -webkit-border-radius: 8px;

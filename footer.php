@@ -7,7 +7,7 @@
  *
  * 	@package        FreeSpiritESU
  *  @subpackage     Footer
- *  @copyright       FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
+ *  @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
  *  @author         Richard Perry <http: //www.perry-online.me.uk/>
  *  @since          Release 0.1.0
  *  @version        $Rev$
@@ -19,20 +19,27 @@
  */
 ?>
 
-	</div><!-- #main -->
+    </div><!-- #main -->
 
 	<footer id="footer" role="contentinfo">
-      <nav id='footer_menu' role='navigation'>
-          <small>
-              <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-          </small>
-      </nav>
-      <div>
-          <small>&copy; 2008 - <?php echo date('Y'); ?> FreeSpirit Explorer Scout Unit. All Rights Reserved. &nbsp;
-            | &nbsp; Hosted by <a href="http://www.webtreeauthoring.com/" target="_blank">Webtree Authoring</a></small>
-      </div>
+	    <div id='colophon'>
+            <nav id='footer_menu' role='navigation'>
+                <small>
+                    <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
+                </small>
+            </nav>
+            <div id='site-info'>
+                <small>
+                    &copy; 2008 - <?php echo date('Y'); ?> FreeSpirit Explorer Scout Unit. 
+                    All Rights Reserved. &nbsp;
+                    | &nbsp; Hosted by <a href="http://www.webtreeauthoring.com/" 
+                        title='Webtree Authoring Ltd' 
+                        target="_blank">Webtree Authoring</a>
+                </small>
+            </div><!-- #site-info -->
+        </div><!-- #colophon -->
 	</footer><!-- #footer -->
-</div><!-- #page -->
+</div><!-- #wrapper -->
 
 <?php wp_footer(); ?>
 

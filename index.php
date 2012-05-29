@@ -31,7 +31,7 @@ get_header();
 
 			<?php if ( have_posts() ) : ?>
 
-				<?php fsesu_content_nav('top-nav'); ?>
+				<?php if(function_exists('fsesu_content_nav')) { fsesu_content_nav('top-nav'); } ?>
 
 				<?php /* Start the Loop */ ?>
 				<?php while ( have_posts() ) : the_post(); ?>
