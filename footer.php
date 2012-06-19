@@ -23,11 +23,11 @@
 
 	<footer id="footer" role="contentinfo">
 	    <div id='colophon'>
-            <nav id='footer_menu' role='navigation'>
-                <small>
-                    <?php wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); ?>
-                </small>
-            </nav>
+            <?php wp_nav_menu( array( 'container' => 'nav',
+                                      'container_id' => 'footer_menu',
+                                      'items_wrap' => '<small><ul><li><a href="/" title="Home">Home</a></li>%3$s</ul></small>', 
+                                      'before' => ' &nbsp; | &nbsp; ',
+                                      'theme_location' => 'footer-menu') ); ?>
             <div id='site-info'>
                 <small>
                     &copy; 2008 - <?php echo date('Y'); ?> FreeSpirit Explorer Scout Unit. 

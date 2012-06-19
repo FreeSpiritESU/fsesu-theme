@@ -26,8 +26,7 @@
 get_header();
  ?>
 
-		<div id="primary">
-			<div id="content" role="main">
+		<div id="content" role="main">
 
 			<?php if ( have_posts() ) : ?>
 
@@ -41,30 +40,29 @@ get_header();
                      *  Get the content template relevant to the post format
                      *  of the post to be displayed
                      */
-					get_template_part('content', get_post_format()); ?>
+					get_template_part('content', get_post_format()); 
+					?>
 
 				<?php endwhile; ?>
 
 			<?php else : ?>
 
-				<article id="post-0" class="post no-results not-found">
-					<header class="entry-header">
-						<h1 class="entry-title">Nothing Found</h1>
-					</header><!-- .entry-header -->
+			<article id="post-0" class="post no-results not-found hentry">
+				<header class="entry-header">
+					<h2 class="entry-title">Nothing Found</h2>
+				</header><!-- .entry-header -->
 
-					<div class="entry-content">
-						<p>
-						    Apologies, but there doesn't seem to be anything 
-						    here. Are you sure you clicked on the right link? Or 
-						    did you mistype the page address?
-					    </p>
-						<?php get_search_form(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-0 -->
+				<div class="entry-content">
+					<p>
+					    Apologies, but there doesn't seem to be anything 
+					    here. Are you sure you clicked on the right link? Or 
+					    did you mistype the page address?
+				    </p>
+					<?php get_search_form(); ?>
+				</div><!-- .entry-content -->
+			</article><!-- #post-0 -->
 
 			<?php endif; ?>
-
-			</div><!-- #content -->
 		</div><!-- #primary -->
 
 <?php get_sidebar(); ?>

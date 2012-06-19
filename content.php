@@ -22,12 +22,12 @@
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<header class="entry-header">
-            <h1 class="entry-title">
+            <h2 class="entry-title">
                 <a href="<?php the_permalink(); ?>" 
                     title="<?php printf( 'Permalink to %s', 
                         the_title_attribute( 'echo=0' ) ); ?>" 
                     rel="bookmark"><?php the_title(); ?></a>
-            </h1>
+            </h2>
 
 			<div class="entry-meta">
 				<?php 
