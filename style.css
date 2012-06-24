@@ -166,7 +166,7 @@ small { font-size: smaller; }
    Content
    ========================================================================== */
 
-#main { clear:both; padding: 5px 0; }
+#main { clear:both; padding: 8px 0; }
 
 
 
@@ -200,7 +200,7 @@ small { font-size: smaller; }
     background: white;
     border: 1px solid #aeaeae; 
     border-radius: 8px;
-    margin: 0 0 5px;
+    margin: 0 0 8px;
     padding: 3px 10px;
 }
 #sidebar aside ul { list-style: none; }
@@ -221,14 +221,16 @@ small { font-size: smaller; }
 	background: white;
 	border: 1px solid #aeaeae; 
     border-radius: 8px;
-	padding: 5px 10px 1.625em; 
-	margin: 0 0 5px;
+	padding: 10px 20px 1.625em; 
+	margin: 0 0 8px;
 }
 .hentry header { }
 .hentry h2 a { color: black; text-decoration: none; }
 .hentry time { display: block; }
 .hentry p.byline { }
 .hentry footer { border: 0; }
+
+.hentry .whats-new { list-style: none; padding: 0; text-align: center; }
 
 
 /* =============================================================================

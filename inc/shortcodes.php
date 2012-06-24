@@ -35,11 +35,12 @@ function googlemap_function($atts, $content = null) {
 function recent_posts_function($atts, $content = null) {
     extract(shortcode_atts(array(
         'posts' => 1,
-        'category' => ''
+        'category' => '',
+        'class' => 'recent'
     ), $atts));
-
-    $return_string = '<h3>'.$content.'</h3>';
-    $return_string .= '<ul>';
+	
+    $return_string = '<h3 class="' . $class . '">'.$content.'</h3>';
+    $return_string .= '<ul class="' . $class . '">';
     query_posts(array(
         'orderby' => 'date', 
         'order' => 'DESC' , 
@@ -56,6 +57,7 @@ function recent_posts_function($atts, $content = null) {
     wp_reset_query();
     return $return_string;
 }
+
 
 
 function register_shortcodes(){
