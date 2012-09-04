@@ -59,40 +59,40 @@
 	          </h1>
 			  <span id='breadcrumb'><?php fsesu_breadcrumb(); ?></span>
 			</div><!-- #branding -->
-		</hgroup><!-- #masthead -->
 
-		<nav id="access" role="navigation">
-			<h3 class="assistive-text"><?php _e( 'Main menu', 'fsesu' ); ?></h3>
-			<?php 
-            /** 
-             * Allow screen readers / text browsers to skip the navigation menu 
-             * and get right to the good stuff.
-             */ 
-            ?>
-			<div class="skip-link">
-                <a class="assistive-text" 
-                    href="#content" 
-                    title="<?php esc_attr_e( 'Skip to main content', 'fsesu' ); ?>">
-                    <?php _e( 'Skip to main content', 'fsesu' ); ?>
-                </a>
-            </div><!-- .skip-link -->
-			<div class="skip-link">
-                <a class="assistive-text" 
-                    href="#secondary" 
-                    title="<?php esc_attr_e( 'Skip to secondary content', 'fsesu' ); ?>">
-                    <?php _e( 'Skip to secondary content', 'fsesu' ); ?>
-                </a>
-            </div><!-- .skip-link -->
-			<?php 
-                /**
-                 * Our navigation menu.  If one isn't filled out, wp_nav_menu falls 
-                 * back to wp_page_menu. The menu assiged to the primary position is 
-                 * the one used. If none is assigned, the menu with the lowest ID is 
-                 * used.
-                 */ 
-                wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); 
-            ?>
-		</nav><!-- #access -->
+			<nav id="access" role="navigation">
+				<h3 class="assistive-text"><?php _e( 'Main menu', 'fsesu' ); ?></h3>
+				<?php 
+	            /** 
+	             * Allow screen readers / text browsers to skip the navigation menu 
+	             * and get right to the good stuff.
+	             */ 
+	            ?>
+				<div class="skip-link">
+	                <a class="assistive-text" 
+	                    href="#content" 
+	                    title="<?php esc_attr_e( 'Skip to main content', 'fsesu' ); ?>">
+	                    <?php _e( 'Skip to main content', 'fsesu' ); ?>
+	                </a>
+	            </div><!-- .skip-link -->
+				<div class="skip-link">
+	                <a class="assistive-text" 
+	                    href="#secondary" 
+	                    title="<?php esc_attr_e( 'Skip to secondary content', 'fsesu' ); ?>">
+	                    <?php _e( 'Skip to secondary content', 'fsesu' ); ?>
+	                </a>
+	            </div><!-- .skip-link -->
+				<?php 
+	                /**
+	                 * Our navigation menu.  If one isn't filled out, wp_nav_menu falls 
+	                 * back to wp_page_menu. The menu assiged to the primary position is 
+	                 * the one used. If none is assigned, the menu with the lowest ID is 
+	                 * used.
+	                 */ 
+	                wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); 
+	            ?>
+			</nav><!-- #access -->
+		</hgroup><!-- #masthead -->
 	</header><!-- #header -->
 
 

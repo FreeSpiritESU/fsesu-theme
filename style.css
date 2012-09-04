@@ -55,7 +55,7 @@ small { font-size: smaller; }
    ========================================================================== */
 
 #header { background: url(images/head/header.php); border: 0; text-align: center; }
-#masthead { margin: 0 10px; }
+#masthead { margin: 0; }
 #branding { background: url(images/fslogo.png) top left no-repeat; height: 180px; }
 #site-title { clear: none; margin: 0 10px; padding: 50px 0 15px; }
 #site-title a { color: red; text-decoration: none; }
