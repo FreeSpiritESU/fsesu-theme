@@ -32,6 +32,9 @@ function fsesu_login_logo() {
     $style = '<style type="text/css"> h1 a { background: transparent url(' . 
         get_bloginfo('url') . 
         '/favicon.ico) no-repeat 30px center !important; } </style>';
+    $style .= '<link rel="stylesheet" type="text/css" href="' .
+        get_bloginfo('stylesheet_directory') . 
+        '/css/admin.css">';
     echo $style;
 }
 add_action( 'login_head', 'fsesu_login_logo' );
@@ -51,3 +54,17 @@ function fsesu_login_headerurl() {
     return home_url();
 }
 add_filter( 'login_headerurl', 'fsesu_login_headerurl' );
+
+/**
+ *  Change the Login/Logout text
+ */
+function fsesu_loginout_text($text) {
+    $login_text_before = 'Log in';
+    $login_text_after = 'Member sign-in';
+    $logout_text_before = 'Log out';
+    $logout_text_after = 'Member sign-out';
+    $text = str_replace($login_text_before, $login_text_after ,$text);
+    $text = str_replace($logout_text_before, $logout_text_after ,$text);
+    return $text;
+}
+add_filter('loginout','fsesu_loginout_text');

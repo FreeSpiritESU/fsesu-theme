@@ -22,7 +22,7 @@
     </div><!-- #main -->
 
 	<footer id="footer" role="contentinfo">
-	    <div id='colophon'>
+	    <div id='footer_content'>
             <?php wp_nav_menu( array( 'container' => 'nav',
                                       'container_id' => 'footer_menu',
                                       'items_wrap' => '<small><ul><li><a href="/" title="Home">Home</a></li>%3$s</ul></small>', 
@@ -37,7 +37,7 @@
                         target="_blank">Webtree Authoring</a>
                 </small>
             </div><!-- #site-info -->
-        </div><!-- #colophon -->
+        </div><!-- #footer_content -->
 	</footer><!-- #footer -->
 </div><!-- #wrapper -->
 

@@ -21,7 +21,11 @@ Tags:           black, red, two-columns, fixed-width, featured-images, custom-me
    Base
    ========================================================================== */
 
-body { background: white; font: 76% verdana, arial, helvetica, sans-serif; padding: 0 0 1em; }
+* { margin: 0; padding: 0; }
+body { 
+    background: #e2e2e2 url(images/head/header.php) top center repeat-x;  
+    font: 76% verdana, arial, helvetica, sans-serif; 
+}
 a, a:visited { color: blue; text-decoration: none; }
 a:hover, a:active { border-bottom: 1px solid red; margin-bottom: -1px; text-decoration: none; }
 h1, h2, h3, h4 { margin: 5px 0 10px; }
@@ -33,20 +37,7 @@ img { border: 0; }
 p { line-height: 1.3em; margin: 10px 0; }
 small { font-size: smaller; }
 
-#wrapper { 
-	-webkit-border-bottom-right-radius: 8px;
-	-webkit-border-bottom-left-radius: 8px;
-	-moz-border-radius-bottomright: 8px;
-	-moz-border-radius-bottomleft: 8px;
-	background: #e2e2e2; 
-	border: 1px solid #aeaeae; 
-	border-bottom-right-radius: 8px;
-	border-bottom-left-radius: 8px;
-	border-top: 0; 
-	margin: 0 auto 2em;
-	max-width: 1000px;
-	padding: 0 8px 8px;
-}
+#wrapper { background: transparent; margin: 0 auto; }
 
 
 
@@ -54,9 +45,13 @@ small { font-size: smaller; }
    Header
    ========================================================================== */
 
-#header { background: url(images/head/header.php); border: 0; text-align: center; }
-#masthead { margin: 0; }
-#branding { background: url(images/fslogo.png) top left no-repeat; height: 180px; }
+#header { border: 0; text-align: center; }
+#branding { 
+    background: url(images/fslogo.png) top left no-repeat; 
+    height: 180px; 
+    margin: 0 auto; 
+    max-width: 1000px; 
+}
 #site-title { clear: none; margin: 0 10px; padding: 50px 0 15px; }
 #site-title a { color: red; text-decoration: none; }
 #site-title a:hover { border: none; }
@@ -70,11 +65,11 @@ small { font-size: smaller; }
    ========================================================================== */
 
 #access {
-    background: #222; /* Show a solid color for older browsers */
-    background: -moz-linear-gradient(#252525, #0a0a0a);
-    background: -o-linear-gradient(#252525, #0a0a0a);
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#252525), to(#0a0a0a)); /* older webkit syntax */
-    background: -webkit-linear-gradient(#252525, #0a0a0a);
+    background: #151515; /* Show a solid color for older browsers */
+    background: -moz-linear-gradient(#050505, #606060);
+    background: -o-linear-gradient(#050505, #606060);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#050505), to(#606060)); /* older webkit syntax */
+    background: -webkit-linear-gradient(#050505, #606060);
     -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
     -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
@@ -84,7 +79,8 @@ small { font-size: smaller; }
     margin: 0 auto 0;
     width: 100%;
 }
-#access ul { font-size: 13px; list-style: none; margin: 0 0 0 -0.8125em; padding-left: 0; }
+#access .menu-primary-navigation-container { margin: 0 auto; max-width: 1000px;  }
+#access ul { font-size: 13px; list-style: none; padding-left: 0; }
 #access li { float: left; position: relative; }
 #access a {
     color: #eee;
@@ -138,7 +134,9 @@ small { font-size: smaller; }
     font-weight: bold;
 }
 #access div { margin: 0; }
-#access .menu { margin-left: 5px; }
+
+#login_links { margin: 0 auto; max-width: 1000px; }
+#login_links ul { float: right; }
 
 
 /* Assistive text */
@@ -160,13 +158,21 @@ small { font-size: smaller; }
     left: 7.6%;
 }
 
+.sticky {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    border-top: 0;
+}
 
 
 /* =============================================================================
    Content
    ========================================================================== */
 
-#main { clear:both; padding: 8px 0; }
+#main { clear:both; margin: 0 auto; max-width: 1000px; padding: 8px 0; }
 
 
 
@@ -174,7 +180,7 @@ small { font-size: smaller; }
    Primary Content
    ========================================================================== */
 
-#content { float: left; width: 74%; }
+#content { float: left; margin-bottom: 40px; width: 74%; }
 #respond { 
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -247,15 +253,24 @@ ol.commentlist img.avatar { float: left; margin-right: 10px; }
    Footer
    ========================================================================== */
 
-footer {   
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    background: white; 
-    border: 1px solid #aeaeae;  
-    border-radius: 8px;
-    clear: both;
+#footer_content {   
+    background: #151515; /* Show a solid color for older browsers */
+    background: -moz-linear-gradient(#606060, #050505);
+    background: -o-linear-gradient(#606060, #050505);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#606060), to(#050505)); /* older webkit syntax */
+    background: -webkit-linear-gradient(#606060, #050505);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 2px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 2px;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 2px;
+    bottom: 0;
+    color: #eeeeee;
+    margin: 0;
+    padding: 8px 0;
+    position: fixed;
     text-align: center;
+    width: 100%;
 }
+footer #footer_content a, footer #footer_content a:visited { color: red;}
 footer div { margin: 5px 0; }
 footer nav li { display: inline; }
 .singular footer.entry-meta { float: right; position: relative; left: 0; top: 0; } 
