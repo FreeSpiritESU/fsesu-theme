@@ -42,6 +42,7 @@ function fsesu_content_nav( $nav_id ) {
     <?php endif;
 }
 
+
 /**
  *  
  */
@@ -56,6 +57,7 @@ function fsesu_entry_meta() {
         get_the_author()
     );
 }
+
 
 /**
  * Generate the breadcrumb for the page header
@@ -78,3 +80,19 @@ function fsesu_breadcrumb() {
         }
     }
 }
+
+
+/**
+ * Create a new category
+ */
+function fsesu_new_category( $category_array ) {
+    if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
+        require_once (ABSPATH.'/wp-admin/includes/taxonomy.php'); 
+        if ( ! get_cat_ID( $category_array['cat_name'] ) ) {
+            wp_insert_category( $category_array ); 
+        }
+    }
+}
+
+
+

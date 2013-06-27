@@ -1,5 +1,5 @@
 <?php
-/* SVN FILE: $Id: content.php 8 2012-06-19 15:21:37Z richard@perrymail.me.uk $ */
+/* SVN FILE: $Id$ */
 /**
  *  The default template for displaying content
  *
@@ -11,9 +11,9 @@
  *  @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
  *  @author         Richard Perry <http: //www.perry-online.me.uk/>
  *  @since          Release 0.1.1
- *  @version        $Rev: 8 $
- * 	@modifiedby    	$LastChangedBy: richard@perrymail.me.uk $
- * 	@lastmodified  	$Date: 2012-06-19 16:21:37 +0100 (Tue, 19 Jun 2012) $
+ *  @version        $Rev$
+ * 	@modifiedby    	$LastChangedBy$
+ * 	@lastmodified  	$Date$
  *
  *  @todo           ToDo List
  *                  - 

@@ -33,6 +33,7 @@ require_once locate_template('/inc/widgets.php');         // Sidebars and widget
 require_once locate_template('/inc/shortcodes.php');      // Shortcodes
 
  
+ 
 /**
  *  GENERAL SETUP FUNCTIONS
  */
@@ -82,7 +83,73 @@ function fsesu_setup() {
 
 	// This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	add_theme_support( 'post-thumbnails' );
-
+    
+    // Add the standard categories that will be used on the FreeSpirit Website
+    fsesu_new_category( 
+        array(
+            'cat_name' => 'Camp Diaries',
+            'category_description' => "Everytime we participate in a major camp, or jamboree, as a 
+                group, we will be keeping everyone informed of how we are getting on through our camp 
+                diary. These diaries will be posted here, and pictures will generally be found on our 
+                Gallery.",
+            'category_nicename' => 'campdiaries'
+        )
+    );
+    fsesu_new_category( 
+        array(
+            'cat_name' => 'News',
+            'category_description' => "News about what is happening in our Unit",
+            'category_nicename' => 'news'
+        )
+    );
+    fsesu_new_category( 
+        array(
+            'cat_name' => 'What\'s New',
+            'category_description' => "Quick updates about new things on the website, as well as 
+                quick notices for the Unit",
+            'category_nicename' => 'whatsnew',
+            'category_parent' => get_cat_ID('news') 
+        )
+    );
+    fsesu_new_category( 
+        array(
+            'cat_name' => 'Unit Supporters',
+            'category_description' => "Over the years the Unit has received support from a lot of 
+                people, and we thought it was about time they got a mention on our site.",
+            'category_nicename' => 'supporters'
+        )
+    );
+    fsesu_new_category( 
+        array(
+            'cat_name' => 'International Opportunities',
+            'category_description' => "<p>A selection of International Opportunities organised 
+                   through Scouting that are available for you. If you are intereseted in any of  
+                   them, get in touch with the organisers. We will help you with whatever you 
+                   need.</p>
+                   <p>For information about many many more international opportunities, please 
+                   visit the International Page at Scouts.org.uk 
+                   <a href='http://scouts.org.uk/international' title='International'>
+                   http://scouts.org.uk/international</a>.</p>",
+            'category_nicename' => 'intopps'
+        )
+    );
+    fsesu_new_category( 
+        array(
+            'cat_name' => 'Merchandise',
+            'category_description' => "A selection of Unit branded merchandise is available to 
+                buy. Please complete the form below and submit to the FreeSpirit Leadership 
+                team with a cheque and we will try to get the goods to you as soon as possible.",
+            'category_nicename' => 'merchandise'
+        )
+    );
+    fsesu_new_category( 
+        array(
+            'cat_name' => 'Press Cuttings/Awards',
+            'category_description' => "Since the Unit started up in 2003, we have been collecting
+                various press cuttings, awards and certificates, so here they are.",
+            'category_nicename' => 'presscuttings'
+        )
+    );
 }
 endif; // fsesu_setup
 add_action( 'after_setup_theme', 'fsesu_setup' );
