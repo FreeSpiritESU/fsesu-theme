@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id$ */
 /**
  *  The Header for our theme.
  *
@@ -9,10 +8,10 @@
  *  @subpackage     Header
  *  @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
  *  @author         Richard Perry <http: //www.perry-online.me.uk/>
- *  @since          Release 0.1.0
- *  @version        $Rev$
- * 	@modifiedby    	$LastChangedBy$
- * 	@lastmodified  	$Date$
+ *  @since          Release 3.0.0
+ *  @version        3.0.0
+ * 	@modifiedby    	Richard Perry <richard@perrymail.me.uk>
+ * 	@lastmodified  	27 July 2013
  *
  *  @todo           ToDo List
  *                  - 
@@ -94,23 +93,25 @@
 	                    <?php _e( 'Skip to secondary content', 'fsesu' ); ?>
 	                </a>
 	            </div><!-- .skip-link -->
-				<?php 
-	                /**
-	                 * Our navigation menu.  If one isn't filled out, wp_nav_menu falls 
-	                 * back to wp_page_menu. The menu assiged to the primary position is 
-	                 * the one used. If none is assigned, the menu with the lowest ID is 
-	                 * used.
-	                 */ 
-	                wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); 
-	            ?>
-	            <nav id="login_links">
-	                
-	                    <ul>
-	                        <li><?php if ( is_user_logged_in() ) { ?> <?php wp_register('', ''); ?></li>
-	                        <li><?php } ?> <?php wp_loginout(); ?></li>
-	                    </ul>
-                    
-                </nav>
+	            <div class='menu-primary-navigation-container'>
+					<?php 
+		                /**
+		                 * Our navigation menu.  If one isn't filled out, wp_nav_menu falls 
+		                 * back to wp_page_menu. The menu assiged to the primary position is 
+		                 * the one used. If none is assigned, the menu with the lowest ID is 
+		                 * used.
+		                 */ 
+		                wp_nav_menu( array( 'theme_location' => 'main-menu' ) ); 
+		            ?>
+		            <nav id="login_links">
+		                
+		                    <ul>
+		                        <li><?php if ( is_user_logged_in() ) { ?> <?php wp_register('', ''); ?></li>
+		                        <li><?php } ?> <?php wp_loginout(); ?></li>
+		                    </ul>
+	                    
+	                </nav>
+                </div>
 			</nav><!-- #access -->
 		</hgroup><!-- #masthead -->
 	</header><!-- #header -->
