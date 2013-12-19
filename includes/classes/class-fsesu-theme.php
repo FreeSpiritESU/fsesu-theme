@@ -18,13 +18,17 @@
  * @since          3.0.0
  * @version        3.0.0
  * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified   18 December 2013
+ * @lastmodified   19 December 2013
  *
  * @todo           ToDo List
  *                  -  
  * 
  */
-class FSESU_Theme {
+require_once( TEMPLATEPATH . '/includes/classes/class-fsesu-singleton.php' );
+
+class FSESU_Theme implements FSESU_Singleton {
+    
+    private static $instance = array();
 	
 	/**
 	 * Construct
@@ -65,8 +69,21 @@ class FSESU_Theme {
 		    'video' ) );
 		
 		$this->wp_hooks();
+		
+		parent::__construct();
 	}
-
+	
+	
+	
+	/**
+	 * Init function required by Singleton class
+	 * 
+	 * @access   public
+	 * @since    3.0.0
+	 */
+	public function init() {
+	    
+	}  
 	
 	
 	/**
