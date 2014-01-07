@@ -30,7 +30,7 @@ class FSESU_Theme {
 	/**
 	 * Construct
 	 * 
-	 * 
+	 * Initialise the class and hook the various functions into WordPress
 	 * 
 	 * @param     void
 	 * @return    void
@@ -40,12 +40,13 @@ class FSESU_Theme {
 	 */
 	public function __construct() {
 	
-		add_action( 'init', array( $this, 'constants' ) );
-        add_action( 'init', array( $this, 'theme_support' ) );
-        add_action( 'init', array( $this, 'styles' ) );
+		add_action( 'after_setup_theme', array( $this, 'constants' ) );
+        add_action( 'after_setup_theme', array( $this, 'theme_support' ) );
+        add_action( 'after_setup_theme', array( $this, 'menus' ) );
+        add_action( 'wp_enqueue_scripts', array( $this, 'styles' ) );
         
-        add_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );
-                
+        add_action( 'widgets_init', array( $this, 'widgets' ) );
+        
 	} 
 	
 	
@@ -126,6 +127,67 @@ class FSESU_Theme {
 	
 	
 	/**
+	 * Menus
+	 * 
+	 * Register the navigation menus for use across the site
+	 * 
+	 * @param       void
+	 * @return      void
+     *
+     * @access      public
+     * @since       3.0.0
+	 */ 
+	function menus() {
+	
+    	// Register the menus for the theme
+    	register_nav_menus(
+    		array(
+    		  'main-menu' => __( 'Main Menu' ),
+    		  'footer-menu' => __( 'Footer Menu' )
+    		)
+    	);
+	}
+	
+	
+	
+	/**
+	 * Widgets
+	 * 
+	 * Register the widget areas for use across the site
+	 * 
+	 * @param       void
+	 * @return      void
+     *
+     * @access      public
+     * @since       3.0.0
+	 */ 
+	function widgets() {
+	
+    	register_sidebar( array(
+            'name' => __( 'Main Sidebar', 'fsesu' ),
+            'id' => 'sidebar',
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => "</aside>",
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ) );
+    
+        register_sidebar( array(
+            'name' => __( 'Footer Sidebar', 'fsesu' ),
+            'id' => 'sidebar-foot',
+            'description' => __( 'An optional widget area for the footer', 'fsesu' ),
+            'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+            'after_widget' => "</aside>",
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ) );
+        
+	}
+	
+	
+	
+	
+	/**
 	 * Styles
 	 * 
 	 * Defines the various items that the theme supports
@@ -168,13 +230,7 @@ class FSESU_Theme {
 	
 	}
 	
-	/**
-     *  Change the [...] to a Read More link
-     */
-    function excerpt_more( $more ) {
-        global $post;
-        return '<a href="'. get_permalink($post->ID) . '">Read more...</a>';
-    }
+	
 	
 	
 }
