@@ -46,8 +46,8 @@ class FSESU_Theme {
         
         // Content filters
         add_filter( 'excerpt_length', array( $this, 'excerpt_length' ), 9999 );
-        add_filter( 'excerpt_more', array( $this, 'fsesu_excerpt_more' ) );
-        add_filter( 'the_content', array( $this, 'fsesu_unautop_4_img' ), 999 );
+        add_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );
+        add_filter( 'the_content', array( $this, 'unautop_for_img' ), 999 );
         
         // Various head tag actions
         add_action( 'wp_head', array( $this, 'favicon' ) );
