@@ -50,8 +50,7 @@ $categories = array(
                         informed of how we are getting on through our camp diary. 
                         These diaries will be posted here, and pictures will 
                         generally be found on our Gallery.",
-                    'slug' => 'campdiaries',
-                    'parent' => get_cat_ID('parent')
+                    'slug' => 'campdiaries'
                 )
         ),
         array (
@@ -70,14 +69,6 @@ $categories = array(
                         website, as well as quick notices for the Unit",
                     'slug' => 'whatsnew',
                     'parent' => get_cat_ID('news')
-                )
-        ),
-        array (
-            'term' => 'Cat 2 Name',
-            'args' => 
-                array(
-                    'description' => 'Cat 2 Description',
-                    'slug' => 'cat1_slug'
                 )
         )
     );

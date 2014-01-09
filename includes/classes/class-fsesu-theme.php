@@ -240,8 +240,8 @@ class FSESU_Theme {
 
             wp_register_style( 'normalize', FSESU_STYLES . '/normalize/normalize.css', null, FSESU_VERSION );
             wp_register_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', array( 'normalize' ), FSESU_VERSION );
-            wp_register_style( 'fsesu-main', FSESU_STYLES . '/main.css', array( 'google-fonts' ), FSESU_VERSION );
-            wp_register_style( 'fsesu-wordpress', FSESU_STYLES . '/wordpress.css', array( 'fsesu-main' ), FSESU_VERSION );
+            wp_register_style( 'fsesu-main', FSESU_STYLES . '/main.min.css', array( 'google-fonts' ), FSESU_VERSION );
+            wp_register_style( 'fsesu-wordpress', FSESU_STYLES . '/wordpress.min.css', array( 'fsesu-main' ), FSESU_VERSION );
             wp_enqueue_style( 'fsesu-wordpress' );
                 
             /*
