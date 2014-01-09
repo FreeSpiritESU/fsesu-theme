@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id$ */
 /**
  *  inc/util.php   The utility functions file for the FreeSpirit ESU Wordpress Theme
  *  
@@ -7,18 +6,15 @@
  *  functions that are not run, or hooked into actions but can be used within the
  *  theme itself
  *  
- *  PHP Version 5
- *  
- *  @package        FreeSpiritESU
- *  @subpackage     Functions
- *  @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
- *  @author         Richard Perry <http: //www.perry-online.me.uk/>
- *  @since          Release 0.1.1
- *  @version        $Rev$
- *  @modifiedby     $LastChangedBy$
- *  @lastmodified   $Date$
- *
- *  @todo           ToDo List
+ * @package         FreeSpiritESU
+ * @subpackage      Functions
+ * @author          Richard Perry <http://www.perry-online.me.uk/>
+ * @copyright       Copyright (c) 2014 FreeSpirit ESU
+ * @license         http://www.gnu.org/licenses/gpl-3.0.html
+ * @since           3.0.0
+ * @version         3.0.0
+ * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
+ * @lastmodified    09 January 2014
  */
 
 /**
@@ -80,19 +76,5 @@ function fsesu_breadcrumb() {
         }
     }
 }
-
-
-/**
- * Create a new category
- */
-function fsesu_new_category( $category_array ) {
-    if (file_exists (ABSPATH.'/wp-admin/includes/taxonomy.php')) {
-        require_once (ABSPATH.'/wp-admin/includes/taxonomy.php'); 
-        if ( ! get_cat_ID( $category_array['cat_name'] ) ) {
-            wp_insert_category( $category_array ); 
-        }
-    }
-}
-
 
 
