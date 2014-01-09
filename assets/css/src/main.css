@@ -1,0 +1,369 @@
+/**
+ * Main theme stylesheet.
+ * 
+ * This stylesheet makes use of the blank stylesheet template included in Justin
+ * Tadlock's (http://justintadlock.com) Skeleton theme version 0.1 as the 
+ * skeleton. This was then built up with the specific styles required by the
+ * FreeSpirit ESU Website and including some specific adjustments to the skeleton
+ * as required.
+ * 
+ * @package        FreeSpiritESU
+ * @subpackage     Stylesheets
+ * @author         Richard Perry <http://www.perry-online.me.uk/>
+ * @copyright      Copyright (c) 2014 FreeSpirit ESU
+ * @license        http://www.gnu.org/licenses/gpl-3.0.html
+ * @since          3.0.0
+ * @version        3.0.0
+ * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
+ * @lastmodified   09 January 2014
+ */
+
+/**
+* Body
+************************************************/
+
+/* Contains everything* /
+body {}
+
+	/* Wrapper for everything inside of the body */
+	#body-container {}
+
+/**
+* Elements
+************************************************/
+
+/* Hyperlinks */
+a:link {}
+a:visited {}
+a:hover {}
+a:active {}
+
+/* Headers */
+h1 {}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+/* Text elements */
+strong {}
+em {}
+cite {}
+abbr {}
+acronym {}
+sup {}
+sub {}
+address {}
+ins {}
+dfn {}
+del {}
+
+/* Paragraphs */
+p {}
+
+/* Unordered lists */
+ul {}
+	ul li {}
+
+/* Ordered lists */
+ol {}
+	ol li {}
+
+/* Defition lists */
+dl {}
+	dt {}
+	dd {}
+
+/* Blockquotes */
+blockquote {}
+	blockquote blockquote {}
+	blockquote em {}
+
+/* Object */
+object {}
+
+/* Code */
+code {}
+pre {}
+pre code {}
+
+/* Tables */
+table {}
+	caption {}
+	tr {}
+	th {}
+	td {}
+
+/* Forms */
+form {}
+	textarea {}
+	input {}
+	label {}
+	option {}
+
+/* Drop caps */
+.drop-cap {	}
+
+/* Notes */
+.note {}
+
+/* Warnings/Alerts */
+.warning, .alert {}
+
+/* Errors */
+.error {}
+
+/* Downloads */
+.download {}
+
+/* Alignment */
+.left, .alignleft {}
+.right, .alignright {}
+.center, .aligncenter {}
+.block, .alignnone {}
+.clear {}
+
+/**
+* Images
+************************************************/
+
+/* Normal images */
+img {}
+a img {}
+
+/* WP Smilies */
+img.wp-smiley {}
+
+/* Thumbnails */
+.thumbnail {}
+
+/* WP Captions [caption] */
+.wp-caption {}
+	.wp-caption img {}
+	.wp-caption p {}
+
+/* Gallery [gallery] */
+.gallery {}
+	.gallery img {}
+
+/* Avatars */
+.avatar {}
+
+/**
+* Header
+************************************************/
+
+/* Contains entire header */
+#header-container {}
+
+	/* Contains site title and tagline */
+	#header {}
+
+		/* Site title */
+		#site-title {}
+			#site-title a {}
+
+		/* Site breadcrumb */
+		#site-breadcrumb {}
+
+/**
+* Page navigation
+************************************************/
+
+/* Wrapper for navigation */
+#navigation {}
+
+	/* Page nav */
+	#page-nav {}
+		#page-nav ul {}
+			#page-nav li {}
+				#page-nav li a {}
+			#page-nav li.current_page_item {}
+			
+	/* Login link */
+	#login-links {}
+	    #login-links ul {}
+	        #login-links li {}
+	            #login-links li a {}
+            #login-links li.current_page_item{}
+
+/**
+* Containers below the header and navigation
+************************************************/
+
+/* Wrapper for the content and primary/secondary widget sections */
+#container {}
+
+	/**
+	* Content
+	************************************************/
+
+	/* Contains site's main content */
+	#content {	}
+
+		/* Breadcrumb trail */
+		.breadcrumb {}
+
+		/* Archive and search <div> before posts are listed */
+		.author-info {}
+		.category-info {}
+		.date-info {}
+		.search-info {}
+		.tag-info {}
+
+		/* Posts */
+		.post {}
+
+			/* Post, page, and archive titles */
+			.entry-title {}
+			.single-title {}
+			.page-title {}
+			.attachment-title {}
+			.error-404-title {}
+			.author-title {}
+			.category-title {}
+			.date-title {}
+			.search-title {}
+			.tag-title {}
+
+			/* Author and date byline */
+			.byline {}
+
+			/* Full entries */
+			.entry-content {}
+
+			/* Excerpts (introduced in Hybrid 0.4) */
+			.entry-summary {}
+
+				/* Using <!--nextpage--> */
+				p.pages a {}
+
+				/* More link <!--more--> */
+				a.more-link {}
+
+			/* Post meta data */
+			.post-meta-data {}
+
+		/* Post series */
+		.series {} 
+			.series-title {}
+
+		/* Navigation links */
+		.navigation-links {}
+			.navigation-links .previous {}
+			.navigation-links .next {}
+
+		/* WP PageNavi (plugin) */
+		.wp-pagenavi {}
+			.wp-pagenavi .pages {}
+			.wp-pagenavi .current {}
+			.wp-pagenavi .extend {}
+			.wp-pagenavi a {}
+
+		/* Attachment image navigation */
+		.navigation-attachment {}
+
+		/**
+		* Comments template
+		************************************************/
+
+		/* Wrapper for entire comments area */
+		#comments-template {}
+
+			/* Comments section headers/titles */
+			.comments-header {}
+			#comments-number {}
+
+			/* Comments closed paragraph */
+			p.comments-closed {}
+
+				/* Main comments section */
+				#comments {}
+					#comments ol {}
+
+						/* Individual comments (note that WordPress has even/odd backwards) */
+						#comments li {}
+							#comments li li {}
+								#comments li li li {}
+									#comments li li li li {}
+						#comments li.even {}
+						#comments li.odd {}
+						#comments li.thread-even {}
+						#comments li.thread-odd {}
+						#comments li.author {}
+						#comments li.trackback {}
+						#comments li.pingback {}
+
+							/* Comment avatars */
+							#comments .avatar {}
+
+							/* Comment meta data */
+							#comments .comment-meta-data {}
+								#comments .comment-meta-data cite {}
+
+							/* Comment text */
+							#comments .comment-text {}
+
+					/* Paged comments navigation */
+					#comments-template .paged-navigation {}
+						#comments-template .paged-navigation .page-numbers {}
+						#comments-template .paged-navigation .next {}
+						#comments-template .paged-navigation .prev {}
+
+				/* Main comment form div */
+				#respond {}
+
+					/* Comment form title */
+					#reply {}
+
+					/* Comment form elements */
+					p#cancel-comment-reply {}
+					#respond form {}
+						#respond .form-author {}
+							#respond input {}
+						#respond .form-email {}
+						#respond .form-url {}
+						#respond .form-textarea {}
+							#respond textarea {}
+						#respond .button {}
+						#respond .comment-action {}
+
+	/**
+	* Widget sections
+	************************************************/
+
+	/* Widgets in general */
+	.widget {}
+		.widget-inside {}
+			.widget-title {}
+
+	/* Primary widget section */
+	#primary {}
+		#primary .widget {}
+			#primary .widget-inside {}
+				#primary .widget-title {}
+				#primary .widget ul {}
+					#primary .widget ul li {}
+
+	/* Secondary widget section */
+	#secondary {}
+		#secondary .widget {}
+			#secondary .widget-inside {}
+				#secondary .widget-title {}
+				#secondary .widget ul {}
+					#secondary .widget ul li {}
+
+/**
+* Footer
+************************************************/
+
+/* Wrapper for the entire footer */
+#footer {}
+
+	/* Footer section */
+	#footer_content {}
+
+		/* Footer extra */
+		#footer_content .footer-menu {}
+		#footer_content .site-info {}
