@@ -13,12 +13,12 @@
  * @package        FreeSpiritESU
  * @subpackage     Classes
  * @author         Richard Perry <http://www.perry-online.me.uk/>
- * @copyright      Copyright (c) 2013 FreeSpirit ESU
+ * @copyright      Copyright (c) 2014 FreeSpirit ESU
  * @license        http://www.gnu.org/licenses/gpl-3.0.html
  * @since          3.0.0
  * @version        3.0.0
  * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified   08 January 2014
+ * @lastmodified   10 January 2014
  *
  * @todo           ToDo List
  *                  -  
@@ -48,6 +48,7 @@ class FSESU_Theme {
         add_filter( 'excerpt_length', array( $this, 'excerpt_length' ), 9999 );
         add_filter( 'excerpt_more', array( $this, 'excerpt_more' ) );
         add_filter( 'the_content', array( $this, 'unautop_for_img' ), 999 );
+        add_filter( 'wp_title', array( $this, 'title' ), 10, 3 );
         
         // Various head tag actions
         add_action( 'wp_head', array( $this, 'favicon' ) );
@@ -266,58 +267,6 @@ class FSESU_Theme {
 	
 	
 	/**
-	 * Add the standard categories that will be used by the site.
-	 * 
-	 * This function uses the wp_insert_term function to add new categories to 
-	 * the standard category taxonomy (n.b. it cannot be used to add new terms to 
-	 * custom taxonomies)
-	 * 
-	 * Usage: 
-	 * 
-	 *     $categories = array(
-     *         array (
-     *             'term' => 'Cat 1 Name',
-     *             'args' => 
-     *                 array(
-     *                     'description' => 'Cat 1 Description',
-     *                     'slug' => 'cat1_slug',
-     *                     'parent' => get_cat_ID('parent')
-     *                 )
-     *         ),
-     *         array (
-     *             'term' => 'Cat 2 Name',
-     *             'args' => 
-     *                 array(
-     *                     'description' => 'Cat 2 Description',
-     *                     'slug' => 'cat1_slug'
-     *                 )
-     *         )
-     *     );
-     *     $fsesu->categories( $categories );
-     * 
-	 * 
-	 * @param       array   $categories array containing category details.
-	 * @return      void
-	 * 
-	 * @since       3.0.0
-	 */
-	public function categories( $categories ) {
-	    /*
-         * Breakdown the categories array into individual category arrays
-         * then check there is not already a category by that name and 
-         * insert the new category if required
-         */
-        foreach ( $categories as $category ) {
-            if ( !get_cat_ID( $category['term'] ) ) {
-                wp_insert_term( $category['term'], 'category', $category['args'] ); 
-            }
-        }
-	}
-	
-	
-	
-	
-	/**
 	 * Add the FreeSpirit ESU Favicon to the site.
 	 * 
 	 * @return      string
@@ -389,5 +338,173 @@ class FSESU_Theme {
         );
         return $content;
     }
+	
+	
+	
+	
+	/**
+	 * Add the standard categories that will be used by the site.
+	 * 
+	 * This function uses the wp_insert_term function to add new categories to 
+	 * the standard category taxonomy (n.b. it cannot be used to add new terms to 
+	 * custom taxonomies)
+	 * 
+	 * Usage: 
+	 * 
+	 *     $categories = array(
+     *         array (
+     *             'term' => 'Cat 1 Name',
+     *             'args' => 
+     *                 array(
+     *                     'description' => 'Cat 1 Description',
+     *                     'slug' => 'cat1_slug',
+     *                     'parent' => get_cat_ID('parent')
+     *                 )
+     *         ),
+     *         array (
+     *             'term' => 'Cat 2 Name',
+     *             'args' => 
+     *                 array(
+     *                     'description' => 'Cat 2 Description',
+     *                     'slug' => 'cat1_slug'
+     *                 )
+     *         )
+     *     );
+     *     $fsesu->categories( $categories );
+     * 
+	 * 
+	 * @param       array   $categories array containing category details.
+	 * @return      void
+	 * 
+	 * @since       3.0.0
+	 */
+	public function categories( $categories ) {
+	    /*
+         * Breakdown the categories array into individual category arrays
+         * then check there is not already a category by that name and 
+         * insert the new category if required
+         */
+        foreach ( $categories as $category ) {
+            if ( !get_cat_ID( $category['term'] ) ) {
+                wp_insert_term( $category['term'], 'category', $category['args'] ); 
+            }
+        }
+	}
+	
+	
+	
+	
+	/**
+	 * Improve the wp_title output with a filter.
+	 * 
+	 * @param       string  $title  The base output of wp_title
+	 * @param       string  $sep    The separator defined by wp_title
+	 * @param       string  $seplocation The position of the separator (left or right)
+	 * @return      string  $title  The filtered and updated title for display
+	 * 
+	 * @since       3.0.0
+	 */
+	function title( $title, $sep, $seplocation ) {
+	    
+	    global $page, $paged;
+        
+        // Don't revise the title in feeds.
+        if ( is_feed() )
+            return $title;
+        
+        /*
+         * If this is the front page of the site then set a specific title 
+         * regardless of the selected separator position
+         */
+        if ( is_home() || is_front_page() )
+            $title = get_bloginfo( 'name' ) . $title . " {$sep} " . get_bloginfo( 'description', 'display' );
+        
+        // For other pages, add the blog name to the correct position
+        if ( 'right' == $seplocation )
+            $title .= get_bloginfo( 'name' );
+        else
+            $title = get_bloginfo( 'name' ) . $title;
+            
+        // Add a page number if necessary
+        if ( $paged >= 2 || $page >= 2 )
+            $title .= " {$sep} " . sprintf( __( 'Page %s', 'dbt' ), max( $paged, $page ) );
+            
+        return $title;
+        
+	}
+	
+	
+	
+	
+	/**
+	 * Generate next/previous navigation for use anywhere within the theme
+	 * 
+	 * @param       string   nav_id     an ID tag for the navigation element.
+	 * @return      void
+	 * 
+	 * @since     3.0.0
+	 */
+	function content_navigation( $nav_id ) {
+	    
+        global $wp_query;
+        
+        if ( $wp_query->max_num_pages > 1 ) : ?>
+            <nav id="<?php echo $nav_id; ?>">
+                <h3 class="assistive-text">Post navigation</h3>
+                <div class="nav-previous alignleft"><?php next_posts_link( '&larr; Previous post' ); ?></div>
+                <div class="nav-next alignright"><?php previous_posts_link( 'Neext post &rarr;' ); ?></div>
+            </nav>
+        <?php endif;
+    }
+    
+    
+    
+    
+    /**
+     * Generate an entry meta data tag for display within the theme
+     * 
+     * @return      void
+     * @since       3.0.0
+     */
+    function entry_meta() {
+        printf( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author">  by  <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>',
+            esc_url( get_permalink() ),
+            esc_attr( get_the_time() ),
+            esc_attr( get_the_date( 'c' ) ),
+            esc_html( get_the_date() ),
+            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+            esc_attr( sprintf( 'View all posts by %s',  get_the_author() ) ),
+            get_the_author()
+        );
+    }
+    
+    
+    
+    
+    /**
+     * Generate the breadcrumb for the page header.
+     * 
+     * @return      void
+     * @since       3.0.0
+     */
+    function breadcrumb() {
+        if ( !is_home() || !is_front_page() ) {
+            echo '<a href="';
+            echo get_option('home');
+            echo '">';
+            bloginfo('name');
+            echo "</a> &gt;&gt; ";
+            if (is_category() || is_single()) {
+                the_category('title_li=');
+                if (is_single()) {
+                    echo " &gt;&gt; ";
+                    the_title();
+                }
+            } elseif (is_page()) {
+                echo the_title();
+            }
+        }
+    }
+    
 	
 }

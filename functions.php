@@ -13,7 +13,7 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    09 January 2014
+ * @lastmodified    10 January 2014
  *
  * @todo            ToDo List
  *                  - Add necessary display functions for the theme
@@ -25,7 +25,6 @@
  *  Include other function files
  */
  
-require_once locate_template( '/includes/util.php' );            // Utility functions
 require_once locate_template( '/includes/admin.php' );           // Admin & login 
 require_once locate_template( '/includes/shortcodes.php' );      // Shortcodes
 

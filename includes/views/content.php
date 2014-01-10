@@ -29,12 +29,7 @@
                 </header><!-- .entry-header -->
                 
                 <section class='entry-meta'>
-                    <?php 
-                        /**
-                         *  Add the meta data for the post
-                         */
-                        fsesu_entry_meta();
-                    ?>
+                    <?php $fsesu->entry_meta(); ?>
                 </section><!-- .entry-meta -->
                 
                 <section class='entry-content'>

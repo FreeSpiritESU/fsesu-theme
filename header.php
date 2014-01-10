@@ -40,7 +40,7 @@
 			          rel='home'><?php bloginfo( 'name' ); ?>
 		          </a>
 	          </h1>
-			  <span id='site-breadcrumb'><?php fsesu_breadcrumb(); ?></span>
+			  <span id='site-breadcrumb'><?php $fsesu->breadcrumb(); ?></span>
 			</div><!-- #branding -->
 
 			<nav id='navigation' role='navigation'>
