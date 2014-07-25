@@ -13,7 +13,7 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    09 January 2014
+ * @lastmodified    25 July 2014
  */
 ?>
 
@@ -29,7 +29,7 @@
                 </header><!-- .entry-header -->
                 
                 <section class='entry-meta'>
-                    <?php $fsesu->entry_meta(); ?>
+                    <?php do_action( 'entry_meta' ); ?>
                 </section><!-- .entry-meta -->
                 
                 <section class='entry-media'>

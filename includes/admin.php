@@ -10,12 +10,13 @@
  *  
  *  @package        FreeSpiritESU
  *  @subpackage     Functions
- *  @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
- *  @author         Richard Perry <http: //www.perry-online.me.uk/>
- *  @since          Release 0.1.1
- *  @version        $Rev$
- *  @modifiedby     $LastChangedBy$
- *  @lastmodified   $Date$
+ * @author          Richard Perry <http://www.perry-online.me.uk/>
+ * @copyright       Copyright (c) 2014 FreeSpirit ESU
+ * @license         http://www.gnu.org/licenses/gpl-3.0.html
+ * @since           3.0.0
+ * @version         3.0.0
+ * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
+ * @lastmodified    10 January 2014
  *
  *  @todo           ToDo List
  */

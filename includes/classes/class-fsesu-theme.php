@@ -50,6 +50,11 @@ class FSESU_Theme {
         add_filter( 'the_content', array( $this, 'unautop_for_img' ), 999 );
         add_filter( 'wp_title', array( $this, 'title' ), 10, 3 );
         
+        // Add actions for use in the theme
+        add_action( 'content_navigation', array( $this, 'content_navigation' ) );
+        add_action( 'entry_meta', array( $this, 'entry_meta' ) );
+        add_action( 'breadcrumb', array( $this, 'breadcrumb' ) );
+        
         // Various head tag actions
         add_action( 'wp_head', array( $this, 'favicon' ) );
         remove_action('wp_head', 'rsd_link');
@@ -452,7 +457,7 @@ class FSESU_Theme {
             <nav id="<?php echo $nav_id; ?>">
                 <h3 class="assistive-text">Post navigation</h3>
                 <div class="nav-previous alignleft"><?php next_posts_link( '&larr; Previous post' ); ?></div>
-                <div class="nav-next alignright"><?php previous_posts_link( 'Neext post &rarr;' ); ?></div>
+                <div class="nav-next alignright"><?php previous_posts_link( 'Next post &rarr;' ); ?></div>
             </nav>
         <?php endif;
     }

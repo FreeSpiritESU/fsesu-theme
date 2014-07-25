@@ -13,7 +13,7 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    10 January 2014
+ * @lastmodified    25 July 2014
  *
  *  @todo           ToDo List
  *                  - 
@@ -26,7 +26,7 @@ get_header();
             <section id='entries'>
     			<?php 
     			    if ( have_posts() ) { 
-    			        $fsesu->content_navigation('top-nav'); 
+    			        do_action( 'content_navigation', 'top-nav' ); 
     
         				/* Start the Loop */ 
     				    while ( have_posts() ) { 

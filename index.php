@@ -16,37 +16,36 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    10 January 2014
+ * @lastmodified    25 July 2014
  *
  * @todo            ToDo List
  *                  - Add i18n/l10n elements
  *                  - Add content templates for other post formats
  */
 
-get_header();
- ?>
+get_header(); ?>
  
-        <section id='content' role='main'>
-            <section id='entries'>
-    			<?php 
-    			    if ( have_posts() ) { 
-    			        $fsesu->content_navigation('top-nav');
-    
-        				/* Start the Loop */ 
-    				    while ( have_posts() ) { 
-    				        the_post(); 
-    				        /**
-    				         * Get the content template relevant to the post format
-    				         * of the post to be displayed
-    				         */
-    				        get_template_part('includes/views/content', get_post_format());
-    			        }
-    				} else {
-    				    get_template_part( 'includes/view/nothing' );
-    				} 
-    			?>
-			</section><!-- #entries -->
-            <?php get_sidebar(); ?>
-		</section><!-- #content -->
+      <section id='content' role='main'>
+        <section id='entries'>
+          <?php 
+            if ( have_posts() ) { 
+              do_action( 'content_navigation', 'top-nav');
+                
+              /* Start the Loop */ 
+              while ( have_posts() ) { 
+                the_post(); 
+                /**
+                 * Get the content template relevant to the post format
+                 * of the post to be displayed
+                 */
+                get_template_part('includes/views/summary', get_post_format());
+              }
+            } else {
+              get_template_part( 'includes/view/nothing' );
+            } 
+          ?>
+        </section><!-- #entries -->
+        <?php get_sidebar(); ?>
+      </section><!-- #content -->
 
 <?php get_footer(); ?>

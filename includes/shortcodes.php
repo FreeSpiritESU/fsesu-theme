@@ -1,5 +1,4 @@
 <?php
-/* SVN FILE: $Id$ */
 /**
  * inc/shortcodes.php   Registers shortcodes for use by the FreeSpirit ESU Wordpress Theme
  *  
@@ -10,9 +9,9 @@
  *  
  * @package        FreeSpiritESU
  * @subpackage     Functions
- * @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
+ * @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2014 
  * @author         Richard Perry <http: //www.perry-online.me.uk/>
- * @since          Release 0.1.1
+ * @since          Release 3.0.0
  * @version        $Rev$
  * @modifiedby     $LastChangedBy$
  * @lastmodified   $Date$

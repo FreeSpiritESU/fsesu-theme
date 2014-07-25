@@ -13,7 +13,7 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    10 January 2014
+ * @lastmodified    25 July 2014
  *
  * @todo            ToDo List
  *                  - Add necessary display functions for the theme
@@ -29,10 +29,8 @@ require_once locate_template( '/includes/admin.php' );           // Admin & logi
 require_once locate_template( '/includes/shortcodes.php' );      // Shortcodes
 
 /**
- * Register the fsesu global for use across the theme and instantiate the theme object
+ * Instantiate the theme object
  */
-global $fsesu;
-
 require_once locate_template( '/includes/classes/class-fsesu-theme.php' );
 $fsesu = new FSESU_Theme();
  
