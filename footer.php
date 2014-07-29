@@ -16,7 +16,7 @@
  */
 ?>
 
-    </section><!-- #container -->
+    </section><!-- #content -->
 
     <footer id='footer' role='contentinfo'>
       <section id='footer_content'>
@@ -43,7 +43,7 @@
         </div><!-- #site-info -->
       </section><!-- #footer_content -->
     </footer><!-- #footer -->
-  </div><!-- #wrapper -->
+  </div><!-- #container -->
 
 <?php wp_footer(); ?>
 

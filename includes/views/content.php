@@ -13,27 +13,26 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    25 July 2014
+ * @lastmodified    28 July 2014
  */
 ?>
 
-            <article id='post-<?php the_ID(); ?>' <?php post_class(); ?>>
+        <article id='post-<?php the_ID(); ?>' <?php post_class(); ?>>
+        
+          <header class='entry-header'>
+            <h2 class='entry-title'>
+              <a href='<?php the_permalink(); ?>' 
+                title='<?php printf( 'Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>' 
+                rel='bookmark'><?php the_title(); ?></a>
+            </h2>
+          </header><!-- .entry-header -->
+          
+          <section class='entry-meta'>
+            <?php do_action( 'entry_meta' ); ?>
+          </section><!-- .entry-meta -->
+          
+          <section class='entry-content'>
+            <?php the_content(); ?>
+          </section><!-- .entry-content -->
             
-                <header class='entry-header'>
-                    <h2 class='entry-title'>
-                        <a href='<?php the_permalink(); ?>' 
-                            title='<?php printf( 'Permalink to %s', 
-                                the_title_attribute( 'echo=0' ) ); ?>' 
-                            rel='bookmark'><?php the_title(); ?></a>
-                    </h2>
-                </header><!-- .entry-header -->
-                
-                <section class='entry-meta'>
-                    <?php do_action( 'entry_meta' ); ?>
-                </section><!-- .entry-meta -->
-                
-                <section class='entry-content'>
-                    <?php the_excerpt(); ?>
-                </section><!-- .entry-content -->
-                
-            </article><!-- #post-<?php the_ID(); ?> -->
+        </article><!-- #post-<?php the_ID(); ?> -->

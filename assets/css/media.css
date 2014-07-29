@@ -1,0 +1,30 @@
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+  
+@media only screen and (min-width: 30em) {
+  
+}
+
+@media only screen and (min-width: 40em) {
+  
+}
+
+@media only screen and (min-width: 50em) {
+  
+}
+
+@media only screen and (min-width: 60em) {
+  #content {
+    padding-bottom: 4em;
+  }
+  #footer {
+    bottom: 0;
+    position: fixed;
+  }
+  
+  /* Fix top padding when using the responsive grid with the fixed topbar */
+  .top-navbar {
+    padding-top: 0;
+  }
+}
