@@ -85,8 +85,8 @@ class FSESU_Theme {
   public function constants() {
       
     define( 'FSESU_VERSION',        '3.0.0' );
-      if ( ! defined( 'THEME_VERSION' ) )
-        define( 'THEME_VERSION',    FSESU_VERSION );
+    if ( ! defined( 'THEME_VERSION' ) )
+      define( 'THEME_VERSION',    FSESU_VERSION );
               
     if ( ! defined( 'THEME_NAME' ) )
       define( 'THEME_NAME',       'FreeSpirit ESU' );
@@ -209,13 +209,13 @@ class FSESU_Theme {
       
       // Check if the browser is IE, and if so, enqueue the html5shiv script
       if ( $is_IE ) {
-          wp_register_script( 'html5shiv', 'http://html5shiv.googlecode.com/svn/trunk/html5.js');
-          wp_enqueue_script( 'html5shiv' );
+          wp_register_script( 'modernizer', FSESU_SCRIPTS . '/vendor/modernizer-2.6.2-respond-1.1.0.min.js');
+          wp_enqueue_script( 'modernizer' );
       }
       
-      
-      wp_register_script( 'fsesu-menu', FSESU_SCRIPTS . '/menu.js', array( 'jquery' ) );
-      
+      wp_register_script( 'slicknav', FSESU_SCRIPTS . '/vendor/jquery.slicknav.min.js', array( 'jquery' ) );
+      wp_enqueue_script( 'slicknav' );
+      wp_register_script( 'fsesu-menu', FSESU_SCRIPTS . '/menu.js', array( 'jquery' ), false, true );
       wp_enqueue_script( 'fsesu-menu' );
   
   }
@@ -248,12 +248,15 @@ class FSESU_Theme {
       // get the jquery ui object
       $queryui = $wp_scripts->query('jquery-ui-core');
       
-      wp_register_style( 'normalize', 'https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css', null, null );
-      wp_register_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic', array( 'normalize' ), null );
-      wp_register_style( 'jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/'.$queryui->ver.'/themes/smoothness/jquery-ui.css', array( 'google-fonts' ), $queryui->ver );
-      wp_register_style( 'fsesu-main', FSESU_STYLES . '/main.css', array( 'jquery-ui' ), FSESU_VERSION );
+      wp_register_style( 'normalize', 'https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css', null, false );
+      wp_register_style( 'jquery-ui', 'http://ajax.googleapis.com/ajax/libs/jqueryui/'.$queryui->ver.'/themes/smoothness/jquery-ui.css', array( 'normalize' ), $queryui->ver );
+      wp_register_style( 'font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', array( 'jquery-ui'), '4.0.3');
+      wp_register_style( 'fsesu-main', FSESU_STYLES . '/main.css', array( 'font-awesome' ), FSESU_VERSION );
       wp_register_style( 'fsesu-wordpress', FSESU_STYLES . '/wordpress.css', array( 'fsesu-main' ), FSESU_VERSION );
-      wp_enqueue_style( 'fsesu-wordpress' );
+      wp_register_style( 'slicknav', FSESU_STYLES . '/vendor/slicknav.css', array( 'fsesu-wordpress' ), false );
+      wp_register_style( 'fsesu-media', FSESU_STYLES . '/media.css', array( 'slicknav' ), FSESU_VERSION );
+      wp_register_style( 'fsesu-print', FSESU_STYLES . '/print.css', array( 'fsesu-media' ), FSESU_VERSION, 'print' );
+      wp_enqueue_style( 'fsesu-print' );
           
       /*
        * Load child theme stylesheets after fsesu to override fsesu 
@@ -326,7 +329,12 @@ class FSESU_Theme {
      */
     public function excerpt_more( $more ) {
         global $post;
-        return '  <a href="'. get_permalink($post->ID) . '">Read more...</a>';
+        return '...
+          <footer class="entry-footer">
+            <a class="read-more" href="'. 
+            get_permalink($post->ID) . 
+            '">Read more <i class="fa fa-chevron-right"></i></a>
+          </footer>';
     }
     
     
@@ -459,10 +467,10 @@ class FSESU_Theme {
       <nav class="<?php echo $nav_id; ?>">
         <h3 class="assistive-text"><?php echo ucwords($type); ?> navigation</h3>
         <div class="nav-previous alignleft">
-          <?php ( $type == 'post' ) ? previous_post_link() : next_posts_link('&laquo; Older'); ?>
+          <?php ( $type == 'post' ) ? previous_post_link() : next_posts_link('<i class="fa fa-chevron-left"></i> Older'); ?>
         </div>
         <div class="nav-next alignright">
-          <?php ( $type == 'post' ) ? next_post_link() : previous_posts_link('Newer &raquo;'); ?>
+          <?php ( $type == 'post' ) ? next_post_link() : previous_posts_link('Newer <i class="fa fa-chevron-right"></i>'); ?>
         </div>
       </nav>
     <?php
@@ -478,15 +486,37 @@ class FSESU_Theme {
      * @since       3.0.0
      */
     function entry_meta() {
-        printf( 'Posted on <a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s" pubdate>%4$s</time></a><span class="by-author">  by  <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>',
-            esc_url( get_permalink() ),
-            esc_attr( get_the_time() ),
-            esc_attr( get_the_date( 'c' ) ),
-            esc_html( get_the_date() ),
-            esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-            esc_attr( sprintf( 'View all posts by %s',  get_the_author() ) ),
-            get_the_author()
-        );
+      $category_list = "";
+      $categories = get_the_category_list( ', ' );
+      
+      if ( $categories ) {
+        $category_list = "
+          <span class='entry-categories'><i class='fa fa-folder-open'></i> 
+            $categories
+          </span>";
+      }
+        
+      printf( '
+          <span class="entry-date"><i class="fa fa-clock-o"></i>
+            <a href="%1$s" title="%2$s" rel="bookmark">
+              <time datetime="%3$s" pubdate>%4$s</time>
+            </a> 
+          </span>
+          <span class="byline"><i class="fa fa-user"></i>   
+            <span class="author vcard">
+              <a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a>
+            </span>
+          </span>%8$s',
+          esc_url( get_permalink() ),
+          esc_attr( get_the_time() ),
+          esc_attr( get_the_date( 'r' ) ),
+          esc_html( get_the_date( 'd M Y' ) ),
+          esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+          esc_attr( sprintf( 'View all posts by %s',  get_the_author() ) ),
+          get_the_author(),
+          $category_list
+      );
+      edit_post_link( __( 'Edit', 'fsesu' ), '<span class="edit-link"><i class="fa fa-pencil"></i>', '</span>' );
     }
     
     

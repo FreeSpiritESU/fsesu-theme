@@ -19,13 +19,12 @@
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="initial-scale=1">
   <title><?php wp_title( '|', true, 'right' ); ?></title>
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
   <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' ); ?>
-  
-  <meta name="description" content="<?php bloginfo('description'); ?>">
     
   <?php wp_head(); ?>
 </head>
@@ -34,6 +33,7 @@
   <div id='container' class='hfeed'>
     <header id='header' role='banner'>
       <hgroup id='branding'>
+        <img id='site-logo' src='<?php echo FSESU_ASSETS; ?>/images/fslogo.png' alt='FS Logo'>
         <h1 id='site-title'>
           <a href='<?php echo esc_url( home_url( '/' ) ); ?>' 
             title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' 

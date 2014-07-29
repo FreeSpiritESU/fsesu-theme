@@ -3,42 +3,42 @@
    ========================================================================== */
 
 .alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.417em 20px 20px 0;
 }
 
 .aligncenter,
 div.aligncenter {
     display: block;
-    margin: 5px auto 5px auto;
+    margin: 0.417em auto;
 }
 
 .alignright {
-    float:right;
-    margin: 5px 0 20px 20px;
+    float: right;
+    margin: 0.417em 0 0.417em 1em;
 }
 
 .alignleft {
     float: left;
-    margin: 5px 20px 20px 0;
+    margin: 0.417em 1em 0.417em 0;
 }
 
 .aligncenter {
     display: block;
-    margin: 5px auto 5px auto;
+    margin: 0.417em auto;
 }
 
 a img.alignright {
     float: right;
-    margin: 5px 0 20px 20px;
+    margin: 0.417em 0 0.417em 1em;
 }
 
 a img.alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.417em 1em 0.417em 0;
 }
 
 a img.alignleft {
     float: left;
-    margin: 5px 20px 20px 0;
+    margin: 0.417em 1em 0.417em 0;
 }
 
 a img.aligncenter {
@@ -56,15 +56,15 @@ a img.aligncenter {
 }
 
 .wp-caption.alignnone {
-    margin: 5px 20px 20px 0;
+    margin: 0.417em 1em 0.417em 0;
 }
 
 .wp-caption.alignleft {
-    margin: 5px 20px 20px 0;
+    margin: 0.417em 1em 0.417em 0;
 }
 
 .wp-caption.alignright {
-    margin: 5px 0 20px 20px;
+    margin: 0.417em 0 0.417em 1em;
 }
 
 .wp-caption img {

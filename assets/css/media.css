@@ -11,11 +11,28 @@
 }
 
 @media only screen and (min-width: 50em) {
+/*  #branding {
+    position: relative;
+  }
   
+    #site-logo {
+      height: 180px;
+      left: 0;
+      position: absolute;
+      top: 0;
+    } 
+    
+    #site-title {
+      padding: 50px 0 15px;
+    }
+    
+    #site-breadcrumb {
+      display: block;
+    }*/
 }
 
 @media only screen and (min-width: 60em) {
-  #content {
+/*  #content {
     padding-bottom: 4em;
   }
   #footer {
@@ -23,8 +40,8 @@
     position: fixed;
   }
   
-  /* Fix top padding when using the responsive grid with the fixed topbar */
+  /* Fix top padding when using the responsive grid with the fixed topbar * /
   .top-navbar {
     padding-top: 0;
-  }
+  } */
 }

@@ -37,7 +37,10 @@ get_header(); ?>
                * Get the content template relevant to the post format
                * of the post to be displayed
                */
-              get_template_part('includes/views/summary', get_post_format());
+              get_template_part('includes/views/summary', get_post_format()); ?>
+              
+        <hr>
+        <?php
             }
             do_action( 'content_navigation', 'post-nav', 'page' );
           } else {
