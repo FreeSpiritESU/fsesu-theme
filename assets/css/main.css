@@ -15,7 +15,7 @@
  * @since          3.0.0
  * @version        3.0.0
  * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified   29 July 2014
+ * @lastmodified   30 July 2014
  */
 
 /*=============================================================================
@@ -38,7 +38,7 @@
 
 /* Contains everything */
 body {
-  background: #fafafa url(../images/head/header.php) top center repeat-x;  
+  background: #fafafa;  
   font: 0.875em "Open Sans", verdana, arial, helvetica, sans-serif;
 }
 
@@ -49,7 +49,6 @@ body {
   #header, 
   #primary-navigation, 
   #content, 
-  #main-content, 
   #footer {
     -moz-box-sizing:border-box;
     -webkit-box-sizing: border-box;
@@ -58,10 +57,11 @@ body {
   }
   #header #branding, 
   #header #page-nav, 
-  #content, 
-  #footer_content {
+  #primary-content, 
+  #secondary-content,
+  #footer-content {
     margin:0 auto;
-    max-width:70em;
+    max-width:80em;
   }
 
 /*=============================================================================
@@ -230,6 +230,7 @@ img.wp-smiley {}
 
 /* Contains entire header */
 #header { 
+  background: #000 url(../images/head/header.php) top center;
   border: 0;
   text-align: center;
 }
@@ -240,8 +241,8 @@ img.wp-smiley {}
 
   /* Contains site title and tagline */
   #branding { 
-    height: 180px; 
     margin: 0 auto;
+    min-height: 180px; 
   }
   
     #site-logo {
@@ -398,7 +399,7 @@ img.wp-smiley {}
    ========================================================================== */
 
 /* Wrapper for the content and primary/secondary widget sections */
-#content {}
+#content { }
 #content, #footer { 
   clear:both; 
 }
@@ -407,9 +408,8 @@ img.wp-smiley {}
    Content
    ========================================================================== */
 
-  /* Contains site's main content */
-  #primary-content {
-    padding: 1em 0;	
+  #primary-content, #secondary-content {
+    padding: 1em;	
   }
 
     /* Post Navigation */
@@ -425,14 +425,17 @@ img.wp-smiley {}
     .search-info {}
     .tag-info {}
 
-    /* Posts */
-    .post {
+    .post,
+    .widget {
       margin: 0 0 0.75em;
-      padding: 0.833em 1.667em 1.625em; 
+      padding: 1em 0 1.625em; 
       position: relative;
     }
 
       /* Post, page, and archive titles */
+      .entry-title {
+        margin: 0;
+      }
       .entry-title a {
         color: black;
         text-decoration: none;
@@ -450,6 +453,7 @@ img.wp-smiley {}
       /* Author and date byline */
       .entry-meta {
         font-size: small;
+        margin: 0.214em 0 1em;
       }
       .entry-meta,
       .entry-meta a {
@@ -459,18 +463,19 @@ img.wp-smiley {}
         margin-right: 1.25em;
       }
       .entry-meta i {
-        padding: 0 0.143em;
+        color: #a00;
+        padding: 0 0.214em;
       }
       
 
       /* Full entries */
       .entry-content {}
 
-      /* Excerpts (introduced in Hybrid 0.4) */
+      /* Excerpts */
       .entry-summary {}
 
         /* Using <!--nextpage--> */
-        p.pages a {}
+        .pages a {}
 
       /* Post meta data */
       .post-meta-data {}
@@ -605,8 +610,6 @@ img.wp-smiley {}
   /* Primary widget section */
   #secondary-content {}
     #secondary-content .widget {
-      margin: 0 0 8px;
-      padding: 3px 10px;
     }
       #secondary-content .widget-inside {}
         #secondary-content .widget-title {}
@@ -640,10 +643,10 @@ img.wp-smiley {}
 }
 
   /* Footer section */
-  #footer_content {}
+  #footer-content {}
 
     /* Footer extra */
-    #footer_content #footer_menu li {
+    #footer-content #footer-menu li {
       display: inline;
     }
-    #footer_content #site-info {}
+    #footer-content #site-info {}

@@ -10,11 +10,11 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    28 July 2014
+ * @lastmodified    30 July 2014
  */
 ?>
 
-      <aside id='secondary-content' class='widget-area' role='complimentary'>
+      <section id='secondary-content' class='widget-area' role='complimentary'>
         <?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
         
         <aside id='archives' class='widget'>
@@ -36,5 +36,5 @@
         </aside>
         
         <?php endif; // end sidebar widget area ?>
-      </aside><!-- #secondary-content .widget-area -->
+      </section><!-- #secondary-content .widget-area -->
             

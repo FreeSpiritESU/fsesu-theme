@@ -18,7 +18,7 @@
  * @since          3.0.0
  * @version        3.0.0
  * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified   28 July 2014
+ * @lastmodified   30 July 2014
  *
  * @todo           ToDo List
  *                  -  
@@ -502,7 +502,7 @@ class FSESU_Theme {
               <time datetime="%3$s" pubdate>%4$s</time>
             </a> 
           </span>
-          <span class="byline"><i class="fa fa-user"></i>   
+          <span class="entry-author"><i class="fa fa-user"></i>   
             <span class="author vcard">
               <a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a>
             </span>

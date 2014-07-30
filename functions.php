@@ -13,7 +13,7 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    25 July 2014
+ * @lastmodified     July 2014
  *
  * @todo            ToDo List
  *                  - Add necessary display functions for the theme
@@ -38,37 +38,37 @@ $fsesu = new FSESU_Theme();
 // Define the standard site categories
 
 $categories = array(
-        array (
-            'term' => 'Camp Diaries',
-            'args' => 
-                array(
-                    'description' => "Everytime we participate in a major camp, 
-                        or jamboree, as a group, we will be keeping everyone 
-                        informed of how we are getting on through our camp diary. 
-                        These diaries will be posted here, and pictures will 
-                        generally be found on our Gallery.",
-                    'slug' => 'campdiaries'
-                )
-        ),
-        array (
-            'term' => 'News',
-            'args' => 
-                array(
-                    'description' => "News about what is happening in our Unit",
-                    'slug' => 'news'
-                )
-        ),
-        array (
-            'term' => "What's New",
-            'args' => 
-                array(
-                    'description' => "Quick updates about new things on the 
-                        website, as well as quick notices for the Unit",
-                    'slug' => 'whatsnew',
-                    'parent' => get_cat_ID('news')
-                )
-        )
-    );
+    array (
+        'term' => 'Camp Diaries',
+        'args' => 
+            array(
+                'description' => "Everytime we participate in a major camp, 
+                    or jamboree, as a group, we will be keeping everyone 
+                    informed of how we are getting on through our camp diary. 
+                    These diaries will be posted here, and pictures will 
+                    generally be found on our Gallery.",
+                'slug' => 'campdiaries'
+            )
+    ),
+    array (
+        'term' => 'News',
+        'args' => 
+            array(
+                'description' => "News about what is happening in our Unit",
+                'slug' => 'news'
+            )
+    ),
+    array (
+        'term' => "What's New",
+        'args' => 
+            array(
+                'description' => "Quick updates about new things on the 
+                    website, as well as quick notices for the Unit",
+                'slug' => 'whatsnew',
+                'parent' => get_cat_ID('News')
+            )
+    )
+);
 $fsesu->categories( $categories );
 
 
