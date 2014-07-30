@@ -1,12 +1,12 @@
 <?php
 /**
- * The default template for displaying page content.
+ * The default template for displaying content.
  *
  * Loops through the content in the database & presents it for display on the
  * users computer.
  *
  * @package         FreeSpiritESU
- * @subpackage      Content
+ * @subpackage      Templates
  * @author          Richard Perry <http://www.perry-online.me.uk/>
  * @copyright       Copyright (c) 2014 FreeSpirit ESU
  * @license         http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,41 +14,25 @@
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
  * @lastmodified    28 July 2014
- *
- *  @todo           ToDo List
- *                  - 
  */
+?>
 
-get_header(); ?>
- 
-      <section id='primary-content'>
-      <?php
-        if ( have_posts() ) {
-          /* Start the Loop */
-          while ( have_posts() ) {
-            the_post(); 
-      ?>
-                  
         <article id='post-<?php the_ID(); ?>' <?php post_class(); ?>>
+        
           <header class='entry-header'>
             <h2 class='entry-title'>
-              <a href="<?php the_permalink(); ?>" 
-                title="<?php printf( 'Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" 
-                rel="bookmark"><?php the_title(); ?></a>
+              <a href='<?php the_permalink(); ?>' 
+                title='<?php printf( 'Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>' 
+                rel='bookmark'><?php the_title(); ?></a>
             </h2>
           </header><!-- .entry-header -->
-      
+          
+          <section class='entry-meta'>
+            <?php do_action( 'entry_meta' ); ?>
+          </section><!-- .entry-meta -->
+          
           <section class='entry-content'>
             <?php the_content(); ?>
           </section><!-- .entry-content -->
+            
         </article><!-- #post-<?php the_ID(); ?> -->
-      <?php 
-          }
-        } else {
-          get_template_part( 'includes/view/nothing' );
-        } 
-      ?>
-      </section><!-- #primary-content -->
-      <?php get_sidebar(); ?>
-    
-<?php get_footer(); ?>

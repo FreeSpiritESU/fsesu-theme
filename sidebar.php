@@ -1,41 +1,40 @@
 <?php
-/* SVN FILE: $Id$ */
 /**
  *  The sidebar template file.
  *
- *  @package        FreeSpiritESU
- *  @subpackage     Content
- *  @copyright      FreeSpirit ESU <http://www.freespiritesu.org.uk/> 2011 
- *  @author         Richard Perry <http: //www.perry-online.me.uk/>
- *  @since          Release 0.1.1
- *  @version        $Rev$
- *  @modifiedby     $LastChangedBy$
- *  @lastmodified   $Date$
- *
- *  @todo           ToDo List
- *                  -
+ * @package         FreeSpiritESU
+ * @subpackage      Templates
+ * @author          Richard Perry <http://www.perry-online.me.uk/>
+ * @copyright       Copyright (c) 2014 FreeSpirit ESU
+ * @license         http://www.gnu.org/licenses/gpl-3.0.html
+ * @since           3.0.0
+ * @version         3.0.0
+ * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
+ * @lastmodified    30 July 2014
  */
 ?>
-        <div id="sidebar" class="widget-area" role="complementary">
+
+      <section id='secondary-content' class='widget-area' role='complimentary'>
         <?php if ( ! dynamic_sidebar( 'sidebar' ) ) : ?>
-
-            <aside id="archives" class="widget">
-                <h3 class="widget-title">
-                    <?php _e( 'Archives', 'fsesu' ); ?>
-                </h3>
-                <ul>
-                    <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-                </ul>
-            </aside>
-
-            <aside id="meta" class="widget">
-                <h3 class="widget-title"><?php _e( 'Meta', 'fsesu' ); ?></h3>
-                <ul>
-                    <?php wp_register(); ?>
-                    <li><?php wp_loginout(); ?></li>
-                    <?php wp_meta(); ?>
-                </ul>
-            </aside>
-
+        
+        <aside id='archives' class='widget'>
+          <h3 class='widget-title'>
+            <?php _e( 'Archives', 'fsesu' ); ?>
+          </h3>
+          <ul>
+            <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
+          </ul>
+        </aside>
+        
+        <aside id='meta' class='widget'>
+          <h3 class='widget-title'><?php _e( 'Meta', 'fsesu' ); ?></h3>
+          <ul>
+            <?php wp_register(); ?>
+            <li><?php wp_loginout(); ?></li>
+            <?php wp_meta(); ?>
+          </ul>
+        </aside>
+        
         <?php endif; // end sidebar widget area ?>
-        </div><!-- #sidebar .widget-area -->
+      </section><!-- #secondary-content .widget-area -->
+            

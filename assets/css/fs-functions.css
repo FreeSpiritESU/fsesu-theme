@@ -1,0 +1,24 @@
+/* SVN FILE: $Id$ */
+/* --- THEME FORCE EVENTS (CUSTOM POST TYPE) --- */
+
+/* Columns CPT Events */
+
+th#fs_col_ev_date, th#fs_col_ev_cat {width:150px}
+td.fs_col_ev_date em{color:gray;}
+th#fs_col_ev_times{width:150px}
+th#fs_col_ev_thumb{width:100px}
+
+th#fs_col_menu_order{width:60px}
+td.fs_col_menu_id{color:gray;text-align:right;}
+td.fs_col_menu_order{color:#219b38;text-align:right;}
+th#fs_col_menu_thumb{width:100px}
+td.fs_col_menu_thumb img{border:1px solid #d8d8d8}
+th#fs_col_menu_cat,th#fs_col_menu_title,th#fs_col_menu_size{width:150px}
+
+/* Metabox */
+
+.fs-meta {  }
+.fs-meta ul li { height: 20px; clear:both; margin: 0 0 15px 0;}
+.fs-meta ul li label { width: 100px; display:block; float:left; padding-top:4px; }
+.fs-meta ul li input { width:125px; display:block; float:left; }
+.fs-meta ul li em { width: 200px; display:block; float:left; color:gray; margin-left:10px; padding-top: 4px}

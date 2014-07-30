@@ -22,28 +22,20 @@
 get_header(); ?>
  
       <section id='primary-content'>
-      <?php
-        if ( have_posts() ) {
-          /* Start the Loop */
-          while ( have_posts() ) {
-            the_post(); 
-      ?>
-                  
-        <article id='post-<?php the_ID(); ?>' <?php post_class(); ?>>
-          <header class='entry-header'>
-            <h2 class='entry-title'>
-              <a href="<?php the_permalink(); ?>" 
-                title="<?php printf( 'Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" 
-                rel="bookmark"><?php the_title(); ?></a>
-            </h2>
-          </header><!-- .entry-header -->
-      
-          <section class='entry-content'>
-            <?php the_content(); ?>
-          </section><!-- .entry-content -->
-        </article><!-- #post-<?php the_ID(); ?> -->
       <?php 
+        if ( have_posts() ) { 
+          do_action( 'content_navigation', 'post-nav' ); 
+
+          /* Start the Loop */ 
+          while ( have_posts() ) { 
+            the_post();  
+		        /**
+		         * Get the content template relevant to the post format
+		         * of the post to be displayed
+		         */
+		        get_template_part('includes/views/content', get_post_format());
           }
+          do_action( 'content_navigation', 'post-nav' );
         } else {
           get_template_part( 'includes/view/nothing' );
         } 
