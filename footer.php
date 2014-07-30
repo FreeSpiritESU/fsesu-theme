@@ -12,20 +12,20 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    25 July 2014
+ * @lastmodified    30 July 2014
  */
 ?>
 
-    </section><!-- #container -->
+    </section><!-- #content -->
 
     <footer id='footer' role='contentinfo'>
-      <section id='footer_content'>
+      <section id='footer-content'>
         <?php 
           if ( has_nav_menu( 'footer-menu' ) )
             wp_nav_menu( 
               array( 
                 'container' => 'nav',
-                'container_id' => 'footer_menu',
+                'container_id' => 'footer-menu',
                 'items_wrap' => '<small><ul><li><a href="/" title="Home">Home</a></li>%3$s</ul></small>', 
                 'before' => ' &nbsp; | &nbsp; ',
                 'theme_location' => 'footer-menu'
@@ -43,7 +43,7 @@
         </div><!-- #site-info -->
       </section><!-- #footer_content -->
     </footer><!-- #footer -->
-  </div><!-- #wrapper -->
+  </div><!-- #container -->
 
 <?php wp_footer(); ?>
 
