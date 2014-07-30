@@ -124,7 +124,6 @@ class FSESU_Theme {
     add_theme_support( 'editor-style' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'post-formats', array( 
-        'aside', 
         'gallery', 
         'link', 
         'image', 
@@ -313,7 +312,7 @@ class FSESU_Theme {
      * @since       3.0.0
      */
     public function excerpt_length( $length ) {
-        return 100;
+        return 120;
     }
     
     
@@ -329,7 +328,7 @@ class FSESU_Theme {
      */
     public function excerpt_more( $more ) {
         global $post;
-        return '...
+        return ' ...
           <footer class="entry-footer">
             <a class="read-more" href="'. 
             get_permalink($post->ID) . 
@@ -467,10 +466,14 @@ class FSESU_Theme {
       <nav class="<?php echo $nav_id; ?>">
         <h3 class="assistive-text"><?php echo ucwords($type); ?> navigation</h3>
         <div class="nav-previous alignleft">
-          <?php ( $type == 'post' ) ? previous_post_link() : next_posts_link('<i class="fa fa-chevron-left"></i> Older'); ?>
+          <?php ( $type == 'post' ) 
+            ? previous_post_link( '%link', '<i class="fa fa-chevron-left"></i> %title' ) 
+            : next_posts_link('<i class="fa fa-chevron-left"></i> Older'); ?>
         </div>
         <div class="nav-next alignright">
-          <?php ( $type == 'post' ) ? next_post_link() : previous_posts_link('Newer <i class="fa fa-chevron-right"></i>'); ?>
+          <?php ( $type == 'post' ) 
+            ? next_post_link( '%link', '%title <i class="fa fa-chevron-right"></i>' ) 
+            : previous_posts_link('Newer <i class="fa fa-chevron-right"></i>'); ?>
         </div>
       </nav>
     <?php

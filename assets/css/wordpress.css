@@ -1,9 +1,26 @@
+/**
+ * WordPress generated class styles
+ * 
+ * This stylesheet includes all the WordPress generated css classes with styling
+ * as required
+ * 
+ * @package        FreeSpiritESU
+ * @subpackage     Stylesheets
+ * @author         Richard Perry <http://www.perry-online.me.uk/>
+ * @copyright      Copyright (c) 2014 FreeSpirit ESU
+ * @license        http://www.gnu.org/licenses/gpl-3.0.html
+ * @since          3.0.0
+ * @version        3.0.0
+ * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
+ * @lastmodified   30 July 2014
+ */
+ 
 /* =============================================================================
    Wordpress Core
    ========================================================================== */
 
 .alignnone {
-    margin: 0.417em 20px 20px 0;
+    margin: 0.417em 1em 1em 0;
 }
 
 .aligncenter,

@@ -49,6 +49,8 @@ body {
   #header, 
   #primary-navigation, 
   #content, 
+  #primary-content, 
+  #secondary-content,
   #footer {
     -moz-box-sizing:border-box;
     -webkit-box-sizing: border-box;
@@ -56,7 +58,8 @@ body {
     width: 100%;
   }
   #header #branding, 
-  #header #page-nav, 
+  #header #page-nav,
+  #content, 
   #primary-content, 
   #secondary-content,
   #footer-content {
@@ -69,22 +72,37 @@ body {
   ========================================================================== */
 
 /* Hyperlinks */
-a, a:visited {
+a, 
+a:visited {
   color: #00a;
   text-decoration: none;
 }
-a:hover, a:active {
+a:hover, 
+a:active {
   border-bottom: 1px solid #f00; 
   margin-bottom: -1px; 
   text-decoration: none;
 }
 
 /* Headers */
-h1, h2, h3, h4 { margin: 5px 0 10px; }
-h1 { font-size: 2.214em;  }
-h2 { font-size: 1.357em; }
-h3 { font-size: 1.214em; }
-h4 { font-size: 0.875em; }
+h1, 
+h2, 
+h3, 
+h4 { 
+  margin: 5px 0 10px;
+}
+h1 { 
+  font-size: 2.214em;
+}
+h2 {
+  font-size: 1.357em;
+}
+h3 {
+  font-size: 1.214em;
+}
+h4 {
+  font-size: 0.875em;
+}
 h5 {}
 h6 {}
 
@@ -234,7 +252,8 @@ img.wp-smiley {}
   border: 0;
   text-align: center;
 }
-#header a, #header a:visited, #footer a, #footer a:visited {
+#header a, 
+#header a:visited {
   color: red;
   text-decoration: none;
 }
@@ -276,9 +295,9 @@ img.wp-smiley {}
   background: -o-linear-gradient(#050505, #606060);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#050505), to(#606060)); /* older webkit syntax */
   background: -webkit-linear-gradient(#050505, #606060);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow:  0 1px 2px rgba(0, 0, 0, 0.4);
   clear: both;
   display: none;
   float: left; 
@@ -300,7 +319,8 @@ img.wp-smiley {}
         float: left;
         position: relative;
       }
-        #page-nav li a, #page-nav li a:visited {
+        #page-nav li a, 
+        #page-nav li a:visited {
           color: #eee;
           display: block;
           line-height: 2.5em;
@@ -338,12 +358,14 @@ img.wp-smiley {}
           padding: 10px 10px;
           width: 168px;
         }
-      #page-nav li:hover > a, #page-nav ul ul :hover > a,
+      #page-nav li:hover > a, 
+      #page-nav ul ul :hover > a,
       #page-nav a:focus {
         background: #efefef;
         color: red;
       }
-      #page-nav li:hover > a, #page-nav a:focus {
+      #page-nav li:hover > a, 
+      #page-nav a:focus {
         background: #f9f9f9; /* Show a solid color for older browsers */
         background: -moz-linear-gradient(#f9f9f9, #e5e5e5);
         background: -o-linear-gradient(#f9f9f9, #e5e5e5);
@@ -417,6 +439,10 @@ img.wp-smiley {}
       display:block;
       height:2em;
     }
+    .post-nav i,
+    .read-more i {
+      color: #a00;
+    }
 
     /* Archive and search <div> before posts are listed */
     .author-info {}
@@ -450,7 +476,7 @@ img.wp-smiley {}
       .search-title {}
       .tag-title {}
 
-      /* Author and date byline */
+      /* Post meta data */
       .entry-meta {
         font-size: small;
         margin: 0.214em 0 1em;
@@ -476,9 +502,6 @@ img.wp-smiley {}
 
         /* Using <!--nextpage--> */
         .pages a {}
-
-      /* Post meta data */
-      .post-meta-data {}
 
       /* Entry Footer */
       .entry-footer {
@@ -610,6 +633,8 @@ img.wp-smiley {}
   /* Primary widget section */
   #secondary-content {}
     #secondary-content .widget {
+      margin: 0;
+      padding: 0 0 1em;
     }
       #secondary-content .widget-inside {}
         #secondary-content .widget-title {}
@@ -617,9 +642,7 @@ img.wp-smiley {}
           list-style: none;
         }
           #secondary-content .widget ul li {}
-        #secondary-content .widget_search form {
-          margin: 8px 10px;
-        }
+        #secondary-content .widget_search form {}
 
 /* =============================================================================
    Footer
@@ -632,15 +655,21 @@ img.wp-smiley {}
   background: -o-linear-gradient(#606060, #050505);
   background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#606060), to(#050505)); /* older webkit syntax */
   background: -webkit-linear-gradient(#606060, #050505);
-  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 2px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 2px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px -1px 2px;
+  -webkit-box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px -1px 2px rgba(0, 0, 0, 0.4);
   color: #eeeeee;
   margin: 0;
   padding: 8px 0;
   text-align: center;
   width: 100%;
 }
+
+  #footer a, 
+  #footer a:visited {
+    color: #aaa;
+    border-bottom: 1px solid #f00;
+  }
 
   /* Footer section */
   #footer-content {}
