@@ -124,11 +124,18 @@ class FSESU_Theme {
     add_theme_support( 'editor-style' );
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'post-formats', array( 
-        'gallery', 
-        'link', 
-        'image', 
-        'status', 
-        'video' ) );
+      'gallery', 
+      'link', 
+      'image', 
+      'status', 
+      'video' ) );
+    add_theme_support( 'html5', array( 
+      'search-form', 
+      'comment-form', 
+      'comment-list', 
+      'gallery', 
+      'caption' ) );
+    load_theme_textdomain( 'fsesu', THEME_DIR . '/language' );
   }
   
   
