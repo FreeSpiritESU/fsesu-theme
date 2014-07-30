@@ -61,6 +61,7 @@ body {
   #header #page-nav,
   #content, 
   #primary-content, 
+  #primary-content #archive-header,
   #secondary-content,
   #footer-content {
     margin:0 auto;
@@ -470,11 +471,22 @@ img.wp-smiley {}
       .page-title {}
       .attachment-title {}
       .error-404-title {}
-      .author-title {}
-      .category-title {}
+      .archive-title {
+        font-size: 1.75em;
+      }
+      .archive-title a {
+        color: black;
+      }
+      .archive-title i {
+        font-size: 0.75em;
+      }
       .date-title {}
       .search-title {}
       .tag-title {}
+      .archive-description {
+        color: #666;
+        font-size: 0.9em;
+      }
 
       /* Post meta data */
       .entry-meta {

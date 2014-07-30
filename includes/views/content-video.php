@@ -38,8 +38,8 @@
                              the_post_format_video(); 
                         } else {
                             global $wp_embed;
-                            add_filter( 'the_excerpt', array($wp_embed, 'autoembed'), 8 );
-                            the_excerpt();
+                            add_filter( 'the_content', array($wp_embed, 'autoembed'), 8 );
+                            the_content();
                         } 
                     ?>
                 </section><!-- .entry-media -->

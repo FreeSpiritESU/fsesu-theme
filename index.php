@@ -16,38 +16,20 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    28 July 2014
+ * @lastmodified    30 July 2014
  *
  * @todo            ToDo List
  *                  - Add i18n/l10n elements
  *                  - Add content templates for other post formats
  */
 
+
 get_header(); ?>
  
-      <section id='primary-content'>
-        <?php 
-          if ( have_posts() ) { 
-            do_action( 'content_navigation', 'post-nav', 'page' );
-              
-            /* Start the Loop */ 
-            while ( have_posts() ) { 
-              the_post(); 
-              /**
-               * Get the content template relevant to the post format
-               * of the post to be displayed
-               */
-              get_template_part('includes/views/summary', get_post_format()); ?>
-              
-        <hr>
-        <?php
-            }
-            do_action( 'content_navigation', 'post-nav', 'page' );
-          } else {
-            get_template_part( 'includes/view/nothing' );
-          } 
-        ?>
-      </section><!-- #primary-content -->
-      <?php get_sidebar(); ?>
-
-<?php get_footer(); ?>
+            <section id='primary-content'>
+                <?php get_template_part( 'includes/parts/loop' ); ?> 
+            </section><!-- #primary-content -->
+            
+<?php 
+get_sidebar(); 
+get_footer(); 

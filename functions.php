@@ -13,7 +13,7 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified     July 2014
+ * @lastmodified    30 July 2014
  *
  * @todo            ToDo List
  *                  - Add necessary display functions for the theme
@@ -42,11 +42,7 @@ $categories = array(
         'term' => 'Camp Diaries',
         'args' => 
             array(
-                'description' => "Everytime we participate in a major camp, 
-                    or jamboree, as a group, we will be keeping everyone 
-                    informed of how we are getting on through our camp diary. 
-                    These diaries will be posted here, and pictures will 
-                    generally be found on our Gallery.",
+                'description' => "Everytime we participate in a major camp, or jamboree, as a group, we will be keeping everyone informed of how we are getting on through our camp diary. These diaries will be posted here, and pictures will generally be found on our Gallery.",
                 'slug' => 'campdiaries'
             )
     ),
@@ -62,8 +58,7 @@ $categories = array(
         'term' => "What's New",
         'args' => 
             array(
-                'description' => "Quick updates about new things on the 
-                    website, as well as quick notices for the Unit",
+                'description' => "Quick updates about new things on the website, as well as quick notices for the Unit",
                 'slug' => 'whatsnew',
                 'parent' => get_cat_ID('News')
             )

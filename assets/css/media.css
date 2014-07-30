@@ -30,7 +30,8 @@
     }
     #primary-content article,
     #primary-content hr,
-    #primary-content .post-nav  {
+    #primary-content .post-nav, 
+    #primary-content #archive-header {
       margin-right: 12.5em;
     }
      
@@ -73,7 +74,8 @@
     }
     #primary-content article,
     #primary-content hr,
-    #primary-content .post-nav {
+    #primary-content .post-nav, 
+    #primary-content #archive-header {
       margin-right: 15em;
     }
      
@@ -83,25 +85,17 @@
 }
 
 @media only screen and (min-width: 60em) {
-  #content {
-    padding-bottom: 4em;
-  }
-  
     #primary-content {
       margin-right: -17.5em;
     }
     #primary-content article,
     #primary-content hr,
-    #primary-content .post-nav  {
+    #primary-content .post-nav, 
+    #primary-content #archive-header  {
       margin-right: 17.5em;
     }
      
     #secondary-content {
       width: 17.5em;
     }
-    
-  #footer {
-    bottom: 0;
-    position: fixed;
-  }
 }
