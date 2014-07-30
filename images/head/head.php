@@ -1,6 +1,12 @@
 <?php header('Content-type: image/jpeg');
-error_reporting(1); 
-$picpage= @file_get_contents('http://www.freespiritesu.org.uk/members/fsg/main.php?g2_view=imageblock.External&g2_maxSize=960&g2_show=none');
+
+if ( ! WP_Filesystem($creds) ) {
+	request_filesystem_credentials($url, '', true, false, null);
+	return;
+}
+global $wp_filesystem;
+$picpage = $wp_filesystem->get_contents( 'http://www.freespiritesu.org.uk/members/fsg/main.php?g2_view=imageblock.External&g2_maxSize=960&g2_show=none' );
+//$picpage= @file_get_contents('http://www.freespiritesu.org.uk/members/fsg/main.php?g2_view=imageblock.External&g2_maxSize=960&g2_show=none');
 
 $regexp = "<img\s[^>]*src=(\"??)([^\" >]*?)\\1[^>]*\/>"; 
 if(preg_match("/$regexp/siU", $picpage, $matches)) 
