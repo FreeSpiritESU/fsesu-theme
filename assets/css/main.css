@@ -438,7 +438,8 @@ img.wp-smiley {}
   }
 
     /* Post Navigation */
-    .post-nav {
+    .post-nav,
+    #comments .comment-navigation {
       display:block;
       height:2em;
     }
@@ -665,11 +666,10 @@ img.wp-smiley {}
           -moz-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
           -webkit-box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
           box-shadow: 4px 4px 4px rgba(0,0,0,0.2);
-          background: #efefef; 
+          background: #fff; 
           /*border-radius: 8px;*/
-          margin: 10px 0; 
-          padding: 10px; 
-          width: auto;
+          margin: 1em 0; 
+          padding: 1em; 
         }
 
           /* Comment form title */
@@ -678,6 +678,11 @@ img.wp-smiley {}
           /* Comment form elements */
           p#cancel-comment-reply {}
           #respond form {}
+            #respond label {
+              display: inline-block;
+              vertical-align: top;
+              width: 6em;
+            }
             #respond .form-author {}
               #respond input {}
               #respond  input#submit {
