@@ -22,6 +22,9 @@ get_header(); ?>
                 <?php 
                 /* Run the loop for full content */
                 get_template_part( 'includes/partials/loop', 'content' );
+                    
+                /* Display the comments template at the bottom of the page */
+                comments_template( '', true );
                 ?> 
             </section><!-- #primary-content -->
             
