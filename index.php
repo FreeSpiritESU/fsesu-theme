@@ -16,18 +16,18 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    30 July 2014
- *
- * @todo            ToDo List
- *                  - Add i18n/l10n elements
- *                  - Add content templates for other post formats
+ * @lastmodified    31 July 2014
  */
 
 
 get_header(); ?>
  
             <section id='primary-content'>
-                <?php get_template_part( 'includes/parts/loop' ); ?> 
+                <?php  
+                do_action( 'content_navigation', 'post-nav', 'page' );
+                
+                get_template_part( 'includes/partials/loop', 'summary' );
+                ?>
             </section><!-- #primary-content -->
             
 <?php 

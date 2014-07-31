@@ -12,38 +12,36 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    30 July 2014
+ * @lastmodified    31 July 2014
  */
 ?>
 
-    </section><!-- #content -->
+        </section><!-- #content -->
 
-    <footer id='footer' role='contentinfo'>
-      <section id='footer-content'>
-        <?php 
-          if ( has_nav_menu( 'footer-menu' ) )
-            wp_nav_menu( 
-              array( 
-                'container' => 'nav',
-                'container_id' => 'footer-menu',
-                'items_wrap' => '<small><ul><li><a href="/" title="Home">Home</a></li>%3$s</ul></small>', 
-                'before' => ' &nbsp; | &nbsp; ',
-                'theme_location' => 'footer-menu'
-              ) 
-            ); 
-        ?>
-        <div id='site-info'>
-          <small>
-            &copy; 2008 - <?php echo date('Y'); ?> FreeSpirit Explorer Scout Unit. 
-            All Rights Reserved. &nbsp;
-            | &nbsp; Hosted by <a href="http://www.webtreeauthoring.com/" 
-              title='Webtree Authoring Ltd' 
-              target="_blank">Webtree Authoring</a>
-          </small>
-        </div><!-- #site-info -->
-      </section><!-- #footer_content -->
-    </footer><!-- #footer -->
-  </div><!-- #container -->
+        <footer id='footer' role='contentinfo'>
+            <section id='footer-content'>
+                <?php 
+                if ( has_nav_menu( 'footer-menu' ) ) :
+                    wp_nav_menu( 
+                        array( 
+                            'container' => 'nav',
+                            'container_id' => 'footer-menu',
+                            'items_wrap' => '<small><ul><li><a href="/" title="Home">Home</a></li>%3$s</ul></small>', 
+                            'before' => ' &nbsp; | &nbsp; ',
+                            'theme_location' => 'footer-menu'
+                        ) 
+                    ); 
+                endif;
+                ?>  
+                <div id='site-info'>
+                    <small>
+                        &copy; 2008 - <?php echo date('Y'); ?> FreeSpirit Explorer Scout Unit. All Rights Reserved. &nbsp; | &nbsp; 
+                        Hosted by <a href="http://www.webtreeauthoring.com/" title='Webtree Authoring Ltd' target="_blank">Webtree Authoring</a>
+                    </small>
+                </div><!-- #site-info -->
+            </section><!-- #footer_content -->
+        </footer><!-- #footer -->
+    </div><!-- #container -->
 
 <?php wp_footer(); ?>
 

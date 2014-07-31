@@ -12,7 +12,7 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    30 July 2014
+ * @lastmodified    31 July 2014
  */
 
 
@@ -34,7 +34,7 @@ get_header(); ?>
                     ?>
                 </header><!-- .archive-header -->
                 
-                <?php get_template_part( 'includes/parts/loop', 'archive' ); ?> 
+                <?php get_template_part( 'includes/partials/loop', 'summary' ); ?> 
             </section><!-- #primary-content -->
             
 <?php 

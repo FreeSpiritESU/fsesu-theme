@@ -541,6 +541,10 @@ img.wp-smiley {}
 
     /* Attachment image navigation */
     .navigation-attachment {}
+    
+    .page .entry-meta {
+      display: none;
+    }
 
 /* =============================================================================
    Comments Template

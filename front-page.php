@@ -13,33 +13,25 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    28 July 2014
+ * @lastmodified    31 July 2014
  */
 
-get_header();
- ?>
+get_header(); ?>
  
-        <section id='primary-content'>
-        <?php 
-          if ( have_posts() ) {
-            /* Start the Loop */ 
-            while ( have_posts() ) { 
-              the_post(); 
-        ?>
-                  
-          <article id='post-<?php the_ID(); ?>' <?php post_class(); ?>>
-            <section class='entry-content'>
-              <?php the_content(); ?>
-            </section><!-- .entry-content -->
-          </article><!-- #post-<?php the_ID(); ?> -->
-
-              <?php  
-                      }
-          } else {
-              get_template_part( 'includes/view/nothing' );
-            } 
-        ?>
-      </section><!-- #primary-content -->
-      <?php get_sidebar(); ?>
-    
-<?php get_footer(); ?>
+            <section id='primary-content'>
+            <?php 
+                if ( have_posts() ) : 
+                    
+                    /* Start the Loop */ 
+                    while ( have_posts() ) : the_post(); 
+                        get_template_part( 'includes/partials/content', 'status' );
+                    endwhile;
+                else :
+                    get_template_part( 'includes/view/nothing' );
+                endif;
+            ?>  
+            </section><!-- #primary-content -->
+                
+<?php
+get_sidebar(); 
+get_footer();

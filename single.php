@@ -13,34 +13,27 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    28 July 2014
- *
- *  @todo           ToDo List
- *                  - 
+ * @lastmodified    31 July 2014
  */
 
 get_header(); ?>
  
-      <section id='primary-content'>
-      <?php 
-        if ( have_posts() ) { 
-          do_action( 'content_navigation', 'post-nav' ); 
-
-          /* Start the Loop */ 
-          while ( have_posts() ) { 
-            the_post();  
-		        /**
-		         * Get the content template relevant to the post format
-		         * of the post to be displayed
-		         */
-		        get_template_part('includes/views/content', get_post_format());
-          }
-          do_action( 'content_navigation', 'post-nav' );
-        } else {
-          get_template_part( 'includes/view/nothing' );
-        } 
-      ?>
-      </section><!-- #primary-content -->
-      <?php get_sidebar(); ?>
-    
-<?php get_footer(); ?>
+            <section id='primary-content'>
+                <?php 
+                /* Display links to the previous & next posts above the comments */
+                do_action( 'content_navigation', 'post-nav' ); 
+                
+                /* Run the loop for full content */
+                get_template_part( 'includes/partials/loop', 'content' );
+                    
+                /* Display links to the previous & next posts above the comments */
+                do_action( 'content_navigation', 'post-nav' );
+                    
+                /* Display the comments template at the bottom of the page */
+                comments_template( '', true );
+                ?> 
+            </section><!-- #primary-content -->
+            
+<?php 
+get_sidebar(); 
+get_footer(); 

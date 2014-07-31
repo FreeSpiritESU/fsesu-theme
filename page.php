@@ -13,42 +13,18 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    28 July 2014
- *
- *  @todo           ToDo List
- *                  - 
+ * @lastmodified    31 July 2014
  */
 
 get_header(); ?>
  
-      <section id='primary-content'>
-      <?php
-        if ( have_posts() ) {
-          /* Start the Loop */
-          while ( have_posts() ) {
-            the_post(); 
-      ?>
-                  
-        <article id='post-<?php the_ID(); ?>' <?php post_class(); ?>>
-          <header class='entry-header'>
-            <h2 class='entry-title'>
-              <a href="<?php the_permalink(); ?>" 
-                title="<?php printf( 'Permalink to %s', the_title_attribute( 'echo=0' ) ); ?>" 
-                rel="bookmark"><?php the_title(); ?></a>
-            </h2>
-          </header><!-- .entry-header -->
-      
-          <section class='entry-content'>
-            <?php the_content(); ?>
-          </section><!-- .entry-content -->
-        </article><!-- #post-<?php the_ID(); ?> -->
-      <?php 
-          }
-        } else {
-          get_template_part( 'includes/view/nothing' );
-        } 
-      ?>
-      </section><!-- #primary-content -->
-      <?php get_sidebar(); ?>
-    
-<?php get_footer(); ?>
+            <section id='primary-content'>
+                <?php 
+                /* Run the loop for full content */
+                get_template_part( 'includes/partials/loop', 'content' );
+                ?> 
+            </section><!-- #primary-content -->
+            
+<?php 
+get_sidebar(); 
+get_footer(); 
