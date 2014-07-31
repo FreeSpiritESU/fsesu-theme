@@ -102,7 +102,7 @@ h3 {
   font-size: 1.214em;
 }
 h4 {
-  font-size: 0.875em;
+  font-size: 1.143em;
 }
 h5 {}
 h6 {}
@@ -431,7 +431,9 @@ img.wp-smiley {}
    Content
    ========================================================================== */
 
-  #primary-content, #secondary-content {
+  #primary-content,
+  #secondary-content,
+  #comments {
     padding: 1em;	
   }
 
@@ -551,7 +553,14 @@ img.wp-smiley {}
    ========================================================================== */
 
     /* Wrapper for entire comments area */
-    #comments-template {}
+    #comments {}
+    #comments *:before, 
+    #comments *:after {
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 14px;
+        padding: 0 0.25em;
+    }
 
       /* Comments section headers/titles */
       .comments-header {}
@@ -566,10 +575,14 @@ img.wp-smiley {}
           clear: both;
           display: block;
         }
-          #comments ol {}
+          #comments ul {
+            list-style: none;
+          }
 
             /* Individual comments (note that WordPress has even/odd backwards) */
-            #comments li {}
+            #comments li {
+              margin: 1em 0;
+            }
               #comments li li {}
                 #comments li li li {}
                   #comments li li li li {}
@@ -580,16 +593,66 @@ img.wp-smiley {}
             #comments li.author {}
             #comments li.trackback {}
             #comments li.pingback {}
+            
+              #comments .children {
+                padding-left: 2em;
+              }
 
               /* Comment avatars */
-              #comments .avatar {}
+              #comments .avatar {
+                border: 1px solid #aeaeae;
+                left: 1em;
+                padding: 1px;
+                position: absolute;
+                top: 1em;
+              }
 
               /* Comment meta data */
-              #comments .comment-meta-data {}
-                #comments .comment-meta-data cite {}
+              #comments .comment-meta {
+              }
+                #comments .comment-meta a {
+                  color: #000;
+                }
+                #comments .comment-author {}
+                #comments .comment-author .fn {
+                  font-weight: bold;
+                }
+                #comments .comment-metadata {
+                  font-size: 0.9em;
+                }
+                #comments .comment-metadata time {
+                  margin-right: 1em;
+                }
+                #comments .comment-metadata .comment-edit-link {
+                  color: #00d;
+                }
+                #comments .comment-metadata .comment-edit-link:hover,
+                #comments .comment-body .comment-reply-link:hover {
+                  border: none;
+                }
+                #comments .comment-metadata .comment-edit-link:after {
+                    content: "\f040";
+                }
 
               /* Comment text */
-              #comments .comment-text {}
+              #comments .comment-body {
+                border-bottom: 1px solid #ddd;
+                padding: 1em 1em 1em 4em;
+                position: relative;
+              }
+              #comments .comment-body .comment-reply-link {
+                color: #a00;
+                text-decoration: underline;
+              }
+              #comments .comment-body .comment-reply-link:before {
+                filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                -ms-transform: rotate(180deg);
+                -o-transform: rotate(180deg);
+                transform: rotate(180deg);
+                content: "\f112";
+              }
 
           /* Paged comments navigation */
           #comments-template .paged-navigation {}
