@@ -1,0 +1,25 @@
+/*
+ Theme Name:    FreeSpirit ESU
+ Theme URI:     http://www.freespiritesu.org.uk/
+ Description:   FreeSpirit ESU Site Theme <br />This theme has been custom built specifically for use by FreeSpirit ESU for their website at http://www.freespiritesu.org.uk/. All functionality has been built in to the specific needs of FreeSpirit ESU and will not necessarily be of any use to anyone else.
+ Author:        Richard Perry
+ Author URI:    http://www.perry-online.me.uk/
+ Template:      twentyfourteen
+ Version:       3.0.0
+ Tags:          black, red, two-columns, responsive-layout, featured-images, custom-menu
+ Text Domain:   fses
+*/
+
+/*
+For older themes, and themes that do not use wp_enqueue_style() to enqueue their stylesheet, use the following line where twentyfourteen is the name of the directory where the theme resides:
+
+Make sure you uncomment out this import line below if you want to include the parent CSS and the wp_enqueue_style() is not working. If you do not then you will not have any styling in your child theme from the parent theme.
+*/
+
+
+/*
+@import url("../twentyfourteen/style.css");
+*/
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
