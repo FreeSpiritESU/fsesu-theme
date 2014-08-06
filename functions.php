@@ -21,7 +21,57 @@
  
  if ( ! isset( $content_width ) ) $content_width = 550;
  
+ 
+ /**
+ * Twenty Fourteen setup.
+ *
+ * Set up theme defaults and registers support for various WordPress features.
+ *
+ * Note that this function is hooked into the after_setup_theme hook, which
+ * runs before the init hook. The init hook is too late for some features, such
+ * as indicating support post thumbnails.
+ *
+ * @since Twenty Fourteen 1.0
+ */
+function fsesu_setup() {
 
+	/*
+	 * Make Twenty Fourteen available for translation.
+	 *
+	 * Translations can be added to the /languages/ directory.
+	 * If you're building a theme based on Twenty Fourteen, use a find and
+	 * replace to change 'twentyfourteen' to the name of your theme in all
+	 * template files.
+	 */
+	load_child_theme_textdomain( 'fsesu', get_stylesheet_directory() . '/languages' );
+
+	
+	// Remove the unnecessary menu registered by Twentyfourteen
+	unregister_nav_menu( 'secondary' );
+	
+	// Register a menu for use in the footer
+	register_nav_menus( array(
+		'footer'    => __( 'Footer menu', 'fsesu' )
+	) );
+	
+	// This will remove support for featured content
+    remove_theme_support( 'featured-content' );
+}
+add_action( 'after_setup_theme', 'fsesu_setup', 99 );
+
+
+function fsesu_header() {
+    if ( get_header_image() ) :
+?> 
+    <style type="text/css">
+        #masthead {
+            background: url('<?php header_image(); ?>') center top;
+        }
+    </style>
+<?php
+	endif;
+}
+add_action( 'wp_head', 'fsesu_header', 99 );
 
 
 // Disable Admin Bar for everyone

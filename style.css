@@ -7,19 +7,207 @@
  Template:      twentyfourteen
  Version:       3.0.0
  Tags:          black, red, two-columns, responsive-layout, featured-images, custom-menu
- Text Domain:   fses
+ Text Domain:   fsesu
 */
 
-/*
-For older themes, and themes that do not use wp_enqueue_style() to enqueue their stylesheet, use the following line where twentyfourteen is the name of the directory where the theme resides:
-
-Make sure you uncomment out this import line below if you want to include the parent CSS and the wp_enqueue_style() is not working. If you do not then you will not have any styling in your child theme from the parent theme.
-*/
-
-
-/*
 @import url("../twentyfourteen/style.css");
-*/
+
 
 /* =Theme customization starts here
 -------------------------------------------------------------- */
+
+
+/**
+ * 3.0 Basic Structure
+ * -----------------------------------------------------------------------------
+ */
+
+.site,
+.site-header,
+.site-content .entry-header, 
+.site-content .entry-content, 
+.site-content .entry-summary, 
+.site-content .entry-meta, 
+.page-content,
+.comments-area {
+    max-width: 100%;
+}
+.header-main,
+.main-menu-container,
+.site-main,
+.site-info {
+    margin: 0 auto;
+    max-width: 1260px;
+}
+
+
+/**
+ * 4.0 Header
+ * -----------------------------------------------------------------------------
+ */
+
+
+.site-header {
+    height: 180px;
+}
+.site-header::before {
+    background: rgba( 0, 0, 0, 0.6 );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+    .site-header::before,
+    .header-main {
+        height: 180px;
+    }
+    .header-main {
+        position: relative;
+        text-align: center;
+    }
+        .site-logo {
+            height: 100px;
+        }
+        .site-title {
+            display: block;
+            float: none;
+            font-size: 30px;
+            max-width: 100%;
+        }
+        .search-toggle {
+            margin: 0;
+            position: absolute;
+            right: 48px;
+            top: 0;
+        }
+        
+        .site-navigation {
+            float: none;
+            text-align: center;
+        }
+        .site-navigation li {
+            border: none;
+        }
+        .primary-navigation.toggled-on {
+            background: #151515; /* Show a solid color for older browsers */
+            background: -moz-linear-gradient(#050505, #606060);
+            background: -o-linear-gradient(#050505, #606060);
+            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#050505), to(#606060)); /* older webkit syntax */
+            background: -webkit-linear-gradient(#050505, #606060);
+            padding: 0;
+        }
+   
+        
+/**
+ * 7.0 Sidebars
+ * -----------------------------------------------------------------------------
+ */
+
+/* Secondary */
+
+#secondary {
+	background-color: transparent;
+	border: 0;
+	clear: none;
+	color: #000;
+	float: right;
+	margin-top: 3px;
+	padding: 0 10px;
+	z-index: 2;
+}
+#secondary a {
+    color: #000;
+}
+
+.site-description {
+	display: none;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 1.5;
+}
+
+/* Primary Sidebar */
+
+.primary-sidebar {
+	padding-top: 48px;
+}
+
+.secondary-navigation + .primary-sidebar {
+	padding-top: 0;
+}
+
+/* Content Sidebar */
+
+.content-sidebar {
+	border-top: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing:    border-box;
+	box-sizing:         border-box;
+	color: #767676;
+	padding: 48px 10px 0;
+}
+
+
+/**
+ * 11.0 Media Queries
+ * -----------------------------------------------------------------------------
+ */
+ 
+@media screen and (min-width: 673px) {
+    .header-main {
+        padding: 0;
+    }
+}
+@media screen and (min-width: 783px) {
+	.admin-bar.masthead-fixed .site-header {
+		top: 0;
+	}
+	.site-header {
+        height: 228px;
+    }
+	.site-logo {
+	    height: 180px;
+	    left: 15px;
+	    position: absolute;
+	    top: 0;
+	}
+	.site-title {
+	    padding: 50px 155px 0;
+	}
+	.search-toggle {
+	    right: 0;
+	}
+	.site-navigation {
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        background: #151515; /* Show a solid color for older browsers */
+        background: -moz-linear-gradient(#050505, #606060);
+        background: -o-linear-gradient(#050505, #606060);
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#050505), to(#606060)); /* older webkit syntax */
+        background: -webkit-linear-gradient(#050505, #606060);
+        box-shadow:  0 1px 2px rgba(0, 0, 0, 0.4);
+	}
+}
+@media screen and (min-width: 1008px) {
+    .site:before {
+        background: transparent;
+        content: "";
+        display: block;
+        height: 100%;
+        min-height: 100%;
+        position: static;
+        top: auto;
+        left: auto;
+        width: auto;
+        z-index: auto;
+    }
+}
+@media screen and (min-width: 1080px) {
+    .site-content, 
+    .site-main .widecolumn,
+    .full-width .site-content {
+        margin-left: 0;
+        margin-right: 222px;
+    }
+}
