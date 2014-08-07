@@ -13,35 +13,25 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    06 August 2014
- *
- * @todo            ToDo List
- *                  - Add necessary display functions for the theme
+ * @lastmodified    07 August 2014
  */
  
  if ( ! isset( $content_width ) ) $content_width = 550;
  
  
  /**
- * Twenty Fourteen setup.
+ * FreeSpiritESU setup.
  *
- * Set up theme defaults and registers support for various WordPress features.
+ * Revise theme defaults and support registered in Twenty Fourteen.
  *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support post thumbnails.
- *
- * @since Twenty Fourteen 1.0
+ * @since FreeSpiritESU 3.0.0
  */
 function fsesu_setup() {
 
 	/*
-	 * Make Twenty Fourteen available for translation.
+	 * Make FreeSpiritESU available for translation.
 	 *
 	 * Translations can be added to the /languages/ directory.
-	 * If you're building a theme based on Twenty Fourteen, use a find and
-	 * replace to change 'twentyfourteen' to the name of your theme in all
-	 * template files.
 	 */
 	load_child_theme_textdomain( 'fsesu', get_stylesheet_directory() . '/languages' );
 
@@ -54,12 +44,33 @@ function fsesu_setup() {
 		'footer'    => __( 'Footer menu', 'fsesu' )
 	) );
 	
-	// This will remove support for featured content
+	// This will remove support for featured content, custom backgrounds & headers
     remove_theme_support( 'featured-content' );
+    remove_theme_support( 'custom-background' );
+    
+    // Add back slightly revised custom header support
+    add_theme_support( 'custom-header', array(
+		'default-image'          => get_stylesheet_directory_uri() . '/assets/images/brandimages/main-explorers.png',
+	    'random-default'         => false,
+		'width'                  => 960,
+		'height'                 => 180,
+		'flex-height'            => true,
+		'flex-width'             => true,
+		'default-text-color'     => 'f00',
+		'wp-head-callback'       => 'twentyfourteen_header_style',
+		'admin-head-callback'    => 'twentyfourteen_admin_header_style',
+		'admin-preview-callback' => 'twentyfourteen_admin_header_image'
+	) );
 }
 add_action( 'after_setup_theme', 'fsesu_setup', 99 );
 
 
+
+/**
+ * Use the custom header as a background to the page header element
+ * 
+ * @since FreeSpiritESU 3.0.0
+ */
 function fsesu_header() {
     if ( get_header_image() ) :
 ?> 
@@ -74,7 +85,36 @@ function fsesu_header() {
 add_action( 'wp_head', 'fsesu_header', 99 );
 
 
-// Disable Admin Bar for everyone
+
+/**
+ * Load Font Awesome & custom javascripts
+ * 
+ * @since FreeSpiritESU 3.0.0
+ */
+function fsesu_enqueue() {
+	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
+	wp_enqueue_script( 'fsesu-functions', get_stylesheet_directory_uri() . '/assets/js/functions.js' );
+}
+add_action( 'wp_enqueue_scripts', 'fsesu_enqueue', 99 );
+
+
+
+
+/**
+ * Remove one of the unnecessary Twenty Fourteen widget areas.
+ *
+ * @since FreeSpiritESU 3.0.0
+ */
+function fsesu_remove_widgets() {
+	unregister_sidebar( 'sidebar-2' );
+}
+add_action( 'widgets_init', 'fsesu_remove_widgets', 99 );
+
+
+
+
+
+/* Disable Admin Bar for everyone
 if (!function_exists('df_disable_admin_bar')) {
 
     function df_disable_admin_bar() {
@@ -100,5 +140,5 @@ if (!function_exists('df_disable_admin_bar')) {
         add_filter('wp_head','remove_admin_bar_style_frontend', 99);
     }
 }
-add_action('init','df_disable_admin_bar');
+add_action('init','df_disable_admin_bar'); */
 

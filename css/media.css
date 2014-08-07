@@ -1,0 +1,104 @@
+/**
+ * Media Queries
+ * 
+ * This stylesheet includes the style changes required for viewing the side on
+ * different size displays. This should allow the site to be more responsive
+ * 
+ * @package        FreeSpiritESU
+ * @subpackage     Stylesheets
+ * @author         Richard Perry <http://www.perry-online.me.uk/>
+ * @copyright      Copyright (c) 2014 FreeSpirit ESU
+ * @license        http://www.gnu.org/licenses/gpl-3.0.html
+ * @since          3.0.0
+ * @version        3.0.0
+ * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
+ * @lastmodified   30 July 2014
+ */
+
+/* =============================================================================
+   Media Queries
+   ========================================================================== */
+  
+@media only screen and (min-width: 30em) {
+  
+}
+
+@media only screen and (min-width: 40em) {
+    #primary-content {
+      float: left;
+      margin-right: -12.5em;
+    }
+    #primary-content .hentry,
+    #primary-content hr,
+    #primary-content .post-nav, 
+    #primary-content #archive-header,
+    #comments {
+      margin-right: 12.5em;
+    }
+     
+    #secondary-content {
+      float: right;
+      width: 12.5em;
+    }
+}
+
+@media only screen and (min-width: 50em) {
+  #branding {
+    position: relative;
+  }
+  
+    #site-logo {
+      height: 180px;
+      left: 0;
+      position: absolute;
+      top: 0;
+    } 
+    
+    #site-title {
+      padding: 50px 0 15px;
+    }
+    
+    #site-breadcrumb {
+      display: block;
+    }
+    
+  #primary-navigation {
+    display: block;
+  }
+  .slicknav_menu {
+    display: none;
+  }
+  
+    
+    #primary-content {
+      margin-right: -15em;
+    }
+    #primary-content .hentry,
+    #primary-content hr,
+    #primary-content .post-nav, 
+    #primary-content #archive-header,
+    #comments {
+      margin-right: 15em;
+    }
+     
+    #secondary-content {
+      width: 15em;
+    }
+}
+
+@media only screen and (min-width: 60em) {
+    #primary-content {
+      margin-right: -17.5em;
+    }
+    #primary-content .hentry,
+    #primary-content hr,
+    #primary-content .post-nav, 
+    #primary-content #archive-header,
+    #comments {
+      margin-right: 17.5em;
+    }
+     
+    #secondary-content {
+      width: 17.5em;
+    }
+}

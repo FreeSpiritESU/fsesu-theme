@@ -17,7 +17,7 @@
  * @since          3.0.0
  * @version        3.0.0
  * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified   06 August 2014
+ * @lastmodified   07 August 2014
  */
 
 get_header(); ?>
@@ -51,7 +51,6 @@ get_header(); ?>
 		
 				</div><!-- #content -->
 			</div><!-- #primary -->
-			<?php get_sidebar( 'content' ); ?>
 		</div><!-- #main-content -->
 
 <?php

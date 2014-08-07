@@ -1,26 +1,22 @@
 jQuery(document).ready(function($) {
-  var stickyNavTop = $('#primary-navigation').offset().top;
-  
-  var stickyNav = function(){
-  var scrollTop = $(window).scrollTop();
-       
-  if (scrollTop > stickyNavTop) { 
-    $('#primary-navigation').addClass('sticky');
-  } else {
-    $('#primary-navigation').removeClass('sticky'); 
-  }
-  };
-  
-  stickyNav();
-  
-  $(window).scroll(function() {
+    var stickyNavTop = $('#primary-navigation').offset().top;
+    
+    var stickyNav = function(){
+        var scrollTop = $(window).scrollTop();
+           
+        if (scrollTop >= stickyNavTop) { 
+            $('#primary-navigation').addClass('primary-navigation-fixed');
+        } else {
+            $('#primary-navigation').removeClass('primary-navigation-fixed'); 
+        }
+    };
+    
+    stickyNav();
+    
+    $(window).scroll(function() {
       stickyNav();
-  });
-  
-  $('#menu-main').slicknav({
-    label: 'Menu',
-    allowParentLinks: true
-  });
-  
-  $('table tr:nth-child(even)').addClass('even');
+    });
+    
+    
+    $('table tr:nth-child(even)').addClass('even');
 });

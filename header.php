@@ -12,7 +12,7 @@
  * @since          3.0.0
  * @version        3.0.0
  * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified   06 August 2014
+ * @lastmodified   07 August 2014
  */
 ?><!DOCTYPE html>
 <!--[if IE 7]>
@@ -47,6 +47,9 @@
 		<div class="header-main">
 		    <img class='site-logo' src='<?php echo get_stylesheet_directory_uri(); ?>/assets/images/fslogo.png' title='FSESU Logo' alt='FSESU Logo'>
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php if ( function_exists('yoast_breadcrumb') ) {
+				yoast_breadcrumb('<div class="site-breadcrumb">','</div>');
+			} ?>
 		</div>
 
 		<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">

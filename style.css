@@ -1,5 +1,5 @@
 /*
- Theme Name:    FreeSpirit ESU
+ Theme Name:    FreeSpirit ESU - New
  Theme URI:     http://www.freespiritesu.org.uk/
  Description:   FreeSpirit ESU Site Theme <br />This theme has been custom built specifically for use by FreeSpirit ESU for their website at http://www.freespiritesu.org.uk/. All functionality has been built in to the specific needs of FreeSpirit ESU and will not necessarily be of any use to anyone else.
  Author:        Richard Perry
@@ -15,6 +15,132 @@
 
 /* =Theme customization starts here
 -------------------------------------------------------------- */
+
+/**
+ * 1.0 Reset
+ *
+ * Resetting and rebuilding styles have been helped along thanks to the fine
+ * work of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+ * along with Nicolas Gallagher and Jonathan Neal
+ * http://necolas.github.com/normalize.css/ and Blueprint
+ * http://www.blueprintcss.org/
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #000;
+}
+
+body {
+	background: #fafafa;
+}
+
+a {
+    border-bottom: 1px solid #ddd;
+	color: #a00;
+}
+
+a:active,
+a:hover {
+	color: #f00;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+blockquote {
+    background: #fee;
+    background: rgba( 170, 0, 0, 0.05);
+    border-left: 5px solid #c44;
+    border-left: 5px solid rgba( 170, 0, 0, 0.65);
+    color: #555;
+	margin: 0;
+    margin-left: 35px;
+    padding: 15px;
+}
+blockquote cite {
+    display: block;
+    padding-top: 8px;
+    text-align: right;
+}
+blockquote p:first-child {
+    margin-top: 0;
+}
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Support a widely-adopted but non-standard selector for text selection styles
+ * to achieve a better experience. See http://core.trac.wordpress.org/ticket/25898.
+ */
+::selection {
+	background: #a00;
+}
+
+::-moz-selection {
+	background: #a00;
+}
+
+
+.fa.fa-chevron-right,
+.fa.fa-chevron-left {
+    font-size: smaller;
+    font-weight: normal;
+}
+
+
+/**
+ * 2.0 Repeatable Patterns
+ * -----------------------------------------------------------------------------
+ */
+
+/* Buttons */
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #a00;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background-color: #f00;
+}
+
+button:active,
+.button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background-color: #d00;
+}
+
+/* Assistive text */
+
+.screen-reader-text:focus {
+	color: #a00;
+}
 
 
 /**
@@ -57,11 +183,22 @@
     left: 0;
     width: 100%;
 }
+
+    .search-toggle {
+    	background-color: #a00;
+    	z-index: 99;
+    }
+    
+    .search-toggle:hover,
+    .search-toggle.active {
+    	background-color: #f00;
+    }
     .site-header::before,
     .header-main {
         height: 180px;
     }
     .header-main {
+        color: #f00;
         position: relative;
         text-align: center;
     }
@@ -74,6 +211,12 @@
             font-size: 30px;
             max-width: 100%;
         }
+        .site-title a, 
+        .site-breadcrumb,
+        .site-breadcrumb a {
+            border: none;
+            color: #f00;
+        }
         .search-toggle {
             margin: 0;
             position: absolute;
@@ -81,23 +224,202 @@
             top: 0;
         }
         
-        .site-navigation {
-            float: none;
-            text-align: center;
-        }
-        .site-navigation li {
-            border: none;
-        }
-        .primary-navigation.toggled-on {
-            background: #151515; /* Show a solid color for older browsers */
-            background: -moz-linear-gradient(#050505, #606060);
-            background: -o-linear-gradient(#050505, #606060);
-            background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#050505), to(#606060)); /* older webkit syntax */
-            background: -webkit-linear-gradient(#050505, #606060);
-            padding: 0;
-        }
-   
+    .search-box {
+    	background-color: #f00;
+    }
         
+/**
+ * 5.0 Navigation
+ * -----------------------------------------------------------------------------
+ */
+
+.site-navigation a:hover {
+	color: #f00;
+}
+
+.site-navigation .current_page_item > a,
+.site-navigation .current_page_ancestor > a,
+.site-navigation .current-menu-item > a,
+.site-navigation .current-menu-ancestor > a {
+	color: #d00;
+}
+
+/* Primary Navigation */
+
+.primary-navigation {
+	float: none;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.primary-navigation.toggled-on {
+	background: #151515; /* Show a solid color for older browsers */
+    background: -moz-linear-gradient(#050505, #606060);
+    background: -o-linear-gradient(#050505, #606060);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#050505), to(#606060)); /* older webkit syntax */
+    background: -webkit-linear-gradient(#050505, #606060);
+    padding: 0;
+}
+
+
+/**
+ * 6.0 Content
+ * -----------------------------------------------------------------------------
+ */
+
+.content-area {
+	padding-top: 24px;
+}
+
+.hentry {
+	margin: 0 auto 48px;
+	max-width: 100%;
+}
+
+.site-content .entry-header,
+.site-content .entry-content,
+.site-content .entry-summary,
+.site-content .entry-meta,
+.page-content {
+	max-width: auto;
+}
+
+.page-content {
+	margin-bottom: 48px;
+}
+
+
+/**
+ * 6.2 Entry Header
+ * -----------------------------------------------------------------------------
+ */
+
+.entry-title {
+	font-size: 28px;
+	font-weight: bold;
+	text-transform: none;
+}
+
+.entry-title a:hover {
+	color: #f00;
+}
+
+
+/**
+ * 6.3 Entry Meta
+ * -----------------------------------------------------------------------------
+ */
+
+.entry-meta a:hover,
+.cat-links a:hover {
+	color: #f00;
+}
+
+
+/**
+ * 6.4 Entry Content
+ * -----------------------------------------------------------------------------
+ */
+
+.entry-content a,
+.entry-summary a,
+.page-content a,
+.comment-content a {
+	text-decoration: none;
+}
+
+.entry-content .edit-link a:hover {
+	color: #f00;
+}
+
+/* Mediaelements */
+
+.hentry .mejs-controls .mejs-time-rail .mejs-time-current {
+	background: #a00;
+}
+
+.hentry .mejs-overlay:hover .mejs-overlay-button {
+	background-color: #a00;
+}
+
+.hentry .mejs-controls .mejs-button button:hover {
+	color: #f00;
+}
+
+/* Page links */
+
+.page-links a:hover {
+	background: #a00;
+	border: 1px solid #a00;
+}
+
+
+/**
+ * 6.7 Post/Image/Paging Navigation
+ * -----------------------------------------------------------------------------
+ */
+
+.post-navigation a:hover,
+.image-navigation a:hover {
+	color: #f00;
+}
+
+/* Paging Navigation */
+
+.paging-navigation .page-numbers.current {
+	border-top: 5px solid #a00;
+}
+
+.paging-navigation a:hover {
+	border-top: 5px solid #f00;
+}
+
+
+/**
+ * 6.9 Archives
+ * -----------------------------------------------------------------------------
+ */
+
+.archive-header,
+.page-header {
+	max-width: auto;
+}
+
+
+/**
+ * 6.10 Contributor Page
+ * -----------------------------------------------------------------------------
+ */
+
+.contributor-info {
+	max-width: auto;
+}
+
+
+/**
+ * 6.14 Comments
+ * -----------------------------------------------------------------------------
+ */
+
+.comments-area {
+	max-width: auto;
+}
+
+.comment-list .reply,
+.comment-metadata {
+	text-transform: none;
+}
+
+.comment-author a:hover,
+.comment-list .pingback a:hover,
+.comment-list .trackback a:hover,
+.comment-metadata a:hover,
+.comment-reply-title small a:hover {
+	color: #f00;
+}
+
+
 /**
  * 7.0 Sidebars
  * -----------------------------------------------------------------------------
@@ -126,11 +448,11 @@
 	line-height: 1.5;
 }
 
-/* Primary Sidebar */
+/* Primary Sidebar
 
 .primary-sidebar {
-	padding-top: 48px;
-}
+	padding-top: 0;
+} */
 
 .secondary-navigation + .primary-sidebar {
 	padding-top: 0;
@@ -138,14 +460,79 @@
 
 /* Content Sidebar */
 
-.content-sidebar {
+#secondary {
 	border-top: 1px solid rgba(0, 0, 0, 0.1);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing:    border-box;
 	box-sizing:         border-box;
 	color: #767676;
-	padding: 48px 10px 0;
+	padding: 24px 10px 0;
+}
+
+
+/**
+ * 7.1 Widgets
+ * -----------------------------------------------------------------------------
+ */
+
+/* Primary Sidebar, Footer Sidebar */
+
+.widget a:hover {
+	color: #f00;
+}
+
+.widget button,
+.widget .button,
+.widget input[type="button"],
+.widget input[type="reset"],
+.widget input[type="submit"] {
+	background-color: #a00;
+}
+
+.widget input[type="button"]:hover,
+.widget input[type="button"]:focus,
+.widget input[type="reset"]:hover,
+.widget input[type="reset"]:focus,
+.widget input[type="submit"]:hover,
+.widget input[type="submit"]:focus {
+	background-color: #f00;
+}
+
+.widget input[type="button"]:active,
+.widget input[type="reset"]:active,
+.widget input[type="submit"]:active {
+	background-color: #d00;
+}
+
+.widget-title a:hover {
+	color: #f00;
+}
+
+/* Calendar Widget*/
+
+.widget_calendar tbody a {
+	background-color: #a00;
+}
+
+.widget_calendar tbody a:hover {
+	background-color: #f00;
+}
+
+/* Ephemera Widget*/
+
+.widget_twentyfourteen_ephemera .entry-meta a:hover {
+	color: #f00;
+}
+
+
+/**
+ * 8.0 Footer
+ * -----------------------------------------------------------------------------
+ */
+
+.site-info a:hover {
+	color: #f00;
 }
 
 
@@ -155,16 +542,58 @@
  */
  
 @media screen and (min-width: 673px) {
+    
     .header-main {
         padding: 0;
     }
+    
+    .site-main {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+    }
+
+	.main-content {
+		float: left;
+		margin-right: -33%;
+		width: 100%;
+	}
+	
+	.content-area {
+	    margin-right: 33%;
+	}
+	
+    #secondary {
+        border: 0;
+        float: right;
+        margin: 0;
+        padding: 48px 30px 24px;
+        position: relative;
+        width: 33%;
+    }
+
+	.search-toggle {
+		margin-right: 0;
+	}
+
+	.search-box .search-field {
+		width: 50%;
+	}
+
+	.site-info {
+		padding: 15px 30px;
+	}
 }
+
 @media screen and (min-width: 783px) {
 	.admin-bar.masthead-fixed .site-header {
 		top: 0;
 	}
 	.site-header {
-        height: 228px;
+	    height: auto;
+        min-height: 228px;
     }
 	.site-logo {
 	    height: 180px;
@@ -178,7 +607,7 @@
 	.search-toggle {
 	    right: 0;
 	}
-	.site-navigation {
+	.primary-navigation {
         -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
         -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
         background: #151515; /* Show a solid color for older browsers */
@@ -188,26 +617,64 @@
         background: -webkit-linear-gradient(#050505, #606060);
         box-shadow:  0 1px 2px rgba(0, 0, 0, 0.4);
 	}
+    .primary-navigation-fixed {
+        position: fixed;
+        margin: 0;
+        top: 0;
+    }
+    .admin-bar .primary-navigation-fixed {
+        top: 32px;
+    }
+}
+
+@media screen and (min-width: 846px) {
+	.content-area {
+		padding-top: 24px;
+	}
+    
 }
 @media screen and (min-width: 1008px) {
     .site:before {
         background: transparent;
-        content: "";
-        display: block;
-        height: 100%;
-        min-height: 100%;
         position: static;
         top: auto;
         left: auto;
         width: auto;
         z-index: auto;
     }
+    
+    .main-content {
+        margin-right: -29%;
+    }
+
+	.site-content {
+		margin-right: 29%;
+		margin-left: 0;
+	}
+	
+    #secondary {
+        margin-left: 0;
+        width: 29%;
+    }
 }
 @media screen and (min-width: 1080px) {
+    
+    .main-content {
+        margin-right: -300px;
+    }
+    
     .site-content, 
     .site-main .widecolumn,
     .full-width .site-content {
         margin-left: 0;
-        margin-right: 222px;
+    }
+    
+    .site-content {
+        margin-right: 300px;
+    }
+	
+    #secondary {
+        margin-left: 0;
+        width: 300px;
     }
 }
