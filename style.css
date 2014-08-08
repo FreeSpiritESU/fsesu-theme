@@ -50,12 +50,27 @@ a:hover {
 	color: #f00;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
+
+/* a:not([href*="freespiritesu.org.uk"]):after */
+a:not([href*="wordpress-c9-richard_p2.c9.io"]):after {
+    -webkit-font-smoothing: antialiased;
+    border: 0;
+    color: #777;
+    content: '\f442';
+    display: inline-block;
+    font: normal 18px/1 Genericons;
+    text-decoration: none;
+    vertical-align: text-bottom;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
 q:after {
-	content: "";
-	content: none;
+    content: close-quote;
 }
 
 blockquote {
@@ -80,6 +95,23 @@ blockquote p:last-child {
     margin-bottom: 0;
 }
 
+dd {
+    margin-left: 24px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #a00;
+    border: 1px solid rgba( 170, 0, 0, 0.8 );
+}
+table thead th {
+    background: #a00;
+    background: rgba( 170, 0, 0, 0.8 );
+    color: #fff;
+}
 
 /* Support a widely-adopted but non-standard selector for text selection styles
  * to achieve a better experience. See http://core.trac.wordpress.org/ticket/25898.
@@ -97,6 +129,9 @@ blockquote p:last-child {
 .fa.fa-chevron-left {
     font-size: smaller;
     font-weight: normal;
+}
+.wp-caption-text {
+    text-align: center;
 }
 
 
@@ -161,7 +196,7 @@ input[type="submit"]:active {
 .header-main,
 .main-menu-container,
 .site-main,
-.site-info {
+.footer-content {
     margin: 0 auto;
     max-width: 1260px;
 }
@@ -184,54 +219,73 @@ input[type="submit"]:active {
     width: 100%;
 }
 
-    .search-toggle {
-    	background-color: #a00;
-    	z-index: 99;
-    }
-    
-    .search-toggle:hover,
-    .search-toggle.active {
-    	background-color: #f00;
-    }
-    .site-header::before,
-    .header-main {
-        height: 180px;
-    }
-    .header-main {
-        color: #f00;
-        position: relative;
-        text-align: center;
-    }
-        .site-logo {
-            height: 100px;
-        }
-        .site-title {
-            display: block;
-            float: none;
-            font-size: 30px;
-            max-width: 100%;
-        }
-        .site-title a, 
-        .site-breadcrumb,
-        .site-breadcrumb a {
-            border: none;
-            color: #f00;
-        }
-        .search-toggle {
-            margin: 0;
-            position: absolute;
-            right: 48px;
-            top: 0;
-        }
+.search-toggle {
+	background-color: #a00;
+	z-index: 99;
+}
+
+.search-toggle:hover,
+.search-toggle.active {
+	background-color: #f00;
+}
+
+.site-header::before,
+.header-main {
+    height: 180px;
+}
+
+.header-main {
+    color: #f00;
+    position: relative;
+    text-align: center;
+}
+
+.site-logo {
+    height: 100px;
+}
+
+.site-title {
+    display: block;
+    float: none;
+    font-size: 30px;
+    max-width: 100%;
+}
+
+.site-title a, 
+.site-breadcrumb,
+.site-breadcrumb a {
+    border: none;
+    color: #f00;
+}
+
+.site-title a:hover,
+.site-breadcrumb a:hover {
+    color: #fff;
+}
+
+.search-toggle {
+    margin: 0;
+    position: absolute;
+    right: 48px;
+    top: 0;
+}
         
-    .search-box {
-    	background-color: #f00;
-    }
+.search-box {
+	background-color: #f00;
+}
         
 /**
  * 5.0 Navigation
  * -----------------------------------------------------------------------------
  */
+
+.site-navigation li {
+	border-top: none;
+}
+
+.site-navigation li a {
+	border: none;
+}
 
 .site-navigation a:hover {
 	color: #f00;
@@ -285,6 +339,11 @@ input[type="submit"]:active {
 	max-width: auto;
 }
 
+.site-content .has-post-thumbnail .entry-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
 .page-content {
 	margin-bottom: 48px;
 }
@@ -301,6 +360,10 @@ input[type="submit"]:active {
 	text-transform: none;
 }
 
+.entry-title a {
+    border: none;
+}
+
 .entry-title a:hover {
 	color: #f00;
 }
@@ -310,6 +373,10 @@ input[type="submit"]:active {
  * 6.3 Entry Meta
  * -----------------------------------------------------------------------------
  */
+
+.entry-meta a {
+    border: none;
+}
 
 .entry-meta a:hover,
 .cat-links a:hover {
@@ -359,6 +426,11 @@ input[type="submit"]:active {
  * 6.7 Post/Image/Paging Navigation
  * -----------------------------------------------------------------------------
  */
+
+.post-navigation a,
+.paging-navigation a {
+    border-bottom: none;
+}
 
 .post-navigation a:hover,
 .image-navigation a:hover {
@@ -428,46 +500,27 @@ input[type="submit"]:active {
 /* Secondary */
 
 #secondary {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
 	background-color: transparent;
-	border: 0;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
 	clear: none;
-	color: #000;
+	color: #767676;
 	float: right;
 	margin-top: 3px;
-	padding: 0 10px;
+	padding: 24px 10px 0;
 	z-index: 2;
 }
 #secondary a {
     color: #000;
 }
 
-.site-description {
-	display: none;
-	font-size: 12px;
-	font-weight: 400;
-	line-height: 1.5;
-}
-
-/* Primary Sidebar
-
-.primary-sidebar {
-	padding-top: 0;
-} */
+/* Primary Sidebar */
 
 .secondary-navigation + .primary-sidebar {
 	padding-top: 0;
-}
-
-/* Content Sidebar */
-
-#secondary {
-	border-top: 1px solid rgba(0, 0, 0, 0.1);
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing:    border-box;
-	box-sizing:         border-box;
-	color: #767676;
-	padding: 24px 10px 0;
 }
 
 
@@ -477,6 +530,24 @@ input[type="submit"]:active {
  */
 
 /* Primary Sidebar, Footer Sidebar */
+
+.widget .widget-title {
+	border-top: 5px solid #000;
+	color: #2b2b2b;
+	font-size: 14px;
+	font-weight: 900;
+	margin: 0 0 18px;
+	padding-top: 7px;
+	text-transform: uppercase;
+}
+
+.widget .widget-title a {
+	color: #2b2b2b;
+}
+
+.widget .widget-title a:hover {
+	color: #f00;
+}
 
 .widget a:hover {
 	color: #f00;
@@ -531,6 +602,14 @@ input[type="submit"]:active {
  * -----------------------------------------------------------------------------
  */
 
+.footer-content {
+    text-align: center;
+}
+
+.footer-content a {
+
+}
+
 .site-info a:hover {
 	color: #f00;
 }
@@ -540,6 +619,25 @@ input[type="submit"]:active {
  * 11.0 Media Queries
  * -----------------------------------------------------------------------------
  */
+ 
+@media screen and (min-width: 401px) {
+    .list-view .site-content .hentry {
+        border: none;
+        padding-top: 0;
+    }
+    .list-view .site-content .hentry:not(:last-of-type):after {
+        background-color: #f7f6f4;
+        background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #c3c3c3));
+        background-image: -webkit-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+        background-image: -moz-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+        background-image: -ms-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+        background-image: -o-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+        content: '';
+        display: block;
+        height: 1px;
+        margin: 48px 0;
+    }
+}
  
 @media screen and (min-width: 673px) {
     
@@ -569,7 +667,7 @@ input[type="submit"]:active {
         border: 0;
         float: right;
         margin: 0;
-        padding: 48px 30px 24px;
+        padding: 24px 10px 24px;
         position: relative;
         width: 33%;
     }
@@ -617,6 +715,21 @@ input[type="submit"]:active {
         background: -webkit-linear-gradient(#050505, #606060);
         box-shadow:  0 1px 2px rgba(0, 0, 0, 0.4);
 	}
+
+	.primary-navigation ul ul {
+		background-color: #a00;
+	}
+
+	.primary-navigation li:hover > a,
+	.primary-navigation li.focus > a {
+		background-color: #a00;
+	}
+
+	.primary-navigation ul ul a:hover,
+	.primary-navigation ul ul li.focus > a {
+		background-color: #f00;
+	}
+	
     .primary-navigation-fixed {
         position: fixed;
         margin: 0;
