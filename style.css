@@ -1,9 +1,793 @@
 /*
-Theme Name:     FreeSpirit ESU
-Theme URI:      http://www.freespiritesu.org.uk/
-Description:    FreeSpirit ESU Site Theme <br />This theme has been custom built specifically for use by FreeSpirit ESU for their website at http://www.freespiritesu.org.uk/. All functionality has been built in to the specific needs of FreeSpirit ESU and will not necessarily be of any use to anyone else.
-Author:         Richard Perry
-Author URI:     http://www.perry-online.me.uk/
-Version:        3.0.0
-Tags:           black, red, two-columns, responsive-layout, featured-images, custom-menu
+ Theme Name:    FreeSpirit ESU - New
+ Theme URI:     http://www.freespiritesu.org.uk/
+ Description:   FreeSpirit ESU Site Theme <br />This theme has been custom built specifically for use by FreeSpirit ESU for their website at http://www.freespiritesu.org.uk/. All functionality has been built in to the specific needs of FreeSpirit ESU and will not necessarily be of any use to anyone else.
+ Author:        Richard Perry
+ Author URI:    http://www.perry-online.me.uk/
+ Template:      twentyfourteen
+ Version:       3.0.0
+ Tags:          black, red, two-columns, responsive-layout, featured-images, custom-menu
+ Text Domain:   fsesu
 */
+
+@import url("../twentyfourteen/style.css");
+
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+/**
+ * 1.0 Reset
+ *
+ * Resetting and rebuilding styles have been helped along thanks to the fine
+ * work of Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
+ * along with Nicolas Gallagher and Jonathan Neal
+ * http://necolas.github.com/normalize.css/ and Blueprint
+ * http://www.blueprintcss.org/
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #000;
+}
+
+body {
+	background: #fafafa;
+}
+
+a {
+    border-bottom: 1px solid #ddd;
+	color: #a00;
+}
+
+a:active,
+a:hover {
+	color: #f00;
+}
+
+
+/* a:not([href*="freespiritesu.org.uk"]):after */
+a:not([href*="wordpress-c9-richard_p2.c9.io"]):after {
+    -webkit-font-smoothing: antialiased;
+    border: 0;
+    color: #777;
+    content: '\f442';
+    display: inline-block;
+    font: normal 18px/1 Genericons;
+    text-decoration: none;
+    vertical-align: text-bottom;
+}
+
+q {
+  quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
+
+blockquote {
+    background: #fee;
+    background: rgba( 170, 0, 0, 0.05);
+    border-left: 5px solid #c44;
+    border-left: 5px solid rgba( 170, 0, 0, 0.65);
+    color: #555;
+	margin: 0;
+    margin-left: 35px;
+    padding: 15px;
+}
+blockquote cite {
+    display: block;
+    padding-top: 8px;
+    text-align: right;
+}
+blockquote p:first-child {
+    margin-top: 0;
+}
+blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+dd {
+    margin-left: 24px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #a00;
+    border: 1px solid rgba( 170, 0, 0, 0.8 );
+}
+table thead th {
+    background: #a00;
+    background: rgba( 170, 0, 0, 0.8 );
+    color: #fff;
+}
+
+/* Support a widely-adopted but non-standard selector for text selection styles
+ * to achieve a better experience. See http://core.trac.wordpress.org/ticket/25898.
+ */
+::selection {
+	background: #a00;
+}
+
+::-moz-selection {
+	background: #a00;
+}
+
+
+.fa.fa-chevron-right,
+.fa.fa-chevron-left {
+    font-size: smaller;
+    font-weight: normal;
+}
+.wp-caption-text {
+    text-align: center;
+}
+
+
+/**
+ * 2.0 Repeatable Patterns
+ * -----------------------------------------------------------------------------
+ */
+
+/* Buttons */
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	background-color: #a00;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus,
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus {
+	background-color: #f00;
+}
+
+button:active,
+.button:active,
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active {
+	background-color: #d00;
+}
+
+/* Assistive text */
+
+.screen-reader-text:focus {
+	color: #a00;
+}
+
+
+/**
+ * 3.0 Basic Structure
+ * -----------------------------------------------------------------------------
+ */
+
+.site,
+.site-header,
+.site-content .entry-header, 
+.site-content .entry-content, 
+.site-content .entry-summary, 
+.site-content .entry-meta, 
+.page-content,
+.comments-area {
+    max-width: 100%;
+}
+.header-main,
+.main-menu-container,
+.site-main,
+.footer-content {
+    margin: 0 auto;
+    max-width: 1260px;
+}
+
+
+/**
+ * 4.0 Header
+ * -----------------------------------------------------------------------------
+ */
+
+
+.site-header {
+    height: 180px;
+}
+.site-header::before {
+    background: rgba( 0, 0, 0, 0.6 );
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.search-toggle {
+	background-color: #a00;
+	z-index: 99;
+}
+
+.search-toggle:hover,
+.search-toggle.active {
+	background-color: #f00;
+}
+
+.site-header::before,
+.header-main {
+    height: 180px;
+}
+
+.header-main {
+    color: #f00;
+    position: relative;
+    text-align: center;
+}
+
+.site-logo {
+    height: 100px;
+}
+
+.site-title {
+    display: block;
+    float: none;
+    font-size: 30px;
+    max-width: 100%;
+}
+
+.site-title a, 
+.site-breadcrumb,
+.site-breadcrumb a {
+    border: none;
+    color: #f00;
+}
+
+.site-title a:hover,
+.site-breadcrumb a:hover {
+    color: #fff;
+}
+
+.search-toggle {
+    margin: 0;
+    position: absolute;
+    right: 48px;
+    top: 0;
+}
+        
+.search-box {
+	background-color: #f00;
+}
+        
+/**
+ * 5.0 Navigation
+ * -----------------------------------------------------------------------------
+ */
+
+.site-navigation li {
+	border-top: none;
+}
+
+.site-navigation li a {
+	border: none;
+}
+
+.site-navigation a:hover {
+	color: #f00;
+}
+
+.site-navigation .current_page_item > a,
+.site-navigation .current_page_ancestor > a,
+.site-navigation .current-menu-item > a,
+.site-navigation .current-menu-ancestor > a {
+	color: #d00;
+}
+
+/* Primary Navigation */
+
+.primary-navigation {
+	float: none;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.primary-navigation.toggled-on {
+	background: #151515; /* Show a solid color for older browsers */
+    background: -moz-linear-gradient(#050505, #606060);
+    background: -o-linear-gradient(#050505, #606060);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#050505), to(#606060)); /* older webkit syntax */
+    background: -webkit-linear-gradient(#050505, #606060);
+    padding: 0;
+}
+
+
+/**
+ * 6.0 Content
+ * -----------------------------------------------------------------------------
+ */
+
+.content-area {
+	padding-top: 24px;
+}
+
+.hentry {
+	margin: 0 auto 48px;
+	max-width: 100%;
+}
+
+.site-content .entry-header,
+.site-content .entry-content,
+.site-content .entry-summary,
+.site-content .entry-meta,
+.page-content {
+	max-width: auto;
+}
+
+.site-content .has-post-thumbnail .entry-header {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+.page-content {
+	margin-bottom: 48px;
+}
+
+
+/**
+ * 6.2 Entry Header
+ * -----------------------------------------------------------------------------
+ */
+
+.entry-title {
+	font-size: 28px;
+	font-weight: bold;
+	text-transform: none;
+}
+
+.entry-title a {
+    border: none;
+}
+
+.entry-title a:hover {
+	color: #f00;
+}
+
+
+/**
+ * 6.3 Entry Meta
+ * -----------------------------------------------------------------------------
+ */
+
+.entry-meta a {
+    border: none;
+}
+
+.entry-meta a:hover,
+.cat-links a:hover {
+	color: #f00;
+}
+
+
+/**
+ * 6.4 Entry Content
+ * -----------------------------------------------------------------------------
+ */
+
+.entry-content a,
+.entry-summary a,
+.page-content a,
+.comment-content a {
+	text-decoration: none;
+}
+
+.entry-content .edit-link a:hover {
+	color: #f00;
+}
+
+/* Mediaelements */
+
+.hentry .mejs-controls .mejs-time-rail .mejs-time-current {
+	background: #a00;
+}
+
+.hentry .mejs-overlay:hover .mejs-overlay-button {
+	background-color: #a00;
+}
+
+.hentry .mejs-controls .mejs-button button:hover {
+	color: #f00;
+}
+
+/* Page links */
+
+.page-links a:hover {
+	background: #a00;
+	border: 1px solid #a00;
+}
+
+
+/**
+ * 6.7 Post/Image/Paging Navigation
+ * -----------------------------------------------------------------------------
+ */
+
+.post-navigation a,
+.paging-navigation a {
+    border-bottom: none;
+}
+
+.post-navigation a:hover,
+.image-navigation a:hover {
+	color: #f00;
+}
+
+/* Paging Navigation */
+
+.paging-navigation .page-numbers.current {
+	border-top: 5px solid #a00;
+}
+
+.paging-navigation a:hover {
+	border-top: 5px solid #f00;
+}
+
+
+/**
+ * 6.9 Archives
+ * -----------------------------------------------------------------------------
+ */
+
+.archive-header,
+.page-header {
+	max-width: auto;
+}
+
+
+/**
+ * 6.10 Contributor Page
+ * -----------------------------------------------------------------------------
+ */
+
+.contributor-info {
+	max-width: auto;
+}
+
+
+/**
+ * 6.14 Comments
+ * -----------------------------------------------------------------------------
+ */
+
+.comments-area {
+	max-width: auto;
+}
+
+.comment-list .reply,
+.comment-metadata {
+	text-transform: none;
+}
+
+.comment-author a:hover,
+.comment-list .pingback a:hover,
+.comment-list .trackback a:hover,
+.comment-metadata a:hover,
+.comment-reply-title small a:hover {
+	color: #f00;
+}
+
+
+/**
+ * 7.0 Sidebars
+ * -----------------------------------------------------------------------------
+ */
+
+/* Secondary */
+
+#secondary {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	background-color: transparent;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+	box-sizing: border-box;
+	clear: none;
+	color: #767676;
+	float: right;
+	margin-top: 3px;
+	padding: 24px 10px 0;
+	z-index: 2;
+}
+#secondary a {
+    color: #000;
+}
+
+/* Primary Sidebar */
+
+.secondary-navigation + .primary-sidebar {
+	padding-top: 0;
+}
+
+
+/**
+ * 7.1 Widgets
+ * -----------------------------------------------------------------------------
+ */
+
+/* Primary Sidebar, Footer Sidebar */
+
+.widget .widget-title {
+	border-top: 5px solid #000;
+	color: #2b2b2b;
+	font-size: 14px;
+	font-weight: 900;
+	margin: 0 0 18px;
+	padding-top: 7px;
+	text-transform: uppercase;
+}
+
+.widget .widget-title a {
+	color: #2b2b2b;
+}
+
+.widget .widget-title a:hover {
+	color: #f00;
+}
+
+.widget a:hover {
+	color: #f00;
+}
+
+.widget button,
+.widget .button,
+.widget input[type="button"],
+.widget input[type="reset"],
+.widget input[type="submit"] {
+	background-color: #a00;
+}
+
+.widget input[type="button"]:hover,
+.widget input[type="button"]:focus,
+.widget input[type="reset"]:hover,
+.widget input[type="reset"]:focus,
+.widget input[type="submit"]:hover,
+.widget input[type="submit"]:focus {
+	background-color: #f00;
+}
+
+.widget input[type="button"]:active,
+.widget input[type="reset"]:active,
+.widget input[type="submit"]:active {
+	background-color: #d00;
+}
+
+.widget-title a:hover {
+	color: #f00;
+}
+
+/* Calendar Widget*/
+
+.widget_calendar tbody a {
+	background-color: #a00;
+}
+
+.widget_calendar tbody a:hover {
+	background-color: #f00;
+}
+
+/* Ephemera Widget*/
+
+.widget_twentyfourteen_ephemera .entry-meta a:hover {
+	color: #f00;
+}
+
+
+/**
+ * 8.0 Footer
+ * -----------------------------------------------------------------------------
+ */
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-content a {
+
+}
+
+.site-info a:hover {
+	color: #f00;
+}
+
+
+/**
+ * 11.0 Media Queries
+ * -----------------------------------------------------------------------------
+ */
+ 
+@media screen and (min-width: 401px) {
+    .list-view .site-content .hentry {
+        border: none;
+        padding-top: 0;
+    }
+    .list-view .site-content .hentry:not(:last-of-type):after {
+        background-color: #f7f6f4;
+        background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #c3c3c3));
+        background-image: -webkit-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+        background-image: -moz-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+        background-image: -ms-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+        background-image: -o-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+        content: '';
+        display: block;
+        height: 1px;
+        margin: 48px 0;
+    }
+}
+ 
+@media screen and (min-width: 673px) {
+    
+    .header-main {
+        padding: 0;
+    }
+    
+    .site-main {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+    }
+
+	.main-content {
+		float: left;
+		margin-right: -33%;
+		width: 100%;
+	}
+	
+	.content-area {
+	    margin-right: 33%;
+	}
+	
+    #secondary {
+        border: 0;
+        float: right;
+        margin: 0;
+        padding: 24px 10px 24px;
+        position: relative;
+        width: 33%;
+    }
+
+	.search-toggle {
+		margin-right: 0;
+	}
+
+	.search-box .search-field {
+		width: 50%;
+	}
+
+	.site-info {
+		padding: 15px 30px;
+	}
+}
+
+@media screen and (min-width: 783px) {
+	.admin-bar.masthead-fixed .site-header {
+		top: 0;
+	}
+	.site-header {
+	    height: auto;
+        min-height: 228px;
+    }
+	.site-logo {
+	    height: 180px;
+	    left: 15px;
+	    position: absolute;
+	    top: 0;
+	}
+	.site-title {
+	    padding: 50px 155px 0;
+	}
+	.search-toggle {
+	    right: 0;
+	}
+	.primary-navigation {
+        -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+        background: #151515; /* Show a solid color for older browsers */
+        background: -moz-linear-gradient(#050505, #606060);
+        background: -o-linear-gradient(#050505, #606060);
+        background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#050505), to(#606060)); /* older webkit syntax */
+        background: -webkit-linear-gradient(#050505, #606060);
+        box-shadow:  0 1px 2px rgba(0, 0, 0, 0.4);
+	}
+
+	.primary-navigation ul ul {
+		background-color: #a00;
+	}
+
+	.primary-navigation li:hover > a,
+	.primary-navigation li.focus > a {
+		background-color: #a00;
+	}
+
+	.primary-navigation ul ul a:hover,
+	.primary-navigation ul ul li.focus > a {
+		background-color: #f00;
+	}
+	
+    .primary-navigation-fixed {
+        position: fixed;
+        margin: 0;
+        top: 0;
+    }
+    .admin-bar .primary-navigation-fixed {
+        top: 32px;
+    }
+}
+
+@media screen and (min-width: 846px) {
+	.content-area {
+		padding-top: 24px;
+	}
+    
+}
+@media screen and (min-width: 1008px) {
+    .site:before {
+        background: transparent;
+        position: static;
+        top: auto;
+        left: auto;
+        width: auto;
+        z-index: auto;
+    }
+    
+    .main-content {
+        margin-right: -29%;
+    }
+
+	.site-content {
+		margin-right: 29%;
+		margin-left: 0;
+	}
+	
+    #secondary {
+        margin-left: 0;
+        width: 29%;
+    }
+}
+@media screen and (min-width: 1080px) {
+    
+    .main-content {
+        margin-right: -300px;
+    }
+    
+    .site-content, 
+    .site-main .widecolumn,
+    .full-width .site-content {
+        margin-left: 0;
+    }
+    
+    .site-content {
+        margin-right: 300px;
+    }
+	
+    #secondary {
+        margin-left: 0;
+        width: 300px;
+    }
+}

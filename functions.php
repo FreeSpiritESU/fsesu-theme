@@ -13,62 +13,108 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    30 July 2014
- *
- * @todo            ToDo List
- *                  - Add necessary display functions for the theme
+ * @lastmodified    07 August 2014
  */
  
  if ( ! isset( $content_width ) ) $content_width = 550;
  
-/**
- *  Include other function files
+
+ /**
+ * FreeSpiritESU setup.
+ *
+ * Revise theme defaults and support registered in Twenty Fourteen.
+ *
+ * @since FreeSpiritESU 3.0.0
  */
- 
-require_once locate_template( '/includes/admin.php' );           // Admin & login 
-require_once locate_template( '/includes/shortcodes.php' );      // Shortcodes
+function fsesu_setup() {
+
+	/*
+	 * Make FreeSpiritESU available for translation.
+	 *
+	 * Translations can be added to the /languages/ directory.
+	 */
+	load_child_theme_textdomain( 'fsesu', get_stylesheet_directory() . '/languages' );
+
+	
+	// Remove the unnecessary menu registered by Twentyfourteen
+	unregister_nav_menu( 'secondary' );
+	
+	// Register a menu for use in the footer
+	register_nav_menus( array(
+		'footer'    => __( 'Footer menu', 'fsesu' )
+	) );
+	
+	// This will remove support for featured content, custom backgrounds & headers
+    remove_theme_support( 'featured-content' );
+    remove_theme_support( 'custom-background' );
+    
+    // Add back slightly revised custom header support
+    add_theme_support( 'custom-header', array(
+		'default-image'          => get_stylesheet_directory_uri() . '/assets/images/brandimages/main-explorers.png',
+	    'random-default'         => false,
+		'width'                  => 960,
+		'height'                 => 180,
+		'flex-height'            => true,
+		'flex-width'             => true,
+		'default-text-color'     => 'f00',
+		'wp-head-callback'       => 'twentyfourteen_header_style',
+		'admin-head-callback'    => 'twentyfourteen_admin_header_style',
+		'admin-preview-callback' => 'twentyfourteen_admin_header_image'
+	) );
+}
+add_action( 'after_setup_theme', 'fsesu_setup', 99 );
+
+
 
 /**
- * Instantiate the theme object
+ * Use the custom header as a background to the page header element
+ * 
+ * @since FreeSpiritESU 3.0.0
  */
-require_once locate_template( '/includes/classes/class-fsesu-theme.php' );
-$fsesu = new FSESU_Theme();
- 
-
-// Define the standard site categories
-
-$categories = array(
-    array (
-        'term' => 'Camp Diaries',
-        'args' => 
-            array(
-                'description' => "Everytime we participate in a major camp, or jamboree, as a group, we will be keeping everyone informed of how we are getting on through our camp diary. These diaries will be posted here, and pictures will generally be found on our Gallery.",
-                'slug' => 'campdiaries'
-            )
-    ),
-    array (
-        'term' => 'News',
-        'args' => 
-            array(
-                'description' => "News about what is happening in our Unit",
-                'slug' => 'news'
-            )
-    ),
-    array (
-        'term' => "What's New",
-        'args' => 
-            array(
-                'description' => "Quick updates about new things on the website, as well as quick notices for the Unit",
-                'slug' => 'whatsnew',
-                'parent' => get_cat_ID('News')
-            )
-    )
-);
-$fsesu->categories( $categories );
+function fsesu_header() {
+    if ( get_header_image() ) :
+?> 
+    <style type="text/css">
+        #masthead {
+            background: url('<?php header_image(); ?>') center top;
+        }
+    </style>
+<?php
+	endif;
+}
+add_action( 'wp_head', 'fsesu_header', 99 );
 
 
 
-// Disable Admin Bar for everyone
+/**
+ * Load Font Awesome & custom javascripts
+ * 
+ * @since FreeSpiritESU 3.0.0
+ */
+function fsesu_enqueue() {
+	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css' );
+	wp_enqueue_script( 'fsesu-functions', get_stylesheet_directory_uri() . '/assets/js/functions.js' );
+}
+add_action( 'wp_enqueue_scripts', 'fsesu_enqueue', 99 );
+
+
+
+
+/**
+ * Remove one of the unnecessary Twenty Fourteen widget areas.
+ *
+ * @since FreeSpiritESU 3.0.0
+ */
+function fsesu_remove_widgets() {
+	unregister_sidebar( 'sidebar-2' );
+}
+add_action( 'widgets_init', 'fsesu_remove_widgets', 99 );
+
+
+
+
+
+/* Disable Admin Bar for everyone
 if (!function_exists('df_disable_admin_bar')) {
 
     function df_disable_admin_bar() {
@@ -94,5 +140,4 @@ if (!function_exists('df_disable_admin_bar')) {
         add_filter('wp_head','remove_admin_bar_style_frontend', 99);
     }
 }
-add_action('init','df_disable_admin_bar');
-
+add_action('init','df_disable_admin_bar'); */
