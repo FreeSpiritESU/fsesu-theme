@@ -19,4 +19,6 @@ jQuery(document).ready(function($) {
     
     
     $('table tr:nth-child(even)').addClass('even');
+    
+    $('a:has(img)').addClass('image-link');
 });

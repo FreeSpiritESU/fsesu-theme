@@ -61,6 +61,9 @@ function fsesu_setup() {
 		'admin-head-callback'    => 'twentyfourteen_admin_header_style',
 		'admin-preview-callback' => 'twentyfourteen_admin_header_image'
 	) );
+	
+	// Change post format support within the theme
+	add_theme_support( 'post-formats', array( 'gallery', 'image', 'status', 'vide' ) );
 }
 add_action( 'after_setup_theme', 'fsesu_setup', 99 );
 
@@ -83,6 +86,7 @@ function fsesu_header() {
 	endif;
 }
 add_action( 'wp_head', 'fsesu_header', 99 );
+
 
 
 
@@ -112,6 +116,149 @@ add_action( 'widgets_init', 'fsesu_remove_widgets', 99 );
 
 
 
+
+/**
+ * Adjust the content for the status post format to include the date & link to post
+ * 
+ * @since FreeSpiritESU 3.0.0
+ */
+function fsesu_status_infinity( $content ) {
+
+	if ( has_post_format( 'status' ) && !is_singular() ) {
+		
+		$date = '<span class="entry-meta"><span class="entry-date">';
+		$date .= sprintf( '<a href="%1$s" rel="bookmark" title="%2$s"><time class="entry-date" datetime="%3$s" itemprop="datePublished">%4$s</time></a>',
+			esc_url( get_permalink() ),
+			get_the_title(),
+			esc_attr( get_the_date( 'c' ) ),
+			esc_html( get_the_date() )
+		);
+		$date .= '</span></span> ';
+		
+		$infinity = sprintf( ' <a href="%1$s" title="%2$s" class="infinity" rel="bookmark" itemprop="url">&infin;</a>',
+			esc_url( get_permalink() ),
+				get_the_title()
+		);
+		$content = $date . $content . $infinity;
+	}
+
+	return $content;
+}
+add_filter( 'the_content', 'fsesu_status_infinity', 9 ); // run before wpautop
+
+
+
+
+/**
+ * Display an optional post thumbnail.
+ *
+ * Wraps the post thumbnail in a div, and if on an archive page it also wraps it
+ * in an anchor. Also checks what size thumbnail to get depending on whether the
+ * post is being viewed from a mobile device or not
+ *
+ * @since FreeSpiritESU 3.0.0
+ */
+function fsesu_post_thumbnail() {
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		return;
+	}
+	
+	$before = '<div class="post-thumbnail">';
+	$after = '';
+	
+	if ( ! is_singular() ) :
+        $before .= '<a class="post-thumbnail" href="' . get_the_permalink() . '">';
+        $after = '</a>';
+    endif;
+    
+    if ( wp_is_mobile() ) :
+	    $thumb = get_the_post_thumbnail( get_the_ID(), ' medium' );
+	else :
+	    $thumb = get_the_post_thumbnail( get_the_ID(), 'large' );
+	endif;
+	
+	$after .= '</div>';
+    echo $before . $thumb . $after;
+}
+
+
+
+
+/**
+ * Display navigation to next/previous set of posts when applicable.
+ *
+ * @since FreeSpiritESU 3.0.0
+ *
+ * @global WP_Query   $wp_query   WordPress Query object.
+ */
+function fsesu_paging_navigation() {
+	global $wp_query;
+
+	// Don't print empty markup if there's only one page.
+	if ( $wp_query->max_num_pages < 2 ) {
+		return;
+	}
+
+	// Set up paginated links.
+	$links = paginate_links( array(
+		'show_all'  => true,
+		'prev_text' => __( ' Previous', 'fsesu' ),
+		'next_text' => __( 'Next ', 'fsesu' ),
+	) );
+
+	if ( $links ) :
+
+	?>
+	<nav class='navigation paging-navigation' role='navigation'>
+		<h1 class='screen-reader-text'><?php _e( 'Posts navigation', 'fsesu' ); ?></h1>
+		<div class='pagination loop-pagination'>
+			<?php echo $links; ?>
+		</div><!-- .pagination -->
+	</nav><!-- .navigation -->
+	<?php
+	endif;
+}
+
+
+
+
+/**
+ * Simple function to return a link to the hosting company
+ * 
+ * @since FreeSpiritESU 3.0.0
+ * 
+ * @param   string  $name   Name of the hosting company
+ * @param   string  $link   Link to the hosting company
+ * @return  string          The collated hosting credit string
+ */
+function fsesu_hosting( $name, $link ) {
+    return "Hosted by <a href='$link' title='$name' target='_blank'>$name</a>";
+}
+
+
+
+
+/**
+ * Simple function to display the copyright details & hosting string
+ * 
+ * @since FreeSpiritESU 3.0.0
+ * 
+ * @param   string  $first_year First year of copyright of the site
+ * @param   string  $owner      Name of the site owner/copyright holder
+ * @return  string              The collated copyright & hosting string
+ */
+function fsesu_credits( $first_year, $owner ) {
+    $copyright = '&copy; ' . $first_year;
+    $current_year = date('Y');
+    if($first_year != $current_year) {
+        $copyright .= ' - ' . $current_year;
+    }
+    $copyright .= ' ' . $owner;
+    
+    echo "$copyright  &nbsp; | &nbsp; " . 
+        fsesu_hosting( 'Webtree Authoring Ltd', 'http://www.webtreeauthoring.com/' );
+}
+add_action( 'fsesu_credits','fsesu_credits', 10, 2 );
 
 
 /* Disable Admin Bar for everyone

@@ -43,10 +43,12 @@ body {
 a {
     border-bottom: 1px solid #ddd;
 	color: #a00;
+	margin-bottom: -1px;
 }
 
 a:active,
 a:hover {
+    border-color: #00f;
 	color: #f00;
 }
 
@@ -58,9 +60,22 @@ a:not([href*="wordpress-c9-richard_p2.c9.io"]):after {
     color: #777;
     content: '\f442';
     display: inline-block;
-    font: normal 18px/1 Genericons;
+    font: normal 16px/1 Genericons;
     text-decoration: none;
     vertical-align: text-bottom;
+}
+
+a.image-link,
+.comment-meta a.url,
+.comment-metadata a {
+    border: none;
+}
+
+a.image-link:after,
+a.comment-reply-link:after,
+.comment-meta a.url:after,
+.comment-metadata a:after {
+    content: '';
 }
 
 q {
@@ -240,6 +255,10 @@ input[type="submit"]:active {
     text-align: center;
 }
 
+.header-main a {
+    border: none;
+}
+
 .site-logo {
     height: 100px;
 }
@@ -350,6 +369,19 @@ input[type="submit"]:active {
 
 
 /**
+ * 6.1 Post Thumbnail
+ * -----------------------------------------------------------------------------
+ */
+
+.post-thumbnail {
+    background-color: #ddd;
+}
+
+a.post-thumbnail:hover {
+    background-color: #bbb;
+}
+
+/**
  * 6.2 Entry Header
  * -----------------------------------------------------------------------------
  */
@@ -382,7 +414,18 @@ input[type="submit"]:active {
 .cat-links a:hover {
 	color: #f00;
 }
+.entry-meta a:hover {
+    border-bottom: 1px solid;
+    margin-bottom: -1px;
+}
 
+.entry-meta .tag-links a:hover {
+    background-color: #a00;
+}
+
+.entry-meta .tag-links a:hover:before {
+    border-right-color: #a00;
+}
 
 /**
  * 6.4 Entry Content
@@ -427,6 +470,38 @@ input[type="submit"]:active {
  * -----------------------------------------------------------------------------
  */
 
+.post-navigation,
+.image-navigation {
+	max-width: 100% !important;
+}
+
+.pagination .next {
+    float: right;
+}
+
+.pagination .prev {
+    float: left;
+}
+
+.pagination .next:after,
+.pagination .prev:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.pagination .next:after {
+    content: "\f054";
+}
+
+.pagination .prev:before {
+    content: "\f053";
+}
+
 .post-navigation a,
 .paging-navigation a {
     border-bottom: none;
@@ -435,6 +510,20 @@ input[type="submit"]:active {
 .post-navigation a:hover,
 .image-navigation a:hover {
 	color: #f00;
+}
+
+.post-navigation a[rel='prev'],
+.post-navigation a[rel='next'] {
+    max-width: 50%;
+}
+
+.post-navigation a[rel='prev'] {
+    float: left;
+}
+
+.post-navigation a[rel='next'] {
+    float: right;
+    text-align: right;
 }
 
 /* Paging Navigation */
@@ -603,15 +692,33 @@ input[type="submit"]:active {
  */
 
 .footer-content {
+    padding: 15px 30px;
     text-align: center;
 }
 
-.footer-content a {
-
+.footer-content a,
+.footer-content a:visited {
+    color: #f00;
 }
 
-.site-info a:hover {
-	color: #f00;
+.footer-content a:hover {
+	color: #a00;
+}
+
+.footer-content ul {
+    margin: 0;
+}
+
+.footer-menu {
+    list-style: none;
+}
+.footer-menu li {
+    display: inline-block;
+}
+
+.footer-menu,
+.site-info {
+    font-size: 90%;
 }
 
 
@@ -637,6 +744,15 @@ input[type="submit"]:active {
         height: 1px;
         margin: 48px 0;
     }
+    
+    .site-content .entry-meta .category-links:before {
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font: normal 16px/1 Genericons;
+		text-decoration: inherit;
+		vertical-align: text-bottom;
+        content: "\f301";
+    }
 }
  
 @media screen and (min-width: 673px) {
@@ -653,13 +769,23 @@ input[type="submit"]:active {
         width: 100%;
     }
 
-	.main-content {
+	.site-content,
+	.full-width .site-content {
 		float: left;
+	    margin-left: 0 !important;
 		margin-right: -33%;
 		width: 100%;
 	}
 	
-	.content-area {
+	.site-content .hentry,
+	.full-width .site-content .hentry,
+	.site-content .paging-navigation,
+	.full-width .site-content .paging-navigation,
+	.site-content .post-navigation,
+	.full-width .site-content .post-navigation,
+	.site-content .comments-area,
+	.full-width .site-content .comments-area {
+	    margin-left: 0 !important;
 	    margin-right: 33%;
 	}
 	
@@ -681,7 +807,7 @@ input[type="submit"]:active {
 	}
 
 	.site-info {
-		padding: 15px 30px;
+		padding: 0;
 	}
 }
 
@@ -740,8 +866,26 @@ input[type="submit"]:active {
     }
 }
 
+@media screen and (min-width: 810px) {
+    .full-width .site-content blockquote.alignleft, 
+    .full-width .site-content img.size-full.alignleft, 
+    .full-width .site-content img.size-large.alignleft, 
+    .full-width .site-content img.size-medium.alignleft, 
+    .full-width .site-content .wp-caption.alignleft {
+        margin-left: 0 !important;
+    }
+    .full-width .site-content blockquote.alignright, 
+    .full-width .site-content img.size-full.alignright, 
+    .full-width .site-content img.size-large.alignright, 
+    .full-width .site-content img.size-medium.alignright, 
+    .full-width .site-content .wp-caption.alignright {
+        margin-right: 0 !important;
+    }
+}
+
 @media screen and (min-width: 846px) {
-	.content-area {
+	.site-content,
+	.full-width .site-content {
 		padding-top: 24px;
 	}
     
@@ -756,13 +900,20 @@ input[type="submit"]:active {
         z-index: auto;
     }
     
-    .main-content {
+    .site-content,
+    .full-width .site-content {
         margin-right: -29%;
     }
 
-	.site-content {
+	.site-content .hentry,
+	.full-width .site-content .hentry,
+	.site-content .paging-navigation,
+	.full-width .site-content .paging-navigation,
+	.site-content .post-navigation,
+	.full-width .site-content .post-navigation,
+	.site-content .comments-area,
+	.full-width .site-content .comments-area {
 		margin-right: 29%;
-		margin-left: 0;
 	}
 	
     #secondary {
@@ -772,17 +923,19 @@ input[type="submit"]:active {
 }
 @media screen and (min-width: 1080px) {
     
-    .main-content {
+    .site-content,
+	.full-width .site-content {
         margin-right: -300px;
     }
     
-    .site-content, 
-    .site-main .widecolumn,
-    .full-width .site-content {
-        margin-left: 0;
-    }
-    
-    .site-content {
+    .site-content .hentry,
+	.full-width .site-content .hentry,
+	.site-content .paging-navigation,
+	.full-width .site-content .paging-navigation,
+	.site-content .post-navigation,
+	.full-width .site-content .post-navigation,
+	.site-content .comments-area,
+	.full-width .site-content .comments-area {
         margin-right: 300px;
     }
 	
