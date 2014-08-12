@@ -209,7 +209,7 @@ input[type="submit"]:active {
     max-width: 100%;
 }
 .header-main,
-.main-menu-container,
+.menu-main-container,
 .site-main,
 .footer-content {
     margin: 0 auto;
@@ -225,6 +225,7 @@ input[type="submit"]:active {
 
 .site-header {
     height: 180px;
+    overflow: hidden;
 }
 .site-header::before {
     background: rgba( 0, 0, 0, 0.6 );
@@ -544,7 +545,7 @@ a.post-thumbnail:hover {
 
 .archive-header,
 .page-header {
-	max-width: auto;
+	max-width: 100%;
 }
 
 
@@ -777,7 +778,9 @@ a.post-thumbnail:hover {
 		width: 100%;
 	}
 	
-	.site-content .hentry,
+	.site-content .archive-header,
+    .site-content .page-header,
+    .site-content .hentry,
 	.full-width .site-content .hentry,
 	.site-content .paging-navigation,
 	.full-width .site-content .paging-navigation,
@@ -905,7 +908,9 @@ a.post-thumbnail:hover {
         margin-right: -29%;
     }
 
-	.site-content .hentry,
+	.site-content .archive-header,
+    .site-content .page-header,
+    .site-content .hentry,
 	.full-width .site-content .hentry,
 	.site-content .paging-navigation,
 	.full-width .site-content .paging-navigation,
@@ -928,6 +933,8 @@ a.post-thumbnail:hover {
         margin-right: -300px;
     }
     
+    .site-content .archive-header,
+    .site-content .page-header,
     .site-content .hentry,
 	.full-width .site-content .hentry,
 	.site-content .paging-navigation,
