@@ -537,6 +537,24 @@ a.post-thumbnail:hover {
 	border-top: 5px solid #f00;
 }
 
+/* Post Read More Link */
+
+.read-more {
+    display: block;
+    overflow: auto;
+}
+
+.read-more a {
+    display: block;
+    float: right;
+    padding: 5px;
+}
+
+.read-more a:hover {
+    background: #a00;
+    color: #fff;
+}
+
 
 /**
  * 6.9 Archives

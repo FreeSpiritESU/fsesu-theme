@@ -149,6 +149,24 @@ add_filter( 'the_content', 'fsesu_status_infinity', 9 ); // run before wpautop
 
 
 
+function fsesu_excerpt_length( $length ) {
+	return 120;
+}
+add_filter( 'excerpt_length', 'fsesu_excerpt_length', 99 );
+
+
+
+
+
+function fsesu_excerpt_more( $more ) {
+	return ' &hellip; <div class="read-more"><a href="'. get_permalink( get_the_ID() ) . '">' . __('Read More', 'fsesu') . '  <i class="fa fa-chevron-right"></i></a></div>';
+}
+add_filter( 'excerpt_more', 'fsesu_excerpt_more' );
+
+
+
+
+
 /**
  * Display an optional post thumbnail.
  *
