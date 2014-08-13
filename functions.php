@@ -183,3 +183,6 @@ require_once get_stylesheet_directory() . '/includes/template-tags.php';
 
 // Custom headers for this theme.
 require_once get_stylesheet_directory() . '/includes/custom-header.php';
+
+// Customshortcodess for this theme.
+require_once get_stylesheet_directory() . '/includes/shortcodes.php';
