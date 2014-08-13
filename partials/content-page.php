@@ -10,13 +10,11 @@
  * @since          3.0.0
  * @version        3.0.0
  * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified   11 August 2014
+ * @lastmodified   13 August 2014
  */
 ?>
 
-				<article id='page-<?php the_ID(); ?>' <?php post_class(); ?>  itemscope itemtype='http://schema.org/BlogPosting'>
-					
-					<?php fsesu_post_thumbnail(); ?>
+				<article id='page-<?php the_ID(); ?>' <?php post_class(); ?>  itemscope itemtype='http://schema.org/Article'>
 					
 					<header class='page-header' itemprop='headline'>
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -38,4 +36,4 @@
 						edit_post_link( __( 'Edit', 'fsesu' ), '<span class="edit-link">', '</span>' );
 					?>
 					</footer><!-- .entry-footer -->
-				</article><!-- #page-## -->
+				</article><!-- #page-<?php the_ID(); ?> -->

@@ -14,7 +14,7 @@
  * @since          3.0.0
  * @version        3.0.0
  * @modifiedby     Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified   11 August 2014
+ * @lastmodified   13 August 2014
  */
 
 get_header(); ?>
@@ -43,7 +43,7 @@ get_header(); ?>
 						 * use this in a child theme, then include a file called called content-___.php
 						 * (where ___ is the post format) and that will be used instead.
 						 */
-						get_template_part( 'content', get_post_format() );
+						get_template_part( 'partials/content', get_post_format() );
 						
 					endwhile;
 					
@@ -52,7 +52,7 @@ get_header(); ?>
 					
 				else :
 					// If no content, include the "No posts found" template.
-					get_template_part( 'content', 'none' );
+					get_template_part( 'partials/content', 'none' );
 					
 				endif;
 			?>
