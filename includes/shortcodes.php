@@ -1,11 +1,22 @@
-<?php 
+<?php
+/**
+ * Custom shortcodes for the FreeSpiritESU theme
+ *  
+ * @package         FreeSpiritESU
+ * @subpackage      Functions
+ * @author          Richard Perry <http://www.perry-online.me.uk/>
+ * @copyright       Copyright (c) 2014 FreeSpirit ESU
+ * @license         http://www.gnu.org/licenses/gpl-3.0.html
+ * @since           3.0.0
+ * @version         3.0.0
+ * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
+ * @lastmodified    14 August 2014
+ */
 
 
 function fsesu_shortcode_random_image() {
     global $post;
     
-    $ids = '';
-    $counter = 0;
     $args = array( 
         'post_type'     => 'attachment',
         'numberposts'   => 1,
@@ -13,20 +24,25 @@ function fsesu_shortcode_random_image() {
         'orderby'       => 'rand'
     );
     $attachments = get_posts( $args );
+    $query = new WP_Query( $args );
     
-    if ( $attachments ) {
-        foreach ( $attachments as $attachment ) {
-            setup_postdata( $attachment );
-            if ( $counter != 0 ) {
-                $ids .= ',' . $attachment->ID;
-            }
-            else {
-                $ids .= $attachment->ID;
-            }
-            $counter++;
-        }
-        wp_reset_postdata();
-    }
+    while ( $query->have_posts() ):
+        $query->the_post();
+        
+        $image_id = get_the_ID();
+        $image_attributes = wp_get_attachment_image_src( $image_id, 'medium' );
+        $image_meta = wp_prepare_attachment_for_js( $image_id );
+        if( $image_attributes ) :
+            $output = sprintf('<figure class="random-image"><img src="%1$s" alt="%2$s"><figcaption class="wp-caption-text">%3$s</figcaption></figure>',
+                $image_attributes[0],
+                ( $image_meta['alt'] ) ? $image_meta['alt'] : get_the_title(),
+                ( $image_meta['caption'] ) ? $image_meta['caption'] : get_the_title()
+            );
+        endif;
+    endwhile;
+    wp_reset_postdata();
+    return $output;
+    
     
     if ( wp_is_mobile() ) :
         return do_shortcode('[gallery include="' . $ids . '" link="file" size="medium"]'); 
