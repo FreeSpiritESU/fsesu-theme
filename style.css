@@ -78,6 +78,10 @@ a.comment-reply-link:after,
     content: '';
 }
 
+a.infinity {
+    font-weight: bold;
+}
+
 q {
   quotes: "“" "”" "‘" "’";
 }
@@ -191,6 +195,25 @@ input[type="submit"]:active {
 .screen-reader-text:focus {
 	color: #a00;
 }
+
+/* Alignment */
+
+.textleft {
+	text-align: left;
+}
+
+.textright {
+	text-align: right;
+}
+
+.textcenter {
+	text-align: center;
+}
+
+.textjustify {
+    text-align: justify;
+}
+
 
 
 /**
@@ -597,6 +620,25 @@ a.post-thumbnail:hover {
 .comment-metadata a:hover,
 .comment-reply-title small a:hover {
 	color: #f00;
+}
+
+
+
+/**
+ * 6.15 Recent Posts
+ * -----------------------------------------------------------------------------
+ */
+
+.recent-posts {
+    list-style: none;
+    margin-left: 0;
+}
+.recent-posts li {
+    margin-bottom: 48px;
+}
+.recent-posts li:last-child, 
+.recent-posts.short li {
+    margin-bottom: 0;
 }
 
 
