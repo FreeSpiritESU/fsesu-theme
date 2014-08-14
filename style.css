@@ -92,6 +92,22 @@ q:after {
     content: close-quote;
 }
 
+/* Horizontal Rules */
+
+hr::after {
+  background-color: #f7f6f4;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #c3c3c3));
+  background-image: -webkit-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  background-image: -moz-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  background-image: -ms-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  background-image: -o-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  content: '';
+  display: block;
+  height: 1px;
+}
+
+/* Blockquotes */
+
 blockquote {
     background: #fee;
     background: rgba( 170, 0, 0, 0.05);
