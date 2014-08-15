@@ -13,7 +13,7 @@
  * @since           3.0.0
  * @version         3.0.0
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    13 August 2014
+ * @lastmodified    15 August 2014
  */
  
  if ( ! isset( $content_width ) ) $content_width = 550;
@@ -57,11 +57,14 @@ add_action( 'after_setup_theme', 'fsesu_setup', 89 );
 
 
 /**
- * Use the custom header as a background to the page header element
+ * Add elements to the head element
  * 
  * @since FreeSpiritESU 3.0.0
  */
 function fsesu_header() {
+	
+	echo '<link rel="shortcut icon" type="image/x-icon" href="' . get_stylesheet_directory_uri() . '/favicon.ico" />' . "\n";
+	
     if ( get_header_image() ) :
 ?> 
     <style type="text/css">
