@@ -1,0 +1,64 @@
+/**
+ * Styling specific to the login page of the site
+ *  
+ * @package         FreeSpiritESU
+ * @subpackage      Styles
+ * @author          Richard Perry <http://www.perry-online.me.uk/>
+ * @copyright       Copyright (c) 2014 FreeSpirit ESU
+ * @license         http://www.gnu.org/licenses/gpl-3.0.html
+ * @since           3.0.0
+ * @version         3.0.0
+ * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
+ * @lastmodified    15 August 2014
+ */
+
+html, body.login {
+    background: #fafafa;
+    color: #000;
+    font-family: Lato, sans-serif;
+    font-size: 16px;
+}
+body.login div#login {
+    max-width: 480px;
+    padding: 5% 0 0;
+    width: 100%;
+}
+body.login div#login h1 a {
+    -moz-background-size: 146px;
+    -webkit-background-size: 146px;
+    background-image: url('../images/fslogo.png');
+    background-size: 146px;
+    height: 180px;
+    margin-bottom: 0;
+    width: 146px;
+}
+body.login div#login form#loginform {
+    webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    background: transparent;
+    box-shadow: none;
+}
+body.login div#login form#loginform p label {
+    color: #000;
+}
+body.login div#login form#loginform p.submit input#wp-submit {
+    background: #a00;
+    border-color: #900;
+    -webkit-box-shadow: inset 0 1px 0 rgba(120,200,230,.6);
+    box-shadow: inset 0 1px 0 rgba(120,200,230,.6);
+    color: #fff;
+}
+body.login div#login form#loginform p.submit input#wp-submit:hover {
+    background: #f00;
+}
+body.login div#login p#nav a,
+body.login div#login p#backtoblog a {
+    border-bottom: 1px solid #ddd;
+    color: #a00;
+    margin-bottom: -1px;
+}
+body.login div#login p#nav a:hover,
+body.login div#login p#backtoblog a:hover {
+    border-color: #00f;
+    color: #f00;
+}
