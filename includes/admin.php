@@ -42,3 +42,21 @@ function fsesu_admin_stylesheet() {
     wp_enqueue_style('fsesu-admin', get_stylesheet_directory_uri() . '/assets/css/admin.css' );
 }
 add_action( 'admin_enqueue_scripts', 'fsesu_admin_stylesheet');
+
+
+
+
+function left_admin_footer_text_output($text) {
+    $text = $text . '   How much wood would a woodchuck chuck?';
+    return $text;
+}
+add_filter('admin_footer_text', 'left_admin_footer_text_output'); //left side
+
+
+
+
+function right_admin_footer_text_output( $text ) {
+    $text = 'That\'s purely hypothetical.   ' . $text;
+    return $text;
+}
+add_filter('update_footer', 'right_admin_footer_text_output', 11); //right side
