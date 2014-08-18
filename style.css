@@ -1,5 +1,5 @@
 /*
- Theme Name:        FreeSpirit ESU - New
+ Theme Name:        FreeSpirit ESU
  Theme URI:         http://www.freespiritesu.org.uk/
  Description:       FreeSpirit ESU Site Theme <br />This theme has been custom built specifically for use by FreeSpirit ESU for their website at http://www.freespiritesu.org.uk/. All functionality has been built in to the specific needs of FreeSpirit ESU and will not necessarily be of any use to anyone else.
  Author:            Richard Perry
@@ -11,7 +11,7 @@
  Tags:              black, red, two-columns, responsive-layout, featured-images, custom-menu
  Text Domain:       fsesu
  GitHub Theme URI:  richardp2/fsesu-theme
- GitHub Branch:     develop
+ GitHub Branch:     master
 */
 
 @import url("../twentyfourteen/style.css");
@@ -57,8 +57,7 @@ a:hover {
 }
 
 
-/* a:not([href*="freespiritesu.org.uk"]):after */
-a:not([href*="wordpress-c9-richard_p2.c9.io"]):after {
+a:not([href*="freespiritesu.org.uk"]):after  {
     -webkit-font-smoothing: antialiased;
     border: 0;
     color: #777;
@@ -259,6 +258,9 @@ input[type="submit"]:active {
     max-width: 1260px;
 }
 
+.site {
+    overflow-x: hidden;
+}
 
 /**
  * 4.0 Header
@@ -268,7 +270,6 @@ input[type="submit"]:active {
 
 .site-header {
     height: 180px;
-    overflow: hidden;
 }
 .site-header::before {
     background: rgba( 0, 0, 0, 0.6 );
