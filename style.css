@@ -1,18 +1,18 @@
 /*
- Theme Name:        FreeSpirit ESU
- Theme URI:         http://www.freespiritesu.org.uk/
- Description:       FreeSpirit ESU Site Theme <br />This theme has been custom built specifically for use by FreeSpirit ESU for their website at http://www.freespiritesu.org.uk/. All functionality has been built in to the specific needs of FreeSpirit ESU and will not necessarily be of any use to anyone else.
- Author:            Richard Perry
- Author URI:        http://richard.perry-online.me.uk/
- License:           GNU General Public License v2
- License URI:       http://www.gnu.org/licenses/gpl-2.0.html
- Template:          twentyfourteen
- Version:           3.0.0.2
- Tags:              black, red, two-columns, responsive-layout, featured-images, custom-menu
- Text Domain:       fsesu
- GitHub Theme URI:  richardp2/fsesu-theme
- GitHub Branch:     develop
-*/
+ * Theme Name:        FreeSpirit ESU
+ * Theme URI:         http://www.freespiritesu.org.uk/
+ * Description:       FreeSpirit ESU Site Theme <br />This theme has been custom built specifically for use by FreeSpirit ESU for their website at http://www.freespiritesu.org.uk/. All functionality has been built in to the specific needs of FreeSpirit ESU and will not necessarily be of any use to anyone else.
+ * Author:            Richard Perry
+ * Author URI:        http://richard.perry-online.me.uk/
+ * License:           GNU General Public License v2
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.html
+ * Template:          twentyfourteen
+ * Version:           3.0.0.3
+ * Tags:              black, red, two-columns, responsive-layout, featured-images, custom-menu
+ * Text Domain:       fsesu
+ * GitHub Theme URI:  richardp2/fsesu-theme
+ * GitHub Branch:     develop
+ */
 
 @import url("../twentyfourteen/style.css");
 
@@ -38,6 +38,7 @@ input,
 select,
 textarea {
 	color: #000;
+	font-size: 15px;
 }
 
 body {
@@ -136,6 +137,10 @@ blockquote p:first-child {
 }
 blockquote p:last-child {
     margin-bottom: 0;
+}
+
+dl {
+    color: #000;
 }
 
 dd {
@@ -621,6 +626,7 @@ a.post-thumbnail:hover {
 
 .archive-header,
 .page-header {
+    margin: 0 auto !important;
 	max-width: 100%;
 }
 
