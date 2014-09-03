@@ -11,9 +11,9 @@
  * @copyright       Copyright (c) 2014 FreeSpirit ESU
  * @license         http://www.gnu.org/licenses/gpl-3.0.html
  * @since           3.0.0
- * @version         3.0.0
+ * @version         3.0.0.4
  * @modifiedby      Richard Perry <richard@freespiritesu.org.uk>
- * @lastmodified    15 August 2014
+ * @lastmodified    03 September 2014
  */
  
  if ( ! isset( $content_width ) ) $content_width = 550;
@@ -43,6 +43,9 @@ function fsesu_setup() {
 	register_nav_menus( array(
 		'footer'    => __( 'Footer menu', 'fsesu' )
 	) );
+	
+	// This theme styles the visual editor to resemble the theme style.
+	add_editor_style( array( 'assets/css/editor-style.css', twentyfourteen_font_url(), 'genericons/genericons.css' ) );
 	
 	// This will remove support for featured content, custom backgrounds & headers
     remove_theme_support( 'featured-content' );
