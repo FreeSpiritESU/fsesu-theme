@@ -1,0 +1,11 @@
+enabled: '1'
+date:
+  start: '2008'
+  end: now
+owner: 'FreeSpirit ESU'
+link: ''
+target: _blank
+additional:
+  text: ''
+css:
+  class: ''

@@ -1,0 +1,22 @@
+enabled: '1'
+css:
+  class: ''
+title: ''
+target: _blank
+display: both
+items:
+  -
+    icon: 'fa fa-facebook fa-fw'
+    text: ''
+    link: 'http://www.facebook.com/RocketTheme'
+    name: Facebook
+  -
+    icon: 'fa fa-twitter fa-fw'
+    text: ''
+    link: 'http://www.twitter.com/freespirit_esu'
+    name: Twitter
+  -
+    icon: 'fa fa-instagram'
+    text: ''
+    link: 'https://instagram.com/freespirit_esu'
+    name: Instagram

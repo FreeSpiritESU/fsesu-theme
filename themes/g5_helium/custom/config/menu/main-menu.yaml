@@ -1,0 +1,95 @@
+ordering:
+  home: ''
+  about-us:
+    history: ''
+    'Who''s-Who': ''
+  unit-info:
+    new-starter-info: ''
+    badge-positions: ''
+    programme: ''
+    downloads: ''
+  camp-diaries:
+    lochgoilhead-2017: ''
+    brumjam-2016: ''
+    north-wales-2015: ''
+    kernow-2013: ''
+    lochgoilhead-2012: ''
+    camjam-2011: ''
+    youlbury-2010: ''
+    wings-2009: ''
+    scotland-2008:
+      stupid-explorers: ''
+    serbia-2006: ''
+  gallery:
+    2017: ''
+    2016: ''
+    2015: ''
+    2014: ''
+    2007: ''
+    2006: ''
+    2005: ''
+  contact-us: ''
+items:
+  home:
+    object_id: 2
+  about-us:
+    object_id: 12
+  about-us/history:
+    object_id: 18
+  'about-us/Who''s-Who':
+    object_id: 20
+  unit-info:
+    object_id: 22
+  unit-info/new-starter-info:
+    object_id: 25
+  unit-info/badge-positions:
+    object_id: 27
+  unit-info/programme:
+    object_id: 29
+  unit-info/downloads:
+    object_id: 31
+  camp-diaries:
+    object_id: 33
+  camp-diaries/lochgoilhead-2017:
+    object_id: 1
+  camp-diaries/brumjam-2016:
+    object_id: 101
+  camp-diaries/north-wales-2015:
+    object_id: 94
+  camp-diaries/kernow-2013:
+    object_id: 93
+  camp-diaries/lochgoilhead-2012:
+    object_id: 66
+  camp-diaries/camjam-2011:
+    object_id: 30
+  camp-diaries/youlbury-2010:
+    object_id: 28
+  camp-diaries/wings-2009:
+    enabled: 0
+    dropdown_dir: right
+    dropdown_hide: '0'
+    width: auto
+  camp-diaries/scotland-2008:
+    object_id: 11
+  camp-diaries/scotland-2008/stupid-explorers:
+    object_id: 440
+  camp-diaries/serbia-2006:
+    object_id: 9
+  gallery:
+    object_id: 36
+  gallery/2017:
+    object_id: 994
+  gallery/2016:
+    object_id: 964
+  gallery/2015:
+    object_id: 950
+  gallery/2014:
+    object_id: 932
+  gallery/2007:
+    object_id: 523
+  gallery/2006:
+    object_id: 521
+  gallery/2005:
+    object_id: 330
+  contact-us:
+    object_id: 39
