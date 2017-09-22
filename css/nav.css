@@ -1,0 +1,48 @@
+#nav ul { 
+   list-style: none; 
+   border-left: 1px solid red; 
+   border-top: 1px solid red; 
+   border-bottom: 1px solid maroon; 
+   display: inline; 
+   float: left 
+}
+#nav ul li { 
+   float: left; 
+   padding: 4px 8px 5px; 
+   border-left: 1px solid maroon; 
+   border-top: 1px solid maroon; 
+   border-right: 1px solid red; 
+   border-bottom: 1px solid red; 
+   width: 93px;
+   text-align: center 
+}
+#nav ul li:hover, #nav ul li.over { 
+   background: #bebebe url(../images/nav3.png) repeat-x 
+}
+#nav ul ul { 
+   display: none; 
+   position: absolute; 
+   top: 206px;  
+   width: 130px;
+   border: none 
+}
+#nav ul ul li { 
+   width: 100%; 
+   border:none;
+   background: #232323 url(../images/nav.png) repeat-x; 
+   position: relative; 
+   left: -10px;
+   display: block 
+}
+#nav ul li:hover ul, #nav ul li.over ul { 
+   display: block; 
+   clear: both; 
+   float: left 
+}
+#nav a, #nav a:visited { 
+   color: red; 
+   text-decoration: none 
+}
+#nav a:hover, #nav a:active { 
+   border-bottom: 1px solid red 
+}

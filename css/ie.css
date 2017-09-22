@@ -1,0 +1,12 @@
+#nav ul ul li { 
+   float: left; 
+   clear: both; 
+   text-align: left; 
+   left: -100px
+}
+#col2 div.user table.login {
+    font-size: 100%;
+}
+#col1 table.progDetails th.title {
+   width: 20%;
+}

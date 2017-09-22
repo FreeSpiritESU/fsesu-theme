@@ -1,0 +1,159 @@
+﻿div.admin_block {
+    width: 98%;
+    padding: 3px;
+}
+div.admin_links {
+   display: inline-table;
+   width: 175px;
+   text-align: center;
+   margin: 10px;
+   padding: 5px;
+   border-left: 5px solid dimGray;
+   border-top: 5px solid dimGray;
+   border-right: 5px solid black;
+   border-bottom: 5px solid black;
+   background: red;
+   line-height: 75px;
+   font-size: 14px;
+   font-weight: bold;
+}
+div.admin_links a, div.admin_links a:visited, div.admin_links a:active, div.admin_links a:hover {
+   padding: 0;
+   border: none;
+   color: black;
+}
+
+
+/* News Administration */
+#body form.admin {
+   margin: 10px 0;
+   border: 1px solid #aeaeae;
+   text-align: center;
+   background: #dedede;
+   width: 697px;
+}
+#body form.admin span.adminSpan {
+   clear: left;
+   float: left;
+   width: 100px;
+   margin-top: 11px;
+   text-align: left;
+   padding-left: 5px;
+}
+#body form.admin span.details { width: 111px; }
+#body form.admin span.adminSpanRadio {
+   width: 100px;
+   margin-top: 9px;
+   margin-right: 10px;
+   padding-left: 5px;
+}
+#body form.admin div.radioArray {
+   margin-left: 114px;
+   padding: 3px;
+   text-align: left;
+}
+#body form.admin div.date {
+   width: 560px;
+   text-align: left;
+   margin-left: 116px;
+}
+#body form.admin input.adminInput, #body form.admin textarea.adminTextarea,
+#body form.admin select.adminSelect {
+   margin-top: 8px;
+   width: 560px;
+   font: 1em verdana, arial, helvetica, sans-serif;
+   padding: 3px;
+}
+#body form.admin input.adminRadio {
+   margin-top: 8px;
+   padding: 3px;
+}
+#body form.admin input.date {
+   width: 100px;
+}
+#body input#addNews, #body input#addLink, #body input#addProgItem {
+   margin: 10px;
+}
+#body form.admin select.adminSelect {
+   width: 570px;
+}
+
+
+
+
+#body table.admin {
+   background: #dedede;
+   border: 1px solid #aeaeae;
+   font: 1em verdana, arial, helvetica, sans-serif; 
+   width: 100%;
+   margin-top: 10px;
+}
+#body table.admin td, #body table.admin th {
+   border: 1px solid #aeaeae;
+   padding: 4px;
+   background: white;
+}
+#body table.admin th {
+   background: #dd0000;
+}
+#body table.admin img {
+   border: none;
+}
+
+#mce {
+   background: white; 
+   text-align: center; 
+   clear: left; 
+   border: 1px solid #aeaeae;
+   padding: 3px;
+}
+
+
+#body ul.admin {
+   list-style: none;
+   display: inline; 
+   float: left;
+   margin: 0;
+   margin-bottom: 12px;
+   background: #dedede;
+   border: 1px solid #aeaeae;
+   width: 688px;
+   text-align: center;
+}
+#body ul.admin li { 
+   float: left; 
+   padding: 4px 0px 5px;
+   margin: 2px;
+   border-left: 2px solid #666;
+   border-top: 2px solid #666;
+   border-right: 2px solid black;
+   border-bottom: 2px solid black;
+   background: #dd0000;
+   text-align: center;
+   font-size: 0.8em;
+   width: 164px;
+}
+#body ul.admin a, #body ul.admin a:visited {
+   color: white;
+   text-decoration: none;
+}
+#body ul.admin a:active, #body ul.admin a:hover {
+   color: red;
+   border-bottom: 1px solid red;
+}
+
+
+
+
+#body h4.process {
+   text-align: center;
+   margin: 25px 0;
+}
+
+#body h4.adminForm {
+   margin-top: 10px;
+}
+#body span.showhide {
+   float: right;
+   margin-top: -15px;
+}

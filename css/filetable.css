@@ -1,0 +1,18 @@
+table {
+    width: 670px;
+}
+table.dir {
+    display: none;
+}
+table .space {
+    width: 10px;
+}
+table td.filemodified {
+    width: 125px;
+}
+table td.filetype {
+    width: 60px;
+}
+table td.filesize {
+    width: 75px;
+}

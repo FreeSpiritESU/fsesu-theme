@@ -1,0 +1,369 @@
+* { 
+   margin: 0; 
+   padding: 0;
+}
+body { 
+   font: 76% verdana, arial, helvetica, sans-serif;
+   text-align: center;
+}
+a, a:visited {
+   color: blue;
+   text-decoration: none;
+}
+a:hover, a:active {
+   border-bottom: 1px solid red 
+}
+div.center {
+    text-align: center;
+}
+h1, h2, h3, h4 {
+   margin: 5px 0 10px;
+}
+h1 {
+   font-size: 2.8em; 
+}
+h2 {
+   font-size: 1.6em; 
+}
+h3 {
+   font-size: 1.2em; 
+}
+h4 {
+   font-size: 1em; 
+}
+img {
+    border: 0;
+}
+small.edit {
+   float: right;
+}
+span.b {
+   font-weight: bold;
+}
+span.cn {
+   font-weight: bold;
+   font-size: 1.1em;
+}
+
+
+
+#wrapper { 
+   background: #dedede;
+   text-align: left;
+}
+#header { 
+    background: black;
+    height: 100px; 
+    text-align: center 
+}
+#nav {
+    height: 31px; 
+    padding: 5px 25px;
+    background: white;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #aeaeae;
+}
+#body { 
+   background: white;
+   border: 1px solid #aeaeae; 
+   margin: 10px 25px 25px;
+   padding: 10px; 
+}
+#footer {   
+   background: white; 
+   text-align: center; 
+   border-top: 1px solid #aeaeae; 
+   padding: 10px 
+}
+#footer img.escouts {
+   width: 88px;
+   height: 31px;
+   vertical-align: middle;
+   border: 0;
+}
+#footer div {
+   margin: 5px 0;
+}
+
+
+#header h1 { 
+   color: red; 
+   padding-top: 0.2em;
+   margin: 0;
+}
+
+#body p { 
+   margin: 10px 0 
+}
+
+
+
+#body div.section {
+   padding: 0 0 10px 0; 
+   text-align: center;
+}
+#body img.separator {
+   width: 99%;
+}
+
+
+#body div.news {
+   float: left;
+   padding: 5px;
+   text-align: left;
+   border-bottom: 1px solid #aeaeae;
+   width: 675px;
+}
+#body div.news blockquote {
+   color: grey;
+   font-size: 0.8em;
+   margin-bottom: 5px;
+}
+#body div.news p {
+   text-align: justify;
+}
+#body div.news p.img {
+   text-align: center;
+}
+#body div.news img {
+   height: 200px;
+   border: 1px solid #ae0000;
+}
+#body div.summary {
+   width: 340px;
+   height: 130px;
+}
+
+
+#body ul.cofc {
+   margin-left: 25px;
+}
+
+
+
+#body table.prog {
+   clear: both;
+   border: 1px solid black;
+   padding: 0;
+   text-align: center;
+   margin: 10px auto;
+}
+#body table.prog th, #body table.prog td.date {
+   background: #dedede;
+}
+#body table.prog td {
+   border-top: 1px solid black;
+   width: 350px
+}
+#body table.prog td.date {
+   border-right: 1px solid black;
+   width: 110px;
+}
+#body table.prog tr {
+   height: 30px;
+}
+#body div.links {
+   margin: 5px 0;
+   font-size: 0.8em;
+}
+#body div.prog_links span.left {
+   float: left;
+   width: 230px;
+}
+#body div.prog_links span.centre {
+   float: left;
+   width: 230px;
+   text-align: center;
+}
+#body div.prog_links span.right {
+   float: right;
+   width: 230px;
+   text-align: right;
+}
+
+
+
+/* Who's Who Styling */
+#body div.who {
+   float: left;
+   width: 680px;
+   padding: 10px 0;
+   border-bottom: 1px solid #aeaeae
+}
+#body div.who h3 {
+   float: left;
+   padding: 3px
+}
+#body div.who img.pic {
+   float: left;
+   height: 152px;
+   border: 1px solid #aeaeae;
+}
+#body div.who div {
+   float: left;
+   width: 520px;
+   padding: 3px
+}
+
+
+
+/*  Downloads Page Styling */
+#body div.main_downloads {
+   text-align: left;
+   margin: 10px 0;
+}
+#body div.main_downloads img {
+   border: none;
+   vertical-align: middle;
+}
+
+
+
+#body ul {
+   margin-left: 25px;
+}
+
+#body table.progDetails {
+   border: none;
+   background: none;
+   width: 100%;
+   margin-bottom: 10px;
+   padding-bottom: 10px;
+   border-bottom: 1px solid #aeaeae;
+}
+#body table.progDetails td, #body table.progDetails th {
+   padding: 5px 3px;
+   text-align: left;
+   vertical-align: top;
+}
+#body table.progDetails th.title {
+   width: 85px;
+}
+#body table.progDetails .grey {
+   background-color: #dedede;
+}
+
+
+/* Sitemap Styling */
+#body ul.menu li {
+   margin: 10px 0;
+}
+#body ul.menu ul {
+   margin-bottom: 10px;
+}
+#body ul.menu ul li {
+   margin: 7px 0;
+}
+#body ul.menu a, #body ul.menu a:visited {
+   border-bottom: 1px solid red;
+}
+#body ul.menu a:hover, #body ul.menu a:active {
+   color: red;
+}
+
+
+
+
+/* Camp diaries styling */
+#body div.section img.c_diary {
+   border: none;
+   width: 200px;
+   margin: 10px;
+}
+
+#body div.section a:hover img.c_diary {
+   border: none;
+}
+
+
+
+
+
+/* User account styling */
+#body table#user_account tr {
+    height: 35px;
+    vertical-align: top;
+}
+#body table#user_account td.img {
+    text-align: center;
+    border: 1px solid #aeaeae;
+    background: #dedede;
+    padding: 2px;
+    vertical-align: middle;
+}
+#body table#user_account td.title {
+    width: 150px;
+    border: 1px solid #aeaeae;
+    padding: 2px;
+}
+#body table#user_account td.data {
+    width: 320px;
+    border: 1px solid #aeaeae;
+    background: #dedede;
+    padding: 2px;
+}
+
+
+
+
+#body blockquote.award {
+    text-align: center;
+    float: left;
+    width: 220px;
+    height: 150px;
+    margin: 5px;
+}
+#body blockquote.award a:hover, #body blockquote.award a:active { 
+    text-decoration: none;
+    border: none;
+}
+#body blockquote.award a, #body blockquote.award a:visited {
+    color: navy;
+}
+
+
+
+
+#body div.links {
+    float: left;
+    padding: 5px;
+    width: 330px; 
+}
+#body div.links ul {
+    margin: 0;
+    font-size: 1.1em;
+}
+#body div.links li {
+    margin: 5px 0;
+}
+
+
+
+
+
+#nav ul { 
+   list-style: none; 
+   display: inline; 
+   float: left 
+}
+#nav ul li { 
+   background: red;
+   float: left; 
+   padding: 4px 8px 5px; 
+   border-left: 3px solid dimGray; 
+   border-top: 3px solid dimGray; 
+   border-right: 3px solid black; 
+   border-bottom: 3px solid black; 
+   margin-right: 3px;
+   text-align: center;
+}
+#nav ul li:hover, #nav ul li.over { 
+   background: #bebebe; 
+}
+#nav a, #nav a:visited { 
+   color: black; 
+   text-decoration: none 
+}
+#nav a:hover, #nav a:active { 
+   border-bottom: 1px solid red;
+}

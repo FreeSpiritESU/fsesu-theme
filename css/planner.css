@@ -1,0 +1,87 @@
+/* Stylesheet for year planner */
+
+div.years {
+    float: right;
+    text-align: right;
+    width: 150px;
+}
+table#planner {
+    text-align: center;
+}
+table#planner td {
+    font-size: 9px;
+    color: #999999;
+    width: 20px;
+}
+table#planner td.Cam, 
+table#planner td.Hik, 
+table#planner td.Mon, 
+table#planner td.Out,
+table#planner td.Int,
+table#planner td.Jam,
+table#planner td.Non,
+table#planner td.Oth {
+    border: 0;
+}
+table#planner td.weekend {
+    background: #cacaca;
+}
+table#planner td.Cam, li.Cam {
+    background: #88cc88;
+}
+table#planner td.Hik, li.Hik {
+    background: #cc8888;
+}
+table#planner td.Mon, li.Mon {
+    background: #8888cc;
+}
+table#planner td.Out, li.Out {
+    background: #cc88cc;
+}
+table#planner td.Int, li.Int {
+    background: #88cccc;
+}
+table#planner td.Jam, li.Jam {
+    background: #cccc88;
+}
+table#planner td.Non, li.Non {
+    background: #88aacc;
+}
+table#planner td.Oth, li.Oth {
+    background: #ccaa88;
+}
+table#planner th.month {
+    font-size: 10px;
+    width: 35px;
+}
+table#planner tr {
+    height: 20px;
+}
+table#planner tr.even {
+    background: #efefef;
+}
+
+ul.eventType {
+    float: left;
+    list-style: none;
+    margin: 10px;
+    width: 150px;
+}
+ul.eventType li {
+    padding: 3px;
+}
+
+
+div#eventInfo {
+    float: left;
+    margin: 5px;
+    width: 350px;
+}
+div#eventInfo label {
+    font-weight: bold;
+    width: 75px;
+}
+div#eventInfo span {
+    font-weight: normal;
+    width: 250px;
+}
